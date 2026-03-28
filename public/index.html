@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roberts Design Studio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      background: #ffffff;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo {
+      width: min(60vw, 400px);
+      opacity: 0.12;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    @media (max-width: 600px) {
+      .logo {
+        width: 70vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <img src="/rds-logo.png" alt="Roberts Design Studio" class="logo" draggable="false">
+</body>
+</html>
