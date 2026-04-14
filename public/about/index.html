@@ -203,7 +203,11 @@
     .page > .page-body:nth-of-type(2) { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s backwards; }
     .page-section-label { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.65s backwards; }
     .page-contact { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.75s backwards; }
-    .page > svg { animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s backwards; }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .page > svg { animation: fadeIn 1.2s ease 0.3s backwards; }
 
     /* === RESPONSIVE === */
     @media (max-width: 768px) {
