@@ -310,6 +310,15 @@
     }
     .ed-footer-bar-bottom a:hover { color: rgba(255,255,255,0.8); }
 
+    /* Page fade-in animations */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .page-title { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s backwards; }
+    .cs-grid { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.35s backwards; }
+
     /* === RESPONSIVE === */
     @media (max-width: 768px) {
       :root { --page-pad: 24px; }
