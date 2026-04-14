@@ -741,6 +741,22 @@
     transition: opacity 0.4s ease;
   }
 
+  /* Hero fade-in animations */
+  @keyframes heroFadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes heroProductReveal {
+    from { opacity: 0; transform: translateY(-46%); }
+    to { opacity: 1; transform: translateY(-52%); }
+  }
+
+  .hero-nav { animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s backwards; }
+  .hero-title { animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.35s backwards; }
+  .hero-product-img { animation: heroProductReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s backwards; }
+  .hero-body > div:last-of-type { animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.65s backwards; }
+  .hero-sub-bar { animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.85s backwards; }
+
   /* Responsive */
   @media (max-width: 768px) {
     :root { --page-pad: 24px; }
@@ -764,7 +780,7 @@
 <!-- STICKY HEADER BAR -->
 <div class="sticky-bar" id="stickyBar">
   <div class="sticky-bar-left"><a href="/" style="color:inherit;text-decoration:none;">Roberts Design Studio</a></div>
-  <div class="sticky-bar-center">Enjoy Your Stay</div>
+  <div class="sticky-bar-center">Make It Real</div>
   <div class="sticky-bar-right">
     <a href="/casestudies/">Case Studies</a>
     <a href="/about/">About</a>
