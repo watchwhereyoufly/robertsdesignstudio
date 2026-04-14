@@ -761,19 +761,14 @@
 
 <!-- STICKY HEADER BAR -->
 <div class="sticky-bar" id="stickyBar">
-  <div class="sticky-bar-left">Roberts Design Studio</div>
+  <div class="sticky-bar-left"><a href="/" style="color:inherit;text-decoration:none;">Roberts Design Studio</a></div>
   <div class="sticky-bar-center">Enjoy Your Stay</div>
   <div class="sticky-bar-right">
-    <a href="#">Case Studies</a>
-    <a href="#">About</a>
+    <a href="/casestudies/">Case Studies</a>
+    <a href="/about/">About</a>
   </div>
 </div>
 
-<!-- BOTTOM BAR -->
-<div class="bottom-bar">
-  <span>Roberts Design Studio is an American design company specializing in brand, package, digital, and web design for products that demand craft.</span>
-  <span>&copy; 2026 Roberts Design Studio</span>
-</div>
 
 <!-- ====== HERO ====== -->
 <div class="hero" id="heroSection">
@@ -790,11 +785,20 @@
     </div>
     <div class="hero-title" style="font-size:clamp(48px, 6vw, 90px);line-height:0.92;letter-spacing:-0.03em;">Humboldt's Best-Kept<br>Cannabis Secret Needed<br>To Stop Being A Secret.</div>
     <img class="hero-product-img" src="assets/hero-product-cutout.png" alt="Northern Harvest 3.5g box with jar and flower">
-    <div class="hero-meta" style="flex-direction:column;gap:0;max-width:none;margin-top:40px;font-size:13px;line-height:1.4;">
-      <span>Client: Northern Harvest</span>
-      <span>Scope: Brand, Website, Packaging, Collateral</span>
-      <span>Industry: Premium Cannabis</span>
-      <span>Designer: Evan Roberts</span>
+    <div style="display:flex;justify-content:flex-start;align-items:flex-start;gap:200px;margin-top:40px;">
+      <div class="hero-meta" style="flex-direction:column;gap:0;max-width:none;font-size:13px;line-height:1.4;margin-top:0;">
+        <span>Client: Northern Harvest</span>
+        <span>Scope: Brand, Website, Packaging, Collateral</span>
+        <span>Industry: Premium Cannabis</span>
+        <span>Designer: Evan Roberts</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <img src="assets/evan-headshot.jpg" alt="Evan Roberts" style="width:44px;height:44px;border-radius:50%;object-fit:cover;">
+        <div>
+          <div style="font-family:var(--font-mono);font-size:13px;font-weight:600;color:#1A1A1A;">Evan Roberts</div>
+          <div style="font-family:var(--font-mono);font-size:10px;color:rgba(0,0,0,0.35);letter-spacing:1px;">Lead Designer, Roberts Design Studio</div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="hero-sub-bar" style="margin-bottom:40px;">
@@ -1100,9 +1104,9 @@
     </div>
   </div>
 
-  <!-- Row 2: Table + RDS Animation -->
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
-    <table class="ed-table" style="margin:0;">
+  <!-- Row 2: Before/After Table (full width) -->
+  <div>
+    <table class="ed-table" style="margin:0;font-size:15px;">
       <thead>
         <tr>
           <th style="width:30%;">Before</th>
@@ -1132,16 +1136,6 @@
         </tr>
       </tbody>
     </table>
-
-    <div style="display:flex;align-items:center;justify-content:center;">
-      <svg viewBox="470 760 1210 680" style="width:100%;height:auto;opacity:0.12;">
-        <polygon style="--dash:1200; stroke-dasharray:1200; stroke-dashoffset:1200; animation: heroStroke 16s 0s ease infinite, heroFill 16s 0s ease infinite" points="653.8 811.4 604 833 608.3 778.4 550.9 778.4 555.2 833 505.5 811.4 487.8 866 540.4 879.4 505 919.5 551.4 953 579.6 907.6 607.9 953 654.2 919.5 618.9 879.4 671.5 866 653.8 811.4"/>
-        <path style="--dash:1200; stroke-dasharray:1200; stroke-dashoffset:1200; animation: heroStroke 16s 0.4s ease infinite, heroFill 16s 0.4s ease infinite" d="M855.4,914.8c-10.4.7-20.5,2.6-30.3,5.4-9.8,2.9-18.8,6.9-27.1,12-10.8,6.4-20,14.5-27.4,24.2-3.5,4.6-6.7,9.5-9.6,14.6v-55.4h-76.5v344.4h87.4v-176c0-13.2,1.8-25,5.4-35.6,3.6-10.5,8.9-19.7,15.9-27.4,7-7.8,15.6-14,25.8-18.7,10.2-4.9,21.6-7.8,34.3-8.8,12.6-1,23.8,0,33.3,3v-81c-10.4-1.3-20.8-1.5-31.3-.8Z"/>
-        <path style="--dash:2500; stroke-dasharray:2500; stroke-dashoffset:2500; animation: heroStroke 16s 0.8s ease infinite, heroFill 16s 0.8s ease infinite" d="M1135.8,926.7c-21.4-13.8-47.4-20.7-77.8-20.7s-61.7,7.9-86.1,23.6c-24.5,15.7-43.4,37.3-56.9,64.6-13.5,27.3-20.2,58.5-20.2,93.6s6.6,65.4,19.9,92.8c13.3,27.4,31.8,49.1,55.6,65.1,23.8,15.9,51.5,23.9,83.2,23.9s62.8-8,85.8-23.9c2.5-1.7,5-3.6,7.3-5.5v19.8h76.5v-459.2h-87.4v125.9ZM1139,1142.6c-5.1,15.7-13.4,28-25,36.7-11.6,8.7-27.1,13.1-46.4,13.1s-34-4.7-45.9-14c-11.9-9.4-20.7-21.9-26.5-37.8-5.7-15.8-8.6-33.4-8.6-52.8s3-36.6,8.9-52.5c5.9-15.8,15.1-28.5,27.6-37.9,12.4-9.5,28.3-14.2,47.7-14.2s32.7,4.4,43.8,13.1c11.2,8.7,19.3,20.9,24.4,36.7,5.1,15.7,7.7,34,7.7,54.8s-2.6,39.1-7.7,54.8Z"/>
-        <path style="--dash:2000; stroke-dasharray:2000; stroke-dashoffset:2000; animation: heroStroke 16s 1.2s ease infinite, heroFill 16s 1.2s ease infinite" d="M1540.9,1156c0-17.9-3.6-33.1-10.8-45.8-7.2-12.6-18.8-23.5-34.6-32.5-15.8-9-36.8-17-63-23.8-26.8-6.8-46.7-12.3-59.8-16.6-13.1-4.2-21.7-8.4-25.8-12.4-4.1-4-6.2-9-6.2-15,0-10,4.8-17.6,14.5-23,9.7-5.3,22.5-7.4,38.4-6.4,16.4,1.3,29.3,5.6,38.9,13.1,9.6,7.4,15.1,17.5,16.6,30.3l88.7-15.9c-3-20.8-10.9-38.9-23.8-54.2-12.9-15.3-29.7-27.1-50.5-35.4-20.8-8.3-44.8-12.4-71.8-12.4s-52,4.4-72.5,13.2c-20.5,8.8-36.4,21.4-47.7,37.6-11.3,16.3-16.9,35.5-16.9,57.6s3.7,32.7,11.2,45.1c7.4,12.4,19.6,23.1,36.4,32,16.8,8.9,39.2,17,67.3,24.2,24.9,6.6,43.2,11.9,55,15.9,11.8,4,19.4,8.1,22.8,12.3,3.4,4.1,5.1,9.6,5.1,16.4,0,10.8-4.3,19.3-12.8,25.4-8.5,6.1-20.6,9.1-36.4,9.1s-34.9-4.6-47.4-13.7c-12.4-9.1-20.5-21.8-24.1-37.9l-88.7,13.4c5.7,35.9,21.9,63.7,48.6,83.4,26.7,19.7,61.7,29.5,105.1,29.5s80.4-10.1,105.9-30.3c25.5-20.2,38.3-47.9,38.3-83.2Z"/>
-        <path style="--dash:1500; stroke-dasharray:1500; stroke-dashoffset:1500; animation: heroStroke 16s 1.6s ease infinite, heroFill 16s 1.6s ease infinite" d="M1658.9,959.3c-9-40.4-22.3-78.9-39.9-115.6-17.5-36.7-38.6-69.5-63.3-98.4l-64.4,47.2c25.9,31.3,46.2,62.5,60.9,93.6,14.7,31.1,25,62.7,31.1,94.7,6.1,32,9.2,64.9,9.4,98.7-.2,33.8-3.3,66.7-9.4,98.7-6.1,32-16.4,63.6-31.1,94.7s-35,62.3-60.9,93.6l64.4,47.2c24.7-28.9,45.8-61.8,63.3-98.5,17.5-36.8,30.8-75.3,39.9-115.6,9-40.3,13.1-80.3,12.3-120.1.8-39.8-3.2-79.8-12.3-120.2Z"/>
-      </svg>
-    </div>
   </div>
 
   <div style="font-family:var(--font-display);font-size:clamp(36px,5vw,64px);font-weight:700;line-height:1.05;color:#1a1a1a;letter-spacing:-0.03em;margin-top:48px;text-align:center;">"Kiva now holds up Northern Harvest materials in meetings and tells other brands: this is the standard."</div>
@@ -1172,13 +1166,19 @@
 </div>
 
 <!-- ====== 10. REFLECTION ====== -->
-<div class="ed-section">
+<div class="ed-section" style="text-align:center;padding:60px var(--page-pad) 80px;">
   <div class="ed-label">Title: Reflection</div>
-  <div class="ed-header">What I Would <span>(</span>Do Differently<span>)</span></div>
-  <div class="ed-text-col" style="max-width:700px;">
+  <div class="ed-header">What I Would Do Differently</div>
+  <div style="max-width:800px;margin:0 auto;">
     <p class="ed-body">With more time, I would have pushed for a professional photography shoot before building the website. The product deserves it. What surprised me is how much the Million Dollar Test simplified decision-making. One filter eliminated hours of debate. When every stakeholder is aligned on a single question, the work moves faster than any process framework.</p>
     <p class="ed-body">This project is ongoing. The brand is still evolving. But the foundation is built, and it is built to scale.</p>
   </div>
+</div>
+
+<!-- TEMP BAR -->
+<div id="tempBar" style="position:fixed;bottom:0;left:0;right:0;padding:8px var(--page-pad);background:#F0F0F0;border-top:1px solid rgba(0,0,0,0.08);font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);letter-spacing:1.5px;text-transform:uppercase;display:flex;justify-content:space-between;z-index:200;">
+  <span>Roberts Design Studio is an American design company specializing in brand, package, digital, and web design for products that demand craft.</span>
+  <span>&copy; 2026 Roberts Design Studio</span>
 </div>
 
 <!-- ====== FOOTER ====== -->
@@ -1193,7 +1193,7 @@
         <path style="--dash:1500; stroke-dasharray:1500; stroke-dashoffset:1500; animation: footerStroke 16s 1.6s ease infinite, footerFill 16s 1.6s ease infinite" d="M1658.9,959.3c-9-40.4-22.3-78.9-39.9-115.6-17.5-36.7-38.6-69.5-63.3-98.4l-64.4,47.2c25.9,31.3,46.2,62.5,60.9,93.6,14.7,31.1,25,62.7,31.1,94.7,6.1,32,9.2,64.9,9.4,98.7-.2,33.8-3.3,66.7-9.4,98.7-6.1,32-16.4,63.6-31.1,94.7s-35,62.3-60.9,93.6l64.4,47.2c24.7-28.9,45.8-61.8,63.3-98.5,17.5-36.8,30.8-75.3,39.9-115.6,9-40.3,13.1-80.3,12.3-120.1.8-39.8-3.2-79.8-12.3-120.2Z"/>
       </svg>
     </div>
-    <div class="ed-footer-tagline"><span style="font-family:var(--font-display);font-weight:700;text-transform:uppercase;letter-spacing:-0.03em;">Roberts Design Studio</span><br><span style="font-family:var(--font-mono);font-size:17px;font-weight:400;line-height:1.2;display:inline-block;margin-top:8px;">is an American design company<br>specializing in brand, package, digital,<br>and web design for products that<br>demand craft.</span></div>
+    <div class="ed-footer-tagline" style="position:relative;z-index:2;margin-left:auto;margin-right:10%;margin-top:-100px;"><span style="font-family:var(--font-display);font-weight:700;text-transform:uppercase;letter-spacing:-0.03em;">Roberts Design Studio</span><br><span style="font-family:var(--font-mono);font-size:17px;font-weight:400;line-height:1.2;display:inline-block;margin-top:8px;">is an American design company<br>specializing in brand, package, digital,<br>and web design for products that<br>demand craft.</span></div>
   </div>
 
   <div class="ed-footer-bar">
@@ -1219,28 +1219,43 @@ const obs = new IntersectionObserver(([e]) => {
 }, { threshold: [0, 0.25, 0.5, 0.75, 1] });
 obs.observe(hero);
 
-
-// Hide bottom bar when footer is visible
-const bottomBar = document.querySelector('.bottom-bar');
+// Temp bar: fixed at bottom, attaches to footer top
+const tempBar = document.getElementById('tempBar');
 const siteFooter = document.getElementById('siteFooter');
-const footerObs = new IntersectionObserver(([e]) => {
-  bottomBar.classList.toggle('hidden', e.isIntersecting);
-}, { threshold: 0 });
-footerObs.observe(siteFooter);
+const tempBarH = tempBar.offsetHeight;
+function positionTempBar() {
+  const footerRect = siteFooter.getBoundingClientRect();
+  const windowH = window.innerHeight;
+  if (footerRect.top < windowH) {
+    tempBar.style.position = 'absolute';
+    tempBar.style.bottom = 'auto';
+    tempBar.style.top = (siteFooter.offsetTop - tempBarH) + 'px';
+    tempBar.style.borderTop = 'none';
+    tempBar.style.borderBottom = '1px solid rgba(255,255,255,0.08)';
+    tempBar.style.background = '#111111';
+    tempBar.style.color = 'rgba(255,255,255,0.35)';
+  } else {
+    tempBar.style.position = 'fixed';
+    tempBar.style.bottom = '0';
+    tempBar.style.top = 'auto';
+    tempBar.style.borderBottom = 'none';
+    tempBar.style.borderTop = '1px solid rgba(0,0,0,0.08)';
+    tempBar.style.background = '#F0F0F0';
+    tempBar.style.color = 'rgba(0,0,0,0.25)';
+  }
+}
+window.addEventListener('scroll', positionTempBar);
+positionTempBar();
 
 // Mountain draw on scroll
 const mtn = document.getElementById('mountainSvg');
 if (mtn) {
   const mtnLine = mtn.querySelector('.mountain-line');
   const mtnObs = new IntersectionObserver(([e]) => {
-    if (e.isIntersecting) {
-      mtnLine.style.strokeDashoffset = '0';
-    }
+    if (e.isIntersecting) mtnLine.style.strokeDashoffset = '0';
   }, { threshold: 0.1 });
   mtnObs.observe(mtn);
 }
-
-
 </script>
 </body>
 </html>
