@@ -514,6 +514,8 @@ for (let x = 5; x < 457; x += 14) {
   }
 
   function spawnFragment(rowIndex) {
+    const activeInRow = fragments.filter(f => f.row === rowIndex).length;
+    if (activeInRow >= 2) return null;
     const startX = -(300 + Math.random() * 200);
     if (wouldOverlap(rowIndex, startX)) return null;
     const el = document.createElement('div');
@@ -580,7 +582,7 @@ for (let x = 5; x < 457; x += 14) {
       last = now;
       for (let i = fragments.length - 1; i >= 0; i--) {
         const f = fragments[i];
-        f.x += f.speed * dt;
+        f.x += f.speed * 60 * dt;
         f.el.style.transform = 'translateX(' + f.x + 'px)';
         if (!f.decoding && now >= f.nextDecode) decodeTo(f);
         if (f.x > container.offsetWidth + 50) { f.el.remove(); fragments.splice(i, 1); }
