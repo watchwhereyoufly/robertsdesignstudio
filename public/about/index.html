@@ -10,6 +10,7 @@
   <meta property="og:image" content="/og-image-dark.jpg">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@300;400;500;600;700;800&display=swap');
 
@@ -136,6 +137,11 @@
     .page-body strong {
       color: rgba(255,255,255,0.85);
       font-weight: 600;
+      cursor: default;
+      transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .page-body strong:hover {
+      color: var(--accent);
     }
 
     .page-section-label {

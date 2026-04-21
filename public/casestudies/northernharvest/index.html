@@ -10,6 +10,7 @@
 <meta property="og:image" content="assets/og-image.jpg">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@300;400;500;600;700;800&display=swap');
 
@@ -71,6 +72,14 @@
   .sticky-bar.scrolled a { color: rgba(255,255,255,0.7); }
   .sticky-bar.scrolled a:hover { color: #FFFFFF; }
   .sticky-bar.scrolled .sticky-bar-center { color: rgba(255,255,255,0.5); }
+  .temp-bar {
+    transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+  }
+  .temp-bar.scrolled {
+    background: #111111 !important;
+    color: rgba(255,255,255,0.35) !important;
+    border-top-color: rgba(255,255,255,0.08) !important;
+  }
   .sticky-bar-left { display: flex; align-items: center; gap: 16px; }
   .sticky-bar-center {
     position: absolute;
@@ -364,10 +373,10 @@
   /* Dissolving word cloud */
   .dissolve-cloud {
     position: absolute;
-    right: 0;
+    right: -40px;
     top: 0;
     bottom: 0;
-    width: 30%;
+    width: 24%;
     pointer-events: none;
     z-index: 0;
   }
@@ -557,6 +566,8 @@
     letter-spacing: -0.04em;
     margin: 8px 0 4px;
   }
+  .gap-stats .ed-stat { font-size: 48px; }
+  .gap-stats .ed-stat-label { font-size: 9px; margin-bottom: 20px; }
   .ed-stat:first-child {
     margin-top: -8px;
   }
@@ -860,6 +871,7 @@
 </div>
 
 <div class="ed-section no-top-line" style="padding-top:0;position:relative;overflow:hidden;">
+  <div style="position:relative;">
   <!-- Dissolving word cloud -->
   <div class="dissolve-cloud" id="dissolveCloud">
     <svg class="orbit-trail" viewBox="0 0 300 300">
@@ -879,13 +891,8 @@
     <span class="dissolve-word" style="top:54%;left:32%;font-size:14px;transform:rotate(-3deg);--float-dur:3.6s;--float-delay:1s;--float-x:5px;--float-y:-3px">NO IDENTITY</span>
     <span class="dissolve-word" style="top:54%;left:55%;font-size:14px;transform:rotate(1deg);--float-dur:4.4s;--float-delay:1.8s;--float-x:-4px;--float-y:-6px">NO STRATEGY</span>
   </div>
-  <div class="ed-two-col" style="position:relative;z-index:1;">
-    <div class="ed-text-col">
-      <p class="ed-body">No website. No active Instagram. No brand guidelines. No organized asset library. No sales collateral. No consistent packaging. No content pipeline. The VP of Sales was walking into dispensaries empty-handed. Previous creative efforts had stalled with no explanation. The brand was positioned as commodity cannabis, not premium.</p>
-      <p class="ed-body">Kiva had set a target: <strong>$500K monthly revenue</strong>. The product could support it. The brand could not. The founder was under pressure to professionalize everything, fast.</p>
-      <p class="ed-body">The only things that existed: a logo, a loose color palette, and incredible cannabis. Not a rebrand. Not a refresh. A build from zero. My job was to make everything else match what was already inside the bag.</p>
-    </div>
-    <div>
+  <div style="max-width:900px;margin-left:calc(50% - 420px);margin-right:auto;position:relative;z-index:1;">
+    <div class="gap-stats" style="position:absolute;right:calc(100% + 220px);top:0;width:180px;text-align:left;">
       <div class="ed-stat">0</div>
       <div class="ed-stat-label">Brand assets or guidelines when I arrived</div>
       <div class="ed-stat">250+</div>
@@ -893,7 +900,15 @@
       <div class="ed-stat">$500K</div>
       <div class="ed-stat-label">Monthly revenue target from Kiva</div>
     </div>
+    <p class="ed-body">No website. No active Instagram. No brand guidelines. No organized asset library. No sales collateral. No consistent packaging. No content pipeline. The VP of Sales was walking into dispensaries empty-handed. Previous creative efforts had stalled with no explanation. The brand was positioned as commodity cannabis, not premium.</p>
+    <p class="ed-body">Kiva had set a target: <strong>$500K monthly revenue</strong>. The product could support it. The brand could not. The founder was under pressure to professionalize everything, fast.</p>
+    <p class="ed-body">The only things that existed: a logo, a loose color palette, and incredible cannabis. Not a rebrand. Not a refresh. A build from zero. My job was to make everything else match what was already inside the bag.</p>
   </div>
+  </div>
+  <figure style="margin:80px 0 0;position:relative;z-index:1;width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);">
+    <img src="assets/photos/row4-c.png" alt="Northern Harvest packaging on shelf" style="width:100%;height:100vh;object-fit:cover;display:block;">
+    <figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);letter-spacing:1px;margin-top:6px;padding-left:var(--page-pad);">row4-c.png</figcaption>
+  </figure>
 </div>
 
 <!-- ====== 4. POSITIONING (AND) SPEED ====== -->
@@ -914,10 +929,10 @@
       <p class="ed-body">The sales team needed materials yesterday. I prioritized revenue-generating collateral over internal documentation. Menus and sell sheets shipped in week three. Brand guidelines came after. Field first. Revenue first. Documentation to support it, not the other way around.</p>
       <p class="ed-body">I built systems that outlast my involvement. Automated menu workflows using CSV-based variable data. Organized asset libraries. Documented brand rules. A brand that runs without needing a designer for every update. Scale beyond me.</p>
     </div>
-    <div style="margin-top:-100px;">
+    <div style="margin-top:-100px;width:calc(100% + 80px);margin-left:-80px;">
       <figure style="margin:0;">
-        <img src="assets/photos/260203_plugging-clones-11.jpg" alt="Plugging clones" style="width:100%;display:block;">
-        <figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);letter-spacing:1px;margin-top:6px;">260203_plugging-clones-11.jpg</figcaption>
+        <img src="assets/photos/gap-hero-v2.png" alt="Northern Harvest products in studio light" style="width:100%;aspect-ratio:1.587;object-fit:cover;display:block;">
+        <figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);letter-spacing:1px;margin-top:6px;">gap-hero-v2.png</figcaption>
       </figure>
     </div>
   </div>
@@ -1083,10 +1098,10 @@
   <!-- Website Screenshots Deck -->
   <div class="ed-deck">
     <div class="deck-spacer"></div>
-    <img src="assets/site-01.png" alt="Website 01">
-    <img src="assets/site-02.png" alt="Website 02">
-    <img src="assets/site-03.png" alt="Website 03">
-    <img src="assets/site-04.png" alt="Website 04">
+    <img src="assets/site-01.png?v=2" alt="Website 01">
+    <img src="assets/site-02.png?v=2" alt="Website 02">
+    <img src="assets/site-03.png?v=2" alt="Website 03">
+    <img src="assets/site-04.png?v=2" alt="Website 04">
     <img src="assets/site-05.png" alt="Website 05">
     <img src="assets/site-06.png" alt="Website 06">
     <img src="assets/site-07.png" alt="Website 07">
@@ -1100,6 +1115,11 @@
 
   <p class="ed-body" style="margin-top:24px;">View live site: <a href="https://northernharvests.com" target="_blank" style="color:var(--text);font-weight:600;">northernharvests.com</a></p>
 </div>
+
+<figure style="margin:20px 0 0;position:relative;z-index:1;width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);">
+  <img src="assets/photos/website-hero.png" alt="Northern Harvest packaging on shelf" style="width:100%;height:100vh;object-fit:cover;display:block;">
+  <figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);letter-spacing:1px;margin-top:6px;padding-left:var(--page-pad);">website-hero.png</figcaption>
+</figure>
 
 <!-- ====== 8. THE RESULTS ====== -->
 <div class="ed-section">
@@ -1172,31 +1192,38 @@
     <figure><img src="assets/photos/nh_3.5g_box_open.png" alt="" style="background:#fff;object-fit:contain;padding:24px;border:1px solid rgba(0,0,0,0.08);"><figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);padding:6px 8px;">nh_3.5g_box_open.png</figcaption></figure>
     <figure><img src="assets/photos/nh_3.5g_box_straight.png" alt="" style="background:#fff;object-fit:contain;padding:24px;border:1px solid rgba(0,0,0,0.08);"><figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);padding:6px 8px;">nh_3.5g_box_straight.png</figcaption></figure>
     <figure><img src="assets/photos/nh_3.5g_jar_side.png" alt="" style="background:#fff;object-fit:contain;padding:24px;border:1px solid rgba(0,0,0,0.08);"><figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);padding:6px 8px;">nh_3.5g_jar_side.png</figcaption></figure>
-    <figure><img src="assets/photos/hero.jpg" alt=""><figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);padding:6px 8px;">hero.jpg</figcaption></figure>
-    <figure><img src="assets/photos/yabbabb.jpg" alt=""><figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);padding:6px 8px;">yabbabb.jpg</figcaption></figure>
-    <figure><img src="assets/photos/0bb5045d.jpeg" alt=""><figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);padding:6px 8px;">0bb5045d.jpeg</figcaption></figure>
-    <figure><img src="assets/photos/260203_packing-25.jpg" alt=""><figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);padding:6px 8px;">260203_packing-25.jpg</figcaption></figure>
-    <figure><img src="assets/photos/260203_harvest-18.jpg" alt=""><figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);padding:6px 8px;">260203_harvest-18.jpg</figcaption></figure>
-    <figure><img src="assets/photos/260203_flower-room-2_overview-6.jpg" alt=""><figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);padding:6px 8px;">260203_flower-room-2_overview-6.jpg</figcaption></figure>
-    <figure><img src="assets/photos/260203_veg-5.jpg" alt=""><figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);padding:6px 8px;">260203_veg-5.jpg</figcaption></figure>
-    <figure><img src="assets/photos/260203_plugging-clones-5.jpg" alt=""><figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);padding:6px 8px;">260203_plugging-clones-5.jpg</figcaption></figure>
-    <figure><img src="assets/photos/260203_clone-room-10.jpg" alt=""><figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);padding:6px 8px;">260203_clone-room-10.jpg</figcaption></figure>
+    <figure><img src="assets/photos/row3-a.png" alt=""><figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);padding:6px 8px;">row3-a.png</figcaption></figure>
+    <figure><img src="assets/photos/row3-b.png" alt=""><figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);padding:6px 8px;">row3-b.png</figcaption></figure>
+    <figure><img src="assets/photos/row3-c.png" alt=""><figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);padding:6px 8px;">row3-c.png</figcaption></figure>
+    <figure><img src="assets/photos/row4-a.png" alt=""><figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);padding:6px 8px;">row4-a.png</figcaption></figure>
+    <figure><img src="assets/photos/row4-b.png" alt=""><figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);padding:6px 8px;">row4-b.png</figcaption></figure>
+    <figure><img src="assets/photos/gap-hero-v3.png" alt=""><figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);padding:6px 8px;">gap-hero-v3.png</figcaption></figure>
+    <figure><img src="assets/photos/row2-a.png" alt=""><figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);padding:6px 8px;">row2-a.png</figcaption></figure>
+    <figure><img src="assets/photos/row2-b.png" alt=""><figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);padding:6px 8px;">row2-b.png</figcaption></figure>
+    <figure><img src="assets/photos/row2-c.png" alt=""><figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);padding:6px 8px;">row2-c.png</figcaption></figure>
   </div>
 </div>
 
 <!-- ====== 10. REFLECTION ====== -->
-<div class="ed-section" style="text-align:center;padding:60px var(--page-pad) 100px;">
+<div class="ed-section" style="text-align:center;padding:60px var(--page-pad);min-height:100vh;display:flex;flex-direction:column;justify-content:center;">
   <div class="ed-label">Title: Reflection</div>
   <div class="ed-header" style="font-size:clamp(32px,5vw,56px);">What I Would Do Differently</div>
   <div style="max-width:800px;margin:0 auto;">
     <p class="ed-body">With more time, I would have pushed for a professional photography shoot before building the website. The product deserves it. What surprised me is how much the Million Dollar Test simplified decision-making. One filter eliminated hours of debate. When every stakeholder is aligned on a single question, the work moves faster than any process framework.</p>
     <p class="ed-body">This project is ongoing. The brand is still evolving. But the foundation is built, and it is built to scale.</p>
+    <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin-top:48px;">
+      <img src="assets/evan-headshot.jpg" alt="Evan Roberts" style="width:44px;height:44px;border-radius:50%;object-fit:cover;">
+      <div style="text-align:left;">
+        <div style="font-family:var(--font-mono);font-size:13px;font-weight:600;color:#1A1A1A;">Evan Roberts</div>
+        <div style="font-family:var(--font-mono);font-size:10px;color:rgba(0,0,0,0.35);letter-spacing:1px;">Lead Designer, Roberts Design Studio</div>
+      </div>
+    </div>
   </div>
 </div>
 
 <!-- TEMP BAR -->
-<div id="tempBar" style="position:fixed;bottom:0;left:0;right:0;padding:8px var(--page-pad);background:#F0F0F0;border-top:1px solid rgba(0,0,0,0.08);font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);letter-spacing:1.5px;text-transform:uppercase;display:flex;justify-content:space-between;z-index:200;">
-  <span>Roberts Design Studio is an American design company specializing in brand, package, digital, and web design for products that demand craft.</span>
+<div id="tempBar" class="temp-bar" style="position:fixed;bottom:0;left:0;right:0;padding:8px var(--page-pad);background:#F0F0F0;border-top:1px solid rgba(0,0,0,0.08);font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);letter-spacing:1.5px;text-transform:uppercase;display:flex;justify-content:space-between;z-index:200;">
+  <span>Roberts Design Studio is an American design company specializing in brand, package, digital, and web design.</span>
   <span>&copy; 2026 Roberts Design Studio</span>
 </div>
 
@@ -1212,7 +1239,7 @@
         <path style="--dash:1500; stroke-dasharray:1500; stroke-dashoffset:1500; animation: footerStroke 16s 1.6s ease infinite, footerFill 16s 1.6s ease infinite" d="M1658.9,959.3c-9-40.4-22.3-78.9-39.9-115.6-17.5-36.7-38.6-69.5-63.3-98.4l-64.4,47.2c25.9,31.3,46.2,62.5,60.9,93.6,14.7,31.1,25,62.7,31.1,94.7,6.1,32,9.2,64.9,9.4,98.7-.2,33.8-3.3,66.7-9.4,98.7-6.1,32-16.4,63.6-31.1,94.7s-35,62.3-60.9,93.6l64.4,47.2c24.7-28.9,45.8-61.8,63.3-98.5,17.5-36.8,30.8-75.3,39.9-115.6,9-40.3,13.1-80.3,12.3-120.1.8-39.8-3.2-79.8-12.3-120.2Z"/>
       </svg>
     </div>
-    <div class="ed-footer-tagline" style="position:relative;z-index:2;margin-left:auto;margin-right:10%;margin-top:-100px;"><span style="font-family:var(--font-display);font-weight:700;text-transform:uppercase;letter-spacing:-0.03em;">Roberts Design Studio</span><br><span style="font-family:var(--font-mono);font-size:17px;font-weight:400;line-height:1.2;display:inline-block;margin-top:8px;">is an American design company<br>specializing in brand, package, digital,<br>and web design for products that<br>demand craft.</span></div>
+    <div class="ed-footer-tagline" style="position:relative;z-index:2;margin-left:auto;margin-right:10%;margin-top:-100px;"><span style="font-family:var(--font-display);font-weight:700;text-transform:uppercase;letter-spacing:-0.03em;">Roberts Design Studio</span><br><span style="font-family:var(--font-mono);font-size:17px;font-weight:400;line-height:1.2;display:inline-block;margin-top:8px;">is an American design company<br>specializing in brand, package,<br>digital, and web design.</span></div>
   </div>
 
   <div class="ed-footer-bar">
@@ -1233,13 +1260,15 @@
 // Sticky bar: gray on hero, orange after
 const hero = document.getElementById('heroSection');
 const bar = document.getElementById('stickyBar');
+const tempBar = document.getElementById('tempBar');
 const obs = new IntersectionObserver(([e]) => {
-  bar.classList.toggle('scrolled', e.intersectionRatio < 0.5);
+  const scrolled = e.intersectionRatio < 0.5;
+  bar.classList.toggle('scrolled', scrolled);
+  tempBar.classList.toggle('scrolled', scrolled);
 }, { threshold: [0, 0.25, 0.5, 0.75, 1] });
 obs.observe(hero);
 
 // Temp bar: fixed at bottom, attaches to footer top
-const tempBar = document.getElementById('tempBar');
 const siteFooter = document.getElementById('siteFooter');
 const tempBarH = tempBar.offsetHeight;
 function positionTempBar() {
@@ -1249,18 +1278,10 @@ function positionTempBar() {
     tempBar.style.position = 'absolute';
     tempBar.style.bottom = 'auto';
     tempBar.style.top = (siteFooter.offsetTop - tempBarH) + 'px';
-    tempBar.style.borderTop = 'none';
-    tempBar.style.borderBottom = '1px solid rgba(255,255,255,0.08)';
-    tempBar.style.background = '#111111';
-    tempBar.style.color = 'rgba(255,255,255,0.35)';
   } else {
     tempBar.style.position = 'fixed';
     tempBar.style.bottom = '0';
     tempBar.style.top = 'auto';
-    tempBar.style.borderBottom = 'none';
-    tempBar.style.borderTop = '1px solid rgba(0,0,0,0.08)';
-    tempBar.style.background = '#F0F0F0';
-    tempBar.style.color = 'rgba(0,0,0,0.25)';
   }
 }
 window.addEventListener('scroll', positionTempBar);

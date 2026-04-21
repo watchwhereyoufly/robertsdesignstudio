@@ -27,8 +27,8 @@
 
     body {
       font-family: var(--font-mono);
-      background: #FFFFFF;
-      color: rgba(0,0,0,0.85);
+      background: #111111;
+      color: rgba(255,255,255,0.85);
       margin: 0;
       -webkit-font-smoothing: antialiased;
       line-height: 1.7;
@@ -107,7 +107,7 @@
     .hero {
       width: 100%;
       min-height: 100vh;
-      background: #FFFFFF;
+      background: #111111;
       position: relative;
       overflow: visible;
       display: flex;
@@ -129,8 +129,8 @@
     }
     .svg-draw path,
     .svg-draw polygon {
-      fill: rgba(0,0,0,0.03);
-      stroke: rgba(0,0,0,0.12);
+      fill: rgba(255,255,255,0.04);
+      stroke: rgba(255,255,255,0.2);
       stroke-width: 1.5;
       stroke-linecap: round;
       stroke-linejoin: round;
@@ -148,7 +148,7 @@
       font-family: var(--font-display);
       font-size: clamp(32px, 4.5vw, 60px);
       font-weight: 800;
-      color: #1A1A1A;
+      color: #FFFFFF;
       text-decoration: none;
       letter-spacing: -0.03em;
       text-transform: uppercase;
@@ -157,13 +157,11 @@
       display: inline-block;
     }
     .hero-link:hover {
-      color: #0093d6;
-    }
-    .rds-logo path, .rds-logo polygon {
-      transition: fill 0.3s ease;
+      color: #17b8d9;
+      opacity: 1;
     }
     .rds-logo:hover path, .rds-logo:hover polygon {
-      fill: #FF6600;
+      fill: #FF4111;
     }
 
     .ascii-stream {
@@ -179,7 +177,7 @@
       font-family: var(--font-mono);
       font-size: 11px;
       letter-spacing: 2px;
-      color: rgba(0,0,0,0.35);
+      color: rgba(255,255,255,0.45);
       text-transform: uppercase;
       opacity: 0;
       will-change: transform, opacity;
@@ -332,6 +330,8 @@
       .svg-draw { width: 95vw; }
     }
 
+    .mountain-line { stroke: rgba(255,255,255,0.3) !important; }
+
     /* === FILM GRAIN OVERLAY === */
     body::after {
       content: '';
@@ -415,11 +415,11 @@
         <path style="--dash:1500; stroke-dasharray:1500; stroke-dashoffset:1500; animation: footerStroke 16s 1.6s ease infinite, footerFill 16s 1.6s ease infinite" d="M1658.9,959.3c-9-40.4-22.3-78.9-39.9-115.6-17.5-36.7-38.6-69.5-63.3-98.4l-64.4,47.2c25.9,31.3,46.2,62.5,60.9,93.6,14.7,31.1,25,62.7,31.1,94.7,6.1,32,9.2,64.9,9.4,98.7-.2,33.8-3.3,66.7-9.4,98.7-6.1,32-16.4,63.6-31.1,94.7s-35,62.3-60.9,93.6l64.4,47.2c24.7-28.9,45.8-61.8,63.3-98.5,17.5-36.8,30.8-75.3,39.9-115.6,9-40.3,13.1-80.3,12.3-120.1.8-39.8-3.2-79.8-12.3-120.2Z"/>
       </svg>
     </div>
-    <div class="ed-footer-tagline" style="position:relative;z-index:2;margin-left:auto;margin-right:10%;margin-top:-100px;"><span style="font-family:var(--font-display);font-weight:700;text-transform:uppercase;letter-spacing:-0.03em;">Roberts Design Studio</span><br><span style="font-family:var(--font-mono);font-size:17px;font-weight:400;line-height:1.2;display:inline-block;margin-top:8px;">is an American design company<br>specializing in brand, package, digital,<br>and web design for products that<br>demand craft.</span></div>
+    <div class="ed-footer-tagline" style="position:relative;z-index:2;margin-left:auto;margin-right:10%;margin-top:-100px;"><span style="font-family:var(--font-display);font-weight:700;text-transform:uppercase;letter-spacing:-0.03em;">Roberts Design Studio</span><br><span style="font-family:var(--font-mono);font-size:17px;font-weight:400;line-height:1.2;display:inline-block;margin-top:8px;">is an American design company<br>specializing in brand, package, digital,<br>and web design.</span></div>
   </div>
 
   <div style="position:absolute;top:0;left:0;right:0;padding:8px var(--page-pad);background:#111111;border-bottom:1px solid rgba(255,255,255,0.08);font-family:var(--font-mono);font-size:9px;color:rgba(255,255,255,0.35);letter-spacing:1.5px;text-transform:uppercase;display:flex;justify-content:space-between;transform:translateY(-100%);z-index:10;">
-    <span>Roberts Design Studio is an American design company specializing in brand, package, digital, and web design for products that demand craft.</span>
+    <span>Roberts Design Studio is an American design company specializing in brand, package, digital, and web design.</span>
     <span>&copy; 2026 Roberts Design Studio</span>
   </div>
 
