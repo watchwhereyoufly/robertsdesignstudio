@@ -211,8 +211,7 @@
       background: #111111;
       color: rgba(255,255,255,0.85);
       position: relative;
-      overflow-x: clip;
-      overflow-y: visible;
+      overflow: clip;
       z-index: 101;
       margin-bottom: -1px;
     }
@@ -437,6 +436,11 @@
   </div>
 </div>
 
+<div id="tempBar" style="position:fixed;bottom:0;left:0;right:0;padding:8px var(--page-pad);background:#111111;border-top:1px solid rgba(255,255,255,0.08);font-family:var(--font-mono);font-size:9px;color:rgba(255,255,255,0.35);letter-spacing:1.5px;text-transform:uppercase;display:flex;justify-content:space-between;z-index:200;">
+  <span>Roberts Design Studio is an American design company specializing in brand, package, digital, and web design.</span>
+  <span>&copy; 2026 Roberts Design Studio</span>
+</div>
+
 <script>
 // Generate twinkling dots
 const dotsG = document.getElementById('twinkleDots');
@@ -649,6 +653,34 @@ if (mtn) {
   });
 })();
 
+// === TEMP BAR: park above footer when it scrolls into view ===
+(function () {
+  const tempBar = document.getElementById('tempBar');
+  const siteFooter = document.getElementById('siteFooter');
+  if (!tempBar || !siteFooter) return;
+  const tempBarH = tempBar.offsetHeight;
+
+  function positionTempBar() {
+    const footerRect = siteFooter.getBoundingClientRect();
+    const windowH = window.innerHeight;
+    if (footerRect.top < windowH) {
+      tempBar.style.position = 'absolute';
+      tempBar.style.bottom = 'auto';
+      tempBar.style.top = (siteFooter.offsetTop - tempBarH) + 'px';
+      tempBar.style.borderTop = 'none';
+      tempBar.style.borderBottom = '1px solid rgba(255,255,255,0.08)';
+    } else {
+      tempBar.style.position = 'fixed';
+      tempBar.style.bottom = '0';
+      tempBar.style.top = 'auto';
+      tempBar.style.borderBottom = 'none';
+      tempBar.style.borderTop = '1px solid rgba(255,255,255,0.08)';
+    }
+  }
+  window.addEventListener('scroll', positionTempBar, { passive: true });
+  window.addEventListener('resize', positionTempBar);
+  positionTempBar();
+})();
 
 </script>
 </body>
