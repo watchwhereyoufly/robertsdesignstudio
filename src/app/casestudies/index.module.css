@@ -1,0 +1,97 @@
+.mountainTop {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.page {
+  padding: 72px var(--page-pad) 48px;
+  min-height: 100vh;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 7vw, 104px);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.card:hover { transform: translateY(-8px); }
+
+.cardHeader { display: flex; justify-content: space-between; align-items: flex-start; }
+.cardId {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 10px;
+  font-family: var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.cardDate { color: var(--accent); font-size: 12px; font-weight: 300; font-family: var(--font-mono); }
+
+.imgWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  background: rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  display: block;
+}
+.img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+.metaRow { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; }
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+.cardTag {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 4px 10px;
+}
+.caption {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.3;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  margin-top: 12px;
+}
+.divider { width: 100%; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; gap: 20px; }
+  .title { font-size: 52px; }
+  .card:hover { transform: none; }
+}

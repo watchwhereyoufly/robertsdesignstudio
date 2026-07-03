@@ -1,0 +1,68 @@
+.bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--page-pad);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* Solid variant: red bar (home, about, index) */
+.solid {
+  background: var(--accent);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Scroll variant: transparent-ish on hero, red after scroll (case studies) */
+.scroll {
+  background: rgba(0, 0, 0, 0.06);
+  color: rgba(0, 0, 0, 0.4);
+  transition: background 0.4s ease, color 0.4s ease;
+}
+.scroll.scrolled {
+  background: var(--accent);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.left { display: flex; align-items: center; gap: 16px; }
+.left a { color: inherit; text-decoration: none; }
+
+.center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  font-size: 10px;
+}
+.solid .center { color: rgba(255, 255, 255, 0.5); }
+.scroll .center { color: rgba(0, 0, 0, 0.35); }
+.scroll.scrolled .center { color: rgba(255, 255, 255, 0.5); }
+
+.right { display: flex; align-items: center; gap: 28px; }
+.right a {
+  text-decoration: none;
+  font-size: 10px;
+  letter-spacing: 2px;
+  transition: color 0.3s ease;
+}
+.solid .right a { color: rgba(255, 255, 255, 0.7); }
+.solid .right a:hover { color: #ffffff; }
+.scroll .right a { color: rgba(0, 0, 0, 0.3); }
+.scroll .right a:hover { color: rgba(0, 0, 0, 0.6); }
+.scroll.scrolled .right a { color: rgba(255, 255, 255, 0.7); }
+.scroll.scrolled .right a:hover { color: #ffffff; }
+
+@media (max-width: 768px) {
+  .bar { font-size: 8px; padding: 0 16px; letter-spacing: 1px; }
+  .center { display: none; }
+}

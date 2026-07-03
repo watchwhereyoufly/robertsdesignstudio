@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --font-display: 'Manrope', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --accent: #FF3000;
+  --brand-blue: #13294B;
+  --brand-gold: #866D4B;
+  --brand-wheat: #FDD086;
+  --page-pad: 22px;
+}
+
+@media (max-width: 768px) {
+  :root { --page-pad: 16px; }
+}
+
+html { scroll-behavior: smooth; background: #111111; }
+
+body {
+  font-family: var(--font-mono);
+  background: #111111;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+a { -webkit-tap-highlight-color: transparent; }
+
+/* Nav pill hover (matches evan---roberts.com, using the RDS accent) */
+.rds-nav-pill { transition: background 0.15s ease, border-color 0.15s ease; }
+.rds-nav-pill:hover { background: rgba(255, 48, 0, 0.16) !important; border-color: rgba(255, 48, 0, 0.45) !important; }
+.rds-nav-pill:hover .nav-num { background: var(--hdr-accent) !important; color: #fff !important; }
+.mono-num { font-family: var(--font-mono); font-feature-settings: "tnum"; }
+
+/* Shared entrance animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === FILM GRAIN OVERLAY === */
+.film-grain {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+  animation: grainShift 0.5s steps(4) infinite;
+}
+@keyframes grainShift {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-5%, -5%); }
+  50% { transform: translate(5%, 2%); }
+  75% { transform: translate(-2%, 5%); }
+  100% { transform: translate(0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .film-grain { animation: none !important; }
+}
+
+/* === RESEARCH READER OVERLAY (page blurs behind, paper opens in a panel) === */
+.site-root { transition: filter 0.26s ease; }
+body.reader-open .site-root { filter: blur(6px); }
+
+.reader-root { position: fixed; inset: 0; z-index: 10000; }
+.reader-dim { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.55); opacity: 0; animation: readerFade 0.25s ease forwards; }
+@keyframes readerFade { to { opacity: 1; } }
+.reader-scroll { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; padding: 4vh 16px; }
+.reader-panel {
+  position: relative;
+  width: min(1100px, 94vw);
+  height: min(90vh, 920px);
+  display: flex;
+  flex-direction: column;
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.5);
+  transform: translateY(16px);
+  animation: readerRise 0.32s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@keyframes readerRise { to { transform: translate3d(0, 0, 0); } }
+.reader-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px 14px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+.reader-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  font-size: 15px;
+  color: #ffffff;
+}
+.reader-x {
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+  flex-shrink: 0;
+}
+.reader-x:hover { background: var(--accent); }
+.reader-frame { flex: 1; width: 100%; border: 0; background: #ffffff; }
+.reader-empty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Reader article (written papers) */
+.reader-article-wrap { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.reader-article-wrap::-webkit-scrollbar { width: 0; height: 0; }
+.reader-article-inner { max-width: 720px; margin: 0 auto; padding: 44px 24px 90px; }
+.reader-kicker {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+.reader-article { max-width: none; }
+.reader-article h3 {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 38px 0 12px;
+}
+.reader-article p {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0 0 20px;
+}
+.reader-article p.reader-dek {
+  font-weight: 600;
+  font-size: clamp(20px, 2.4vw, 28px);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin: 12px 0 32px;
+}
+.reader-article em { font-style: italic; color: #ffffff; }
+.reader-article strong { font-weight: 700; color: #ffffff; }
+.reader-article p:last-child { color: rgba(255, 255, 255, 0.92); font-weight: 500; }

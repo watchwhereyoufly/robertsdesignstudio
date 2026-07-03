@@ -1,0 +1,182 @@
+.viewport {
+  height: 100svh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.hero {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  background: #111111;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navCol {
+  position: absolute;
+  left: var(--page-pad);
+  top: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.heroLink {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 7vw, 104px);
+  font-weight: 800;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  line-height: 0.9;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+.heroLink:hover { color: #17b8d9; opacity: 1; }
+.navCol .heroLink:nth-child(1) { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s backwards; }
+.navCol .heroLink:nth-child(2) { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s backwards; }
+.navCol .heroLink:nth-child(3) { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.45s backwards; }
+
+.rdsLogo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  width: 700px;
+  height: auto;
+  mix-blend-mode: difference;
+  cursor: pointer;
+}
+.rdsLogo:hover path,
+.rdsLogo:hover polygon { fill: #ff4111; }
+
+.mountainWrap {
+  position: absolute;
+  bottom: 80px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.mountainLine { stroke: rgba(255, 255, 255, 0.3); }
+
+.star {
+  position: absolute;
+  right: 5%;
+  top: 13%;
+  transform: translateY(-50%);
+  z-index: 2;
+  pointer-events: none;
+  width: clamp(500px, 60vw, 900px);
+  height: auto;
+  animation: spinStar 120s linear infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.7; }
+}
+@keyframes starSnake {
+  0% { stroke-dashoffset: 3000; }
+  100% { stroke-dashoffset: 0; }
+}
+@keyframes spinStar {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.tempBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px var(--page-pad);
+  background: #111111;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  z-index: 200;
+}
+
+/* === MOBILE POSTER === */
+.mHero { display: none; }
+.mStar { width: 56px; height: auto; display: block; animation: spinStar 90s linear infinite; }
+.mStar path { fill: rgba(255, 255, 255, 0.9); }
+.mWordmark {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  font-size: clamp(44px, 15.5vw, 68px);
+  margin-top: 28px;
+}
+.mTagline {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-top: 20px;
+}
+.mNav {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.mNav a {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  font-size: 30px;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: color 0.2s ease;
+}
+.mNav a:active { color: var(--accent); }
+.mMountains {
+  width: calc(100% + 2 * var(--page-pad));
+  margin-left: calc(-1 * var(--page-pad));
+  height: 70px;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+  .hero { display: none; }
+  .tempBar { display: none; }
+  .mHero {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    padding: 84px var(--page-pad) 0;
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .star, .mStar, .rdsLogo { animation: none !important; }
+}

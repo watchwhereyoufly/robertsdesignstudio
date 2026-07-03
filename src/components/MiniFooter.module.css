@@ -1,0 +1,40 @@
+.footer { flex-shrink: 0; position: relative; }
+
+.thinBar {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 8px var(--page-pad);
+  background: #111111;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.orange { background: var(--accent); }
+.bar { padding: 0 var(--page-pad); }
+.bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  padding: 14px 0;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 1px;
+}
+.bottom > *:nth-child(2) { text-align: center; }
+.bottom > *:last-child { text-align: right; }
+.bottom a { color: rgba(255, 255, 255, 0.9); text-decoration: none; transition: color 0.3s ease; }
+.bottom a:hover { color: #ffffff; }
+
+@media (max-width: 768px) {
+  .thinBar { display: none; }
+  .bottom { grid-template-columns: 1fr; gap: 6px; }
+  .bottom > *,
+  .bottom > *:nth-child(2),
+  .bottom > *:last-child { text-align: left; }
+}
