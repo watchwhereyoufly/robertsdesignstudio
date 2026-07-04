@@ -1,136 +1,120 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import styles from "./home.module.css";
+import { useEffect, useRef, useState } from "react";
 import Header from "@/components/Header";
-import MiniFooter from "@/components/MiniFooter";
-import GlitchLink from "@/components/GlitchLink";
-import { RDS_PATHS, RDS_STAR_POLYGON, STAR_PATH } from "@/components/logoPaths";
-
-const MOUNTAIN_POINTS =
-  "0,100 60,95 120,85 180,70 240,90 300,60 360,75 420,45 480,65 540,35 580,50 620,25 660,40 700,15 730,30 760,10 790,25 820,18 860,35 900,50 940,65 980,55 1020,70 1060,80 1100,75 1140,85 1200,90";
 
 export default function Home() {
-  const dotsRef = useRef<SVGGElement>(null);
-  const mtnRef = useRef<SVGPolylineElement>(null);
-  const mMtnRef = useRef<SVGPolylineElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [muted, setMuted] = useState(true);
 
+  // Try to unmute on the first interaction anywhere on the page.
+  // Browsers block audible autoplay until the user interacts, so the
+  // video starts muted and gains sound the instant Evan touches anything.
   useEffect(() => {
-    // twinkling dots inside the star
-    const g = dotsRef.current;
-    if (g && g.childNodes.length === 0) {
-      for (let x = 5; x < 457; x += 14) {
-        for (let y = 5; y < 435; y += 14) {
-          const c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-          c.setAttribute("cx", String(x));
-          c.setAttribute("cy", String(y));
-          c.setAttribute("r", "1");
-          const isDark = Math.random() < 0.2;
-          c.setAttribute("fill", isDark ? "rgba(0,0,0,0.6)" : "rgba(0,0,0,0.25)");
-          const dur = (2 + Math.random() * 5).toFixed(1);
-          const delay = (Math.random() * 5).toFixed(1);
-          c.style.animation = `twinkle ${dur}s ${delay}s ease-in-out infinite`;
-          g.appendChild(c);
-        }
+    const enableSound = () => {
+      const v = videoRef.current;
+      if (v) {
+        v.muted = false;
+        v.volume = 1;
+        setMuted(false);
+        v.play().catch(() => {});
       }
-    }
-
-    // desktop mountain draw on scroll into view
-    if (mtnRef.current) {
-      const line = mtnRef.current;
-      const obs = new IntersectionObserver(
-        ([e]) => { if (e.isIntersecting) line.style.strokeDashoffset = "0"; },
-        { threshold: 0.1 }
-      );
-      obs.observe(line);
-    }
-    // mobile mountain draw on load
-    requestAnimationFrame(() => {
-      if (mMtnRef.current) mMtnRef.current.style.strokeDashoffset = "0";
-    });
+      remove();
+    };
+    const remove = () => {
+      window.removeEventListener("pointerdown", enableSound);
+      window.removeEventListener("keydown", enableSound);
+      window.removeEventListener("touchstart", enableSound);
+      window.removeEventListener("scroll", enableSound);
+    };
+    window.addEventListener("pointerdown", enableSound, { once: true });
+    window.addEventListener("keydown", enableSound, { once: true });
+    window.addEventListener("touchstart", enableSound, { once: true });
+    window.addEventListener("scroll", enableSound, { once: true });
+    return remove;
   }, []);
+
+  const toggleMute = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    const next = !v.muted;
+    v.muted = next;
+    if (!next) v.volume = 1;
+    setMuted(next);
+    v.play().catch(() => {});
+  };
 
   return (
     <>
       <Header hidePills />
 
-      <div className={styles.viewport}>
-      {/* DESKTOP HERO */}
-      <div className={styles.hero} id="heroSection">
-        <div className={styles.navCol}>
-          <GlitchLink href="/casestudies/" className={styles.heroLink}>Case Studies</GlitchLink>
-          <GlitchLink href="/research/" className={styles.heroLink}>Research</GlitchLink>
-          <GlitchLink href="/about/" className={styles.heroLink}>Info</GlitchLink>
-        </div>
-
-        <svg className={styles.rdsLogo} viewBox="470 700 1210 800" aria-label="Roberts Design Studio">
-          {RDS_PATHS.map((d, i) => (<path key={i} d={d} fill="#FFFFFF" />))}
-          <polygon points={RDS_STAR_POLYGON} fill="#FFFFFF" />
-        </svg>
-
-        <div className={styles.mountainWrap}>
-          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" style={{ width: "100%", height: 100, display: "block" }}>
-            <polyline
-              ref={mtnRef}
-              className={styles.mountainLine}
-              fill="none"
-              strokeWidth={1.5}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              points={MOUNTAIN_POINTS}
-              style={{ strokeDasharray: 2000, strokeDashoffset: 2000, transition: "stroke-dashoffset 6s ease" }}
-            />
-          </svg>
-        </div>
-
-        <svg
-          className={styles.star}
-          viewBox="0 0 456.73 434.8"
-          aria-hidden="true"
+      <div
+        style={{
+          position: "fixed",
+          inset: 0,
+          width: "100%",
+          height: "100dvh",
+          background: "#111111",
+          overflow: "hidden",
+          zIndex: 0,
+        }}
+      >
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="/prds-poster.jpg"
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            display: "block",
+          }}
         >
-          <defs>
-            <clipPath id="starClip"><path d={STAR_PATH} /></clipPath>
-          </defs>
-          <rect width="456.73" height="434.8" fill="#FFFFFF" clipPath="url(#starClip)" />
-          <g clipPath="url(#starClip)" ref={dotsRef} />
-          <path
-            d={STAR_PATH}
-            fill="none"
-            stroke="rgba(0,0,0,0.6)"
-            strokeWidth={1.5}
-            strokeLinejoin="round"
-            style={{ strokeDasharray: "600 1400", animation: "starSnake 30s linear infinite" }}
-          />
-        </svg>
-      </div>
+          <source src="/prds-hero.mp4" type="video/mp4" />
+        </video>
 
-      {/* MOBILE POSTER */}
-      <section className={styles.mHero}>
-        <svg className={styles.mStar} viewBox="0 0 456.73 434.8" aria-hidden="true">
-          <path d={STAR_PATH} />
-        </svg>
-        <h1 className={styles.mWordmark}>Roberts<br />Design<br />Studio</h1>
-        <div className={styles.mTagline}>Make It Real</div>
-        <nav className={styles.mNav}>
-          <a href="/casestudies/">Case Studies</a>
-          <a href="/research/">Research</a>
-          <a href="/about/">Info</a>
-        </nav>
-        <svg className={styles.mMountains} viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <polyline
-            ref={mMtnRef}
-            fill="none"
-            stroke="rgba(255,255,255,0.28)"
-            strokeWidth={1.5}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            points={MOUNTAIN_POINTS}
-            style={{ strokeDasharray: 2000, strokeDashoffset: 2000, transition: "stroke-dashoffset 3s ease 0.4s" }}
-          />
-        </svg>
-      </section>
-
-      <MiniFooter />
+        {/* Mute / unmute toggle */}
+        <button
+          type="button"
+          onClick={toggleMute}
+          aria-label={muted ? "Unmute" : "Mute"}
+          style={{
+            position: "absolute",
+            bottom: "calc(env(safe-area-inset-bottom, 0px) + 20px)",
+            right: 20,
+            width: 44,
+            height: 44,
+            borderRadius: 999,
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+            zIndex: 10,
+            color: "#FFFFFF",
+            border: "1px solid rgba(255,255,255,0.18)",
+            background: "rgba(0,0,0,0.35)",
+            backdropFilter: "blur(14px) saturate(1.4)",
+            WebkitBackdropFilter: "blur(14px) saturate(1.4)",
+          }}
+        >
+          {muted ? (
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+              <path d="M11 5 6 9H3v6h3l5 4V5Z" fill="currentColor" />
+              <path d="m17 9 4 6M21 9l-4 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+          ) : (
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+              <path d="M11 5 6 9H3v6h3l5 4V5Z" fill="currentColor" />
+              <path d="M16 8.5a4.5 4.5 0 0 1 0 7M18.5 6a8 8 0 0 1 0 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none" />
+            </svg>
+          )}
+        </button>
       </div>
     </>
   );
