@@ -83,6 +83,9 @@ export default function Home() {
         <button
           type="button"
           onClick={toggleMute}
+          onPointerDown={(e) => e.stopPropagation()}
+          onTouchStart={(e) => e.stopPropagation()}
+          onKeyDown={(e) => e.stopPropagation()}
           aria-label={muted ? "Unmute" : "Mute"}
           style={{
             position: "absolute",
