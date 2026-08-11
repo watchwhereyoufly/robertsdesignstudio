@@ -314,17 +314,6 @@
      letting the browser balance the block holds a bigger size with no orphans. */
   .cs-page .hero-title { font-size: 28px !important; line-height: 1.04; letter-spacing: -0.03em; text-wrap: balance; }
   .cs-page .hero-title br { display: none; }
-
-  /* The header is fixed and its star was landing on body copy while scrolling. */
-  body:has(.cs-page) .rds-header::before {
-    content: "";
-    position: absolute;
-    inset: -14px 0 auto 0;
-    height: 76px;
-    background: linear-gradient(#ffffff 42%, rgba(255, 255, 255, 0));
-    pointer-events: none;
-    z-index: -1;
-  }
   /* Two studies carry an inline height to shrink the desktop hero; on a phone the
      image goes in flow instead, so those inline values have to be overridden. */
   .cs-page .hero-product-img {
