@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { research } from "@/data/research";
 
 type Paper = { href: string; title: string; category?: string; body?: string };
 
@@ -13,7 +14,30 @@ export default function ResearchReader() {
   useEffect(() => {
     const onOpen = (e: Event) => setPaper((e as CustomEvent).detail as Paper);
     window.addEventListener("rds:open-paper", onOpen as EventListener);
-    return () => window.removeEventListener("rds:open-paper", onOpen as EventListener);
+
+    // Second, independent path to the same overlay. The research page's own
+    // onClick only fires once that page's chunk has hydrated; if it hasn't (or
+    // it failed), the row is still a live <a> and the browser just navigates to
+    // the source — which is what mobile Safari was doing. This listener lives in
+    // the root layout, is native rather than synthetic, and runs in the capture
+    // phase, so it intercepts the tap before the default follows the href.
+    const onDocClick = (e: MouseEvent) => {
+      if (e.defaultPrevented) return;
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button === 1) return;
+      const target = e.target as Element | null;
+      const row = target?.closest?.("a[data-paper]") as HTMLAnchorElement | null;
+      if (!row) return;
+      const found = research.find((r) => r.href === row.dataset.paper);
+      if (!found) return; // unknown row: let it navigate rather than dead-end
+      e.preventDefault();
+      setPaper(found as Paper);
+    };
+    document.addEventListener("click", onDocClick, true);
+
+    return () => {
+      window.removeEventListener("rds:open-paper", onOpen as EventListener);
+      document.removeEventListener("click", onDocClick, true);
+    };
   }, []);
 
   useEffect(() => {
@@ -42,8 +66,17 @@ export default function ResearchReader() {
         <div className="reader-panel" onClick={(e) => e.stopPropagation()}>
           <div className="reader-bar">
             <span className="reader-title">{paper.title}</span>
+            {/* SVG rather than a "×" glyph: the character centers on its own
+                baseline, which left it sitting high in the circle. */}
             <button className="reader-x" onClick={() => setPaper(null)} aria-label="Close">
-              ×
+              <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+                <path
+                  d="M1 1L11 11M11 1L1 11"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                />
+              </svg>
             </button>
           </div>
           {paper.body ? (

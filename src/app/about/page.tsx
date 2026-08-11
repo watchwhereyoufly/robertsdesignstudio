@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "About | Roberts Design Studio",
   description:
     "Roberts Design Studio is an American design company specializing in brand, package, digital, and web design for products that demand craft.",
-  openGraph: { images: ["/og-image-dark.jpg"] },
+  openGraph: { images: ["/og-image.jpg"] },
 };
 
 export default function About() {
@@ -48,18 +48,13 @@ export default function About() {
             systems directly in code.
           </p>
 
-          <p className={styles.body}>
-            &quot;We work with companies that make real things and need a brand to match the quality inside the
-            box.&quot;
-          </p>
-
           <div className={styles.sectionLabel}>Contact</div>
           <div className={styles.contact}>
             <a href="mailto:evan@robertsdesignstudio.com">evan@robertsdesignstudio.com</a>
           </div>
         </div>
 
-        <MiniFooter />
+        <MiniFooter hideThinBar />
       </div>
     </>
   );

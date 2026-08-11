@@ -100,22 +100,16 @@
 .barTop > *:last-child { text-align: right; }
 .barBottom {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr auto;
   align-items: center;
   padding: 12px 0 24px;
   font-family: var(--font-mono);
   font-size: 9px;
   color: rgba(255, 255, 255, 0.85);
   letter-spacing: 1px;
+  text-transform: uppercase;
 }
-.barBottom > *:nth-child(2) { text-align: center; }
 .barBottom > *:last-child { text-align: right; }
-.barBottom a {
-  color: rgba(255, 255, 255, 0.9);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-.barBottom a:hover { color: #ffffff; }
 
 @media (max-width: 768px) {
   .hero {
@@ -125,17 +119,44 @@
     padding: 56px var(--page-pad) 40px;
     min-height: 0;
   }
-  .logo { display: none; }
-  .tagline { margin: 0; max-width: none; }
+  /* Mark stays, stacked under the tagline and bleeding off the left edge the
+     way it does on desktop. .footer has overflow: clip, so the bleed is safe. */
+  .logo {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    order: 2;
+    width: 100%;
+    margin: 32px 0 0 calc(var(--page-pad) * -1 - 14px);
+    pointer-events: none;
+  }
+  .logo svg {
+    display: block;
+    height: auto;
+    width: min(124%, 470px);
+  }
+  /* Stroke is in viewBox units, so scaling the mark down thins it. Bumped to
+     hold the ~2.2px optical weight the desktop mark renders at. Opacity is
+     lifted too: the same value that reads on a small desktop corner reads as
+     nothing across a phone-width field of orange. */
+  .shape { stroke-width: 6.6; stroke: rgba(255, 255, 255, 0.78); }
+  .tagline { order: 1; margin: 0; max-width: none; }
   .taglineSub { font-size: 13px; }
-  .barTop,
-  .barBottom { grid-template-columns: 1fr; gap: 6px; }
+  .barTop { grid-template-columns: 1fr; gap: 6px; }
   .barTop > *,
-  .barBottom > *,
   .barTop > *:nth-child(2),
-  .barBottom > *:nth-child(2),
-  .barTop > *:last-child,
-  .barBottom > *:last-child { text-align: left; }
+  .barTop > *:last-child { text-align: left; }
+  /* Copyright left, country right. Stays a two-up split on phones. Bottom pad
+     clears the home indicator and the curved corners on notched iPhones. */
+  .barBottom {
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    font-size: 8.5px;
+    letter-spacing: 0.8px;
+    padding: 12px 0 calc(26px + env(safe-area-inset-bottom));
+  }
+  .barBottom > *:last-child { text-align: right; }
 }
 
 @media (prefers-reduced-motion: reduce) {

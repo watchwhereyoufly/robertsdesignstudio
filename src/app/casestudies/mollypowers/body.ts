@@ -1,2 +1,369 @@
-// Auto-extracted from the original static case study. Pixel-exact body content.
-export const body = "<!-- ====== HERO ====== -->\n<div class=\"hero\" id=\"heroSection\">\n  <div class=\"hero-body\">\n    <div class=\"hero-nav\">\n      <div class=\"hero-nav-left\">\n        <strong>Case Study</strong>\n      </div>\n      <div class=\"hero-nav-center\">Molly K Powers</div>\n      <div class=\"hero-nav-right\">\n        <span>Brooklyn, NY</span>\n        <span>2026</span>\n      </div>\n    </div>\n    <div class=\"hero-title\" style=\"font-size:clamp(48px, 6vw, 90px);line-height:0.92;letter-spacing:-0.03em;\">A Writer Needed A Site<br>That Reads The Way<br>She Writes.</div>\n    <img class=\"hero-product-img\" src=\"assets/molly-portrait.jpg\" alt=\"Molly Powers, writer, Brooklyn\" style=\"height:82%;max-height:720px;border-radius:2px;object-fit:cover;\">\n    <div style=\"display:flex;justify-content:flex-start;align-items:flex-start;gap:200px;margin-top:40px;\">\n      <div class=\"hero-meta\" style=\"flex-direction:column;gap:0;max-width:none;font-size:13px;line-height:1.4;margin-top:0;\">\n        <span>Client: Molly Powers</span>\n        <span>Scope: Art Direction, Web Design, Build</span>\n        <span>Industry: Writer &middot; Personal Site</span>\n        <span>Designer: Evan Roberts</span>\n      </div>\n      <div style=\"display:flex;align-items:center;gap:16px;\">\n        <img src=\"assets/evan-headshot.jpg?v=3\" alt=\"Evan Roberts\" style=\"width:44px;height:44px;border-radius:50%;object-fit:cover;\">\n        <div>\n          <div style=\"font-family:var(--font-mono);font-size:13px;font-weight:600;color:#1A1A1A;\">Evan Roberts</div>\n          <div style=\"font-family:var(--font-mono);font-size:10px;color:rgba(0,0,0,0.35);letter-spacing:1px;\">Lead Designer, Roberts Design Studio</div>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"hero-sub-bar\" style=\"margin-bottom:40px;\">\n    <svg viewBox=\"0 0 2160 2160\">\n      <polygon style=\"--dash:1200; stroke-dasharray:1200; stroke-dashoffset:1200; animation: heroStroke 16s 0s ease infinite, heroFill 16s 0s ease infinite\" points=\"653.8 811.4 604 833 608.3 778.4 550.9 778.4 555.2 833 505.5 811.4 487.8 866 540.4 879.4 505 919.5 551.4 953 579.6 907.6 607.9 953 654.2 919.5 618.9 879.4 671.5 866 653.8 811.4\"/>\n      <path style=\"--dash:1200; stroke-dasharray:1200; stroke-dashoffset:1200; animation: heroStroke 16s 0.4s ease infinite, heroFill 16s 0.4s ease infinite\" d=\"M855.4,914.8c-10.4.7-20.5,2.6-30.3,5.4-9.8,2.9-18.8,6.9-27.1,12-10.8,6.4-20,14.5-27.4,24.2-3.5,4.6-6.7,9.5-9.6,14.6v-55.4h-76.5v344.4h87.4v-176c0-13.2,1.8-25,5.4-35.6,3.6-10.5,8.9-19.7,15.9-27.4,7-7.8,15.6-14,25.8-18.7,10.2-4.9,21.6-7.8,34.3-8.8,12.6-1,23.8,0,33.3,3v-81c-10.4-1.3-20.8-1.5-31.3-.8Z\"/>\n      <path style=\"--dash:2500; stroke-dasharray:2500; stroke-dashoffset:2500; animation: heroStroke 16s 0.8s ease infinite, heroFill 16s 0.8s ease infinite\" d=\"M1135.8,926.7c-21.4-13.8-47.4-20.7-77.8-20.7s-61.7,7.9-86.1,23.6c-24.5,15.7-43.4,37.3-56.9,64.6-13.5,27.3-20.2,58.5-20.2,93.6s6.6,65.4,19.9,92.8c13.3,27.4,31.8,49.1,55.6,65.1,23.8,15.9,51.5,23.9,83.2,23.9s62.8-8,85.8-23.9c2.5-1.7,5-3.6,7.3-5.5v19.8h76.5v-459.2h-87.4v125.9ZM1139,1142.6c-5.1,15.7-13.4,28-25,36.7-11.6,8.7-27.1,13.1-46.4,13.1s-34-4.7-45.9-14c-11.9-9.4-20.7-21.9-26.5-37.8-5.7-15.8-8.6-33.4-8.6-52.8s3-36.6,8.9-52.5c5.9-15.8,15.1-28.5,27.6-37.9,12.4-9.5,28.3-14.2,47.7-14.2s32.7,4.4,43.8,13.1c11.2,8.7,19.3,20.9,24.4,36.7,5.1,15.7,7.7,34,7.7,54.8s-2.6,39.1-7.7,54.8Z\"/>\n      <path style=\"--dash:2000; stroke-dasharray:2000; stroke-dashoffset:2000; animation: heroStroke 16s 1.2s ease infinite, heroFill 16s 1.2s ease infinite\" d=\"M1540.9,1156c0-17.9-3.6-33.1-10.8-45.8-7.2-12.6-18.8-23.5-34.6-32.5-15.8-9-36.8-17-63-23.8-26.8-6.8-46.7-12.3-59.8-16.6-13.1-4.2-21.7-8.4-25.8-12.4-4.1-4-6.2-9-6.2-15,0-10,4.8-17.6,14.5-23,9.7-5.3,22.5-7.4,38.4-6.4,16.4,1.3,29.3,5.6,38.9,13.1,9.6,7.4,15.1,17.5,16.6,30.3l88.7-15.9c-3-20.8-10.9-38.9-23.8-54.2-12.9-15.3-29.7-27.1-50.5-35.4-20.8-8.3-44.8-12.4-71.8-12.4s-52,4.4-72.5,13.2c-20.5,8.8-36.4,21.4-47.7,37.6-11.3,16.3-16.9,35.5-16.9,57.6s3.7,32.7,11.2,45.1c7.4,12.4,19.6,23.1,36.4,32,16.8,8.9,39.2,17,67.3,24.2,24.9,6.6,43.2,11.9,55,15.9,11.8,4,19.4,8.1,22.8,12.3,3.4,4.1,5.1,9.6,5.1,16.4,0,10.8-4.3,19.3-12.8,25.4-8.5,6.1-20.6,9.1-36.4,9.1s-34.9-4.6-47.4-13.7c-12.4-9.1-20.5-21.8-24.1-37.9l-88.7,13.4c5.7,35.9,21.9,63.7,48.6,83.4,26.7,19.7,61.7,29.5,105.1,29.5s80.4-10.1,105.9-30.3c25.5-20.2,38.3-47.9,38.3-83.2Z\"/>\n      <path style=\"--dash:1500; stroke-dasharray:1500; stroke-dashoffset:1500; animation: heroStroke 16s 1.6s ease infinite, heroFill 16s 1.6s ease infinite\" d=\"M1658.9,959.3c-9-40.4-22.3-78.9-39.9-115.6-17.5-36.7-38.6-69.5-63.3-98.4l-64.4,47.2c25.9,31.3,46.2,62.5,60.9,93.6,14.7,31.1,25,62.7,31.1,94.7,6.1,32,9.2,64.9,9.4,98.7-.2,33.8-3.3,66.7-9.4,98.7-6.1,32-16.4,63.6-31.1,94.7s-35,62.3-60.9,93.6l64.4,47.2c24.7-28.9,45.8-61.8,63.3-98.5,17.5-36.8,30.8-75.3,39.9-115.6,9-40.3,13.1-80.3,12.3-120.1.8-39.8-3.2-79.8-12.3-120.2Z\"/>\n    </svg>\n  </div>\n</div>\n\n<!-- MOUNTAIN DIVIDER -->\n<div style=\"width:100%;overflow:hidden;padding:0;position:absolute;bottom:-70px;left:0;right:0;z-index:2;pointer-events:none;\">\n  <svg id=\"mountainSvg\" viewBox=\"0 0 1200 120\" preserveAspectRatio=\"none\" style=\"width:100%;height:100px;display:block;\">\n    <polyline class=\"mountain-line\" fill=\"none\" stroke=\"rgba(0,0,0,0.2)\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"\n      points=\"0,100 60,95 120,85 180,70 240,90 300,60 360,75 420,45 480,65 540,35 580,50 620,25 660,40 700,15 730,30 760,10 790,25 820,18 860,35 900,50 940,65 980,55 1020,70 1060,80 1100,75 1140,85 1200,90\"\n      style=\"stroke-dasharray: 2000; stroke-dashoffset: 2000; transition: stroke-dashoffset 6s ease;\"\n    />\n  </svg>\n</div>\n\n<!-- ====== 1. HUMBOLDT HERITAGE ====== -->\n<div class=\"ed-section no-top-line\" style=\"max-width:900px;margin-left:auto;margin-right:auto;padding-top:100px;padding-bottom:0;\">\n  <div class=\"ed-label\">Title: The Bet</div>\n  <div class=\"ed-header\">The Bet</div>\n  <p class=\"ed-body\">Molly Powers is a writer in Brooklyn. She runs a Substack called <strong>K</strong>, \"a coming-of-age publication for the stickers on my laptop,\" and has spent two years publishing on music, fashion, identity, and a dated series she calls Field Notes. She has readers. What she did not have was a home of her own on the web.</p>\n  <p class=\"ed-body\">The default move for a writer is a Linktree with a serif font. Competent, dead, scrolled past in four seconds. The second-easiest move is a portfolio that lists her essays and ships every click straight back to Substack. I did not want to build an index. She is a writer. The design had to serve the language, not file it.</p>\n  <p class=\"ed-body\">So the brief was a bet, and I set it before the first screen: build a site that does not <em>list</em> her writing but <strong>reads like it</strong>. Her voice in the type. Her rhythm in the scroll. The concept would come out of her prose, not a moodboard.</p>\n\n  <div class=\"ed-pullquote\">\n    <div class=\"ed-pullquote-text\">\"The only thing that gets me out of bed in the morning is the opportunity to get dressed. I'm dressed in this uniform, and therefore, I'm ready.\"</div>\n    <div style=\"font-family:var(--font-mono);font-size:13px;font-weight:500;color:rgba(0,0,0,0.5);letter-spacing:1px;text-transform:uppercase;margin-top:16px;\">Molly Powers, \"I'm Dressed In This Uniform,\" K</div>\n    <div class=\"ed-pullquote-meta\">\n      <span>PQ #001</span>\n      <span>From the archive</span>\n    </div>\n  </div>\n</div>\n\n<div class=\"ed-section no-top-line\" style=\"padding-top:0;position:relative;overflow:hidden;\">\n  <div style=\"position:relative;\">\n  <!-- Dissolving word cloud -->\n  <div class=\"dissolve-cloud\" id=\"dissolveCloud\">\n    <svg class=\"orbit-trail\" viewBox=\"0 0 300 300\">\n      <ellipse class=\"orbit-ellipse\" cx=\"150\" cy=\"150\" rx=\"140\" ry=\"90\" opacity=\"0.04\" style=\"stroke-dasharray:2 8 2 8 2 8 2 8 2 8 2 8 2 8 2 8 2 8 2 8 2 8 2 8 2 8 2 8 2 8 2 8 2 8 2 8 0 570\" />\n      <ellipse class=\"orbit-ellipse\" cx=\"150\" cy=\"150\" rx=\"140\" ry=\"90\" opacity=\"0.08\" style=\"stroke-dasharray:2 8 2 8 2 8 2 8 2 8 2 8 2 8 2 8 2 8 2 8 2 8 2 8 0 630\" />\n      <ellipse class=\"orbit-ellipse\" cx=\"150\" cy=\"150\" rx=\"140\" ry=\"90\" opacity=\"0.14\" style=\"stroke-dasharray:2 8 2 8 2 8 2 8 2 8 2 8 2 8 0 680\" />\n      <ellipse class=\"orbit-ellipse\" cx=\"150\" cy=\"150\" rx=\"140\" ry=\"90\" opacity=\"0.22\" style=\"stroke-dasharray:2 8 2 8 2 8 0 720\" />\n    </svg>\n    <span class=\"dissolve-word\" style=\"top:30%;left:30%;font-size:15px;transform:rotate(-3deg);--float-dur:5s;--float-delay:0s;--float-x:4px;--float-y:-6px\">FIELD NOTES</span>\n    <span class=\"dissolve-word\" style=\"top:30%;left:55%;font-size:14px;transform:rotate(2deg);--float-dur:4.2s;--float-delay:0.8s;--float-x:-3px;--float-y:-4px\">UN BESO</span>\n    <span class=\"dissolve-word\" style=\"top:36%;left:22%;font-size:14px;transform:rotate(-1deg);--float-dur:3.8s;--float-delay:1.2s;--float-x:5px;--float-y:-3px\">THE MARGIN</span>\n    <span class=\"dissolve-word\" style=\"top:36%;left:48%;font-size:16px;transform:rotate(1.5deg);--float-dur:4.6s;--float-delay:0.3s;--float-x:-4px;--float-y:-7px\">TRUE ITALIC</span>\n    <span class=\"dissolve-word\" style=\"top:42%;left:35%;font-size:14px;transform:rotate(-2deg);--float-dur:5.2s;--float-delay:1.5s;--float-x:3px;--float-y:-5px\">FRAGMENTS</span>\n    <span class=\"dissolve-word\" style=\"top:42%;left:58%;font-size:15px;transform:rotate(3deg);--float-dur:4s;--float-delay:0.6s;--float-x:-5px;--float-y:-4px\">COLD OPENS</span>\n    <span class=\"dissolve-word\" style=\"top:48%;left:20%;font-size:13px;transform:rotate(-1.5deg);--float-dur:4.8s;--float-delay:2s;--float-x:4px;--float-y:-6px\">PARENTHETICALS</span>\n    <span class=\"dissolve-word\" style=\"top:48%;left:52%;font-size:15px;transform:rotate(2.5deg);--float-dur:5.5s;--float-delay:0.4s;--float-x:-3px;--float-y:-5px\">HIGH / LOW</span>\n    <span class=\"dissolve-word\" style=\"top:54%;left:32%;font-size:14px;transform:rotate(-3deg);--float-dur:3.6s;--float-delay:1s;--float-x:5px;--float-y:-3px\">EM-DASHES</span>\n    <span class=\"dissolve-word\" style=\"top:54%;left:55%;font-size:14px;transform:rotate(1deg);--float-dur:4.4s;--float-delay:1.8s;--float-x:-4px;--float-y:-6px\">READ IT HERE</span>\n  </div>\n  <div style=\"max-width:900px;margin-left:calc(50% - 420px);margin-right:auto;position:relative;z-index:1;\">\n    <div class=\"gap-stats\" style=\"position:absolute;right:calc(100% + 220px);top:0;width:180px;text-align:left;\">\n      <div class=\"ed-stat\">12</div>\n      <div class=\"ed-stat-label\">Essays read in full before a single screen was designed</div>\n      <div class=\"ed-stat\">0</div>\n      <div class=\"ed-stat-label\">Templates. Custom build, no themes, no page-builder</div>\n      <div class=\"ed-stat\">2 yrs</div>\n      <div class=\"ed-stat-label\">Of K to design around. One voice, studied first</div>\n    </div>\n    <p class=\"ed-body\">The work started in her archive, not a moodboard. I read every essay: \"I'm Dressed In This Uniform,\" \"No Stone Left Unturned,\" \"How To Kill An Hour,\" \"The Resistance.\" Twelve posts, September 2025 to May 2026. I marked the sentences only she would write.</p>\n    <p class=\"ed-body\">A pattern came up fast. Concrete cold open, every time. A dropped case-less iPhone outside a wine bar. Headphones in, Funkadelic playing. Then fragments against long, breathless runs that keep qualifying themselves. She lives in the parenthetical, the aside, the wink at her own pretension. Em-dashes for breath. \"Un beso\" to close.</p>\n    <p class=\"ed-body\">That is not decoration to add at the end. That <em>is</em> the brief. The rhythm of her sentences is the rhythm the site had to move in.</p>\n  </div>\n  </div>\n  <figure style=\"margin:80px 0 0;position:relative;z-index:1;width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);\">\n    <img src=\"assets/site-home.png\" alt=\"Molly K Powers home screen\" style=\"width:100%;height:auto;display:block;\">\n    <figcaption style=\"font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);letter-spacing:1px;margin-top:6px;padding-left:var(--page-pad);\">molly k powers &mdash; home. the wordmark is built from a field of her own initials.</figcaption>\n  </figure>\n</div>\n\n<!-- ====== 4. POSITIONING (AND) SPEED ====== -->\n<div class=\"ed-section\" style=\"position:relative;overflow:hidden;\">\n  <!-- Ascending dotted trail -->\n  <svg class=\"approach-trail\" viewBox=\"0 0 2000 2000\" preserveAspectRatio=\"xMidYMid slice\" style=\"position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;\">\n    <path d=\"M -100,1400 C 300,1200 500,900 800,700 C 1100,500 1400,350 1700,200 C 1900,100 2100,0 2200,-50\" fill=\"none\" stroke=\"black\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-dasharray=\"3 10\" opacity=\"0.1\" />\n    <path d=\"M -100,1500 C 300,1300 550,1000 850,800 C 1150,600 1450,420 1750,280 C 1950,180 2100,80 2200,20\" fill=\"none\" stroke=\"black\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-dasharray=\"2 12\" opacity=\"0.07\" />\n    <path d=\"M -50,1600 C 350,1400 600,1100 900,900 C 1200,700 1500,500 1800,350 C 2000,250 2100,150 2250,80\" fill=\"none\" stroke=\"black\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-dasharray=\"2 14\" opacity=\"0.04\" />\n  </svg>\n\n  <div class=\"ed-label\" style=\"position:relative;z-index:1;\">Title: The Read</div>\n  <div class=\"ed-header\" style=\"position:relative;z-index:1;\">The Read</div>\n  <div class=\"ed-two-col\" style=\"position:relative;z-index:1;\">\n    <div class=\"ed-text-col\">\n      <p class=\"ed-body\">She writes high against low on purpose. \"Man-repelling outfit ingenuity\" slammed against \"copped it.\" Salomon, Brandy Melville, Supreme dropped in as coordinates that locate a person in space. The type had to hold both registers without flinching, and it had to carry real long-form reading. So the face is a <strong>proper text face with a true italic</strong> from an elite foundry, not a Google default. She leans on italics for the inner voice; the site leans with her.</p>\n      <p class=\"ed-body\">She lives in the margin. Half the personality is in the aside, the self-interruption, the wink at her own pretension. So the <strong>margin became the interface</strong>. Her asides sit where footnotes would, alongside the text, not buried in a modal. Almost no personal site uses the margin. Hers does, because she does.</p>\n      <p class=\"ed-body\">Field Notes is her dated, almanac-like series. Instead of a generic \"Writing\" list with arrows that ship readers off to Substack, the dated-entry structure drives the architecture. You read her <em>here</em>.</p>\n      <p class=\"ed-body\">And \"un beso\" closes her essays, a Spanish kiss-off after English introspection. So the site ends the way her writing ends. The concept is not applied to her voice. It is extracted from it.</p>\n    </div>\n    <div style=\"margin-top:-100px;width:calc(100% + 80px);margin-left:-80px;\">\n      <figure style=\"margin:0;\">\n        <img src=\"assets/site-about.png\" alt=\"Molly K Powers about page\" style=\"width:100%;aspect-ratio:1.587;object-fit:cover;object-position:top;display:block;border:1px solid rgba(0,0,0,0.08);\">\n        <figcaption style=\"font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);letter-spacing:1px;margin-top:6px;\">about &mdash; her words set in the text face, her photo, her register.</figcaption>\n      </figure>\n    </div>\n  </div>\n\n  <div style=\"font-family:var(--font-display);font-size:clamp(28px,3.5vw,42px);font-weight:700;line-height:1.08;color:#1a1a1a;letter-spacing:-0.02em;margin:40px 0 16px 0;max-width:66%;text-align:left;\">\"Not a website that lists her writing. A website that is written.\"</div>\n  <div style=\"font-family:var(--font-mono);font-size:13px;font-weight:500;color:rgba(0,0,0,0.5);letter-spacing:1px;text-transform:uppercase;margin-top:16px;\">Evan Roberts, Lead Designer</div>\n  <div class=\"ed-pullquote-meta\" style=\"margin-bottom:32px;justify-content:flex-start;gap:24px;\">\n    <span>PQ #002</span>\n    <span>The Bet, In One Line</span>\n  </div>\n\n  <!-- Two-column: Key Decisions + Scope of Work -->\n  <div style=\"display:grid;grid-template-columns:2fr 3fr;gap:48px;margin-top:16px;align-items:start;\">\n\n    <!-- Left: Key Decisions -->\n    <div>\n      <div style=\"font-family:var(--font-display);font-size:clamp(24px,3vw,36px);font-weight:800;color:#1a1a1a;text-transform:uppercase;letter-spacing:-0.02em;margin-bottom:24px;\">Key Decisions</div>\n      <table class=\"ed-table\">\n        <thead>\n          <tr>\n            <th style=\"width:40%;\">Decision</th>\n            <th style=\"width:60%;\">Outcome</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr>\n            <td>Concept from her archive, not a moodboard</td>\n            <td>Every screen traces back to a sentence she actually wrote. The site reads as hers, not as a cool site she admired.</td>\n          </tr>\n          <tr>\n            <td>Typography as the whole design</td>\n            <td>No logo and no stock imagery to hide behind. An elite text face with a true italic carries both her long reading and her inner voice.</td>\n          </tr>\n          <tr>\n            <td>The margin as interface</td>\n            <td>Her asides and footnotes live alongside the text, where she actually lives, instead of in a modal or a tooltip.</td>\n          </tr>\n          <tr>\n            <td>Keep her words on the site</td>\n            <td>Reading is the product. Nothing ships the reader off to Substack mid-thought. Field Notes structure drives the architecture.</td>\n          </tr>\n          <tr>\n            <td>Code, not mockups</td>\n            <td>Concept to live site with no handoff and no translation loss. What was designed is what shipped.</td>\n          </tr>\n        </tbody>\n      </table>\n    </div>\n\n    <!-- Right: Scope of Work -->\n    <div>\n      <div style=\"font-family:var(--font-display);font-size:clamp(24px,3vw,36px);font-weight:800;color:#1a1a1a;text-transform:uppercase;letter-spacing:-0.02em;margin-bottom:24px;\">Scope of Work</div>\n\n      <!-- Process sequence -->\n      <div style=\"display:flex;flex-direction:column;gap:8px;padding:4px 0;\">\n        <div style=\"background:rgba(0,0,0,0.04);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:16px;\">\n          <span style=\"font-family:var(--font-mono);font-size:13px;color:#1a1a1a;font-weight:600;\">01 &nbsp; Read the archive</span>\n          <span style=\"font-family:var(--font-mono);font-size:11px;color:rgba(0,0,0,0.4);text-align:right;\">Every essay, marked for the sentences only she writes</span>\n        </div>\n        <div style=\"background:rgba(0,0,0,0.04);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:16px;\">\n          <span style=\"font-family:var(--font-mono);font-size:13px;color:#1a1a1a;font-weight:600;\">02 &nbsp; Direction</span>\n          <span style=\"font-family:var(--font-mono);font-size:11px;color:rgba(0,0,0,0.4);text-align:right;\">Her references and favorite sentences, one lane locked</span>\n        </div>\n        <div style=\"background:rgba(0,0,0,0.04);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:16px;\">\n          <span style=\"font-family:var(--font-mono);font-size:13px;color:#1a1a1a;font-weight:600;\">03 &nbsp; Concept &amp; type</span>\n          <span style=\"font-family:var(--font-mono);font-size:11px;color:rgba(0,0,0,0.4);text-align:right;\">Text face, true italic, the letter-field wordmark</span>\n        </div>\n        <div style=\"background:rgba(0,0,0,0.04);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:16px;\">\n          <span style=\"font-family:var(--font-mono);font-size:13px;color:#1a1a1a;font-weight:600;\">04 &nbsp; Build</span>\n          <span style=\"font-family:var(--font-mono);font-size:11px;color:rgba(0,0,0,0.4);text-align:right;\">In code, in Next.js. The margin, Field Notes, the scroll</span>\n        </div>\n        <div style=\"background:#1a1a1a;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:16px;\">\n          <span style=\"font-family:var(--font-mono);font-size:13px;color:#fff;font-weight:600;\">05 &nbsp; Ship</span>\n          <span style=\"font-family:var(--font-mono);font-size:11px;color:rgba(255,255,255,0.6);text-align:right;\">Un beso</span>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<!-- ====== 5. THE SYSTEM ====== -->\n<div class=\"ed-section\">\n  <div class=\"ed-label\">Title: The Type</div>\n  <div class=\"ed-header\">The Type</div>\n  <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:40px;\">\n    <p class=\"ed-body\">With no logo and no photography to hide behind, the typeface <em>is</em> the identity. The face had to do two jobs at once: carry long-form reading without fatigue, and hold her voice, which means a true italic with real character, because she writes half her thinking in italics. Elite register only. Commercial Type, Klim, Frere-Jones, Grilli. Nothing off a default menu.</p>\n    <p class=\"ed-body\">The wordmark is not a logo. It is her name built from a drifting field of her own initials, M O L L Y K P O W E R S, that resolve into the words and dissolve back into texture as you move through the page. The mark is made of the same letters she writes with. It behaves like her prose: legible, then playful, then legible again.</p>\n  </div>\n\n  <div style=\"font-family:var(--font-display);font-size:clamp(28px,3.5vw,42px);font-weight:700;line-height:1.08;color:#1a1a1a;letter-spacing:-0.02em;margin:40px 0 16px 0;max-width:66%;\">\"Typography is the entire job. Text that can carry long reading, with a true italic for the inner voice, and real craft.\"</div>\n  <div style=\"font-family:var(--font-mono);font-size:13px;font-weight:500;color:rgba(0,0,0,0.5);letter-spacing:1px;text-transform:uppercase;margin-top:16px;\">From the read on her writing</div>\n  <div class=\"ed-pullquote-meta\" style=\"justify-content:flex-start;gap:24px;\">\n    <span>PQ #003</span>\n    <span>The Whole Job</span>\n  </div>\n</div>\n\n<!-- ====== 6. BUILT IN CODE ====== -->\n<div class=\"ed-section\">\n  <div class=\"ed-label\">Title: The Build</div>\n  <div class=\"ed-header\">The Build</div>\n  <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:40px;\">\n    <p class=\"ed-body\">The whole site is built directly in code, in Next.js. No mockups, no handoff, no translation loss. The wordmark's letter-field, the marginalia, the pacing of the scroll, all of it made in the medium it ships in. What I designed is what she got.</p>\n    <p class=\"ed-body\">This is what I call <strong>Direct Design</strong>. The browser is the canvas. The feedback loop collapses from weeks to minutes, and every decision gets tested against real type, real reading, real devices. For a site whose whole point is <em>rhythm</em>, that mattered. You cannot feel a scroll in a static mockup.</p>\n  </div>\n\n  <p class=\"ed-body\" style=\"margin-top:24px;\">Built in Next.js, directly in code. Launching 2026.</p>\n</div>\n\n<!-- ====== 8. THE RESULTS ====== -->\n<div class=\"ed-section\">\n  <div class=\"ed-label\">Title: What Shipped</div>\n  <div style=\"font-family:var(--font-display);font-size:clamp(80px,12vw,180px);font-weight:800;color:#1a1a1a;line-height:0.9;letter-spacing:-0.04em;text-transform:uppercase;margin:16px 0 16px;\">What Shipped</div>\n  <div style=\"font-family:var(--font-display);font-size:clamp(24px,3vw,36px);font-weight:800;color:#1a1a1a;letter-spacing:-0.02em;margin-bottom:32px;text-transform:uppercase;\">One Voice. One Site.</div>\n\n  <!-- Row 1: Stats full width -->\n  <div style=\"display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;margin-bottom:48px;\">\n    <div>\n      <div class=\"ed-stat\">1</div>\n      <div class=\"ed-stat-label\">Custom type system, built around her true italic and her register</div>\n    </div>\n    <div>\n      <div class=\"ed-stat\">0</div>\n      <div class=\"ed-stat-label\">Templates, stock images, or off-the-shelf faces</div>\n    </div>\n    <div>\n      <div class=\"ed-stat\">100%</div>\n      <div class=\"ed-stat-label\">Of her writing read on the page, not shipped off to Substack</div>\n    </div>\n  </div>\n\n  <!-- Row 2: Before/After Table (full width) -->\n  <div>\n    <table class=\"ed-table\" style=\"margin:0;font-size:15px;\">\n      <thead>\n        <tr>\n          <th style=\"width:30%;\">The default</th>\n          <th style=\"width:70%;\">What shipped</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>A Linktree that ships every click off to Substack</td>\n          <td>A site where the reading happens on the page, in her own type</td>\n        </tr>\n        <tr>\n          <td>A serif template that could be anyone</td>\n          <td>A type system built around her true italic and her high/low register</td>\n        </tr>\n        <tr>\n          <td>Writing filed as a list of links</td>\n          <td>Writing staged like her essays: cold open, aside in the margin, un beso</td>\n        </tr>\n        <tr>\n          <td>A generic \"Writing\" index</td>\n          <td>Field Notes, her dated almanac, as the architecture itself</td>\n        </tr>\n        <tr>\n          <td>A logo</td>\n          <td>A wordmark built from a drifting field of her own initials</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n\n  <div style=\"font-family:var(--font-display);font-size:clamp(36px,5vw,64px);font-weight:700;line-height:1.05;color:#1a1a1a;letter-spacing:-0.03em;margin-top:48px;text-align:center;\">\"Bro, if we keep making art, doing DJ sets, hosting events, and posting on Instagram, everything will be fine. I promise.\"</div>\n  <div style=\"font-family:var(--font-mono);font-size:13px;font-weight:500;color:rgba(0,0,0,0.5);letter-spacing:1px;text-transform:uppercase;margin-top:16px;text-align:center;\">A note on Molly's home screen, in her words</div>\n  <div class=\"ed-pullquote-meta\" style=\"justify-content:center;gap:24px;margin-top:8px;\">\n    <span>PQ #004</span>\n    <span>Straight from the site</span>\n  </div>\n</div>\n\n<!-- ====== 10. REFLECTION ====== -->\n<div class=\"ed-section\" style=\"text-align:center;padding:60px var(--page-pad);min-height:100vh;display:flex;flex-direction:column;justify-content:center;\">\n  <div class=\"ed-label\">Title: Reflection</div>\n  <div class=\"ed-header\" style=\"font-size:clamp(32px,5vw,56px);\">What I Would Do Differently</div>\n  <div style=\"max-width:800px;margin:0 auto;\">\n    <p class=\"ed-body\">The hardest part was restraint. A writer's site tempts you toward gimmicks: cursor trails, noise shaders, five components at forty percent. The read on her work said the opposite. One or two real things, fully made. So the margin-as-interface and the letter-field wordmark got the hours, and everything else stayed quiet enough to disappear into the reading.</p>\n    <p class=\"ed-body\">With more time, I would build Field Notes into a living, dated index that grows every time she publishes, so the architecture keeps writing itself. But the bet held. The site does not list her writing. It reads like it. Un beso.</p>\n    <div style=\"display:flex;align-items:center;justify-content:center;gap:16px;margin-top:48px;\">\n      <img src=\"assets/evan-headshot.jpg?v=3\" alt=\"Evan Roberts\" style=\"width:44px;height:44px;border-radius:50%;object-fit:cover;\">\n      <div style=\"text-align:left;\">\n        <div style=\"font-family:var(--font-mono);font-size:13px;font-weight:600;color:#1A1A1A;\">Evan Roberts</div>\n        <div style=\"font-family:var(--font-mono);font-size:10px;color:rgba(0,0,0,0.35);letter-spacing:1px;\">Lead Designer, Roberts Design Studio</div>\n      </div>\n    </div>\n  </div>\n</div>";
+export const body = `
+<!-- ====== HERO ====== -->
+<div class="hero" id="heroSection">
+  <div class="hero-body">
+    <div class="hero-nav">
+      <div class="hero-nav-left">
+        <strong>Case Study</strong>
+      </div>
+      <div class="hero-nav-center">Molly Powers</div>
+      <div class="hero-nav-right">
+        <span>Brooklyn, NY</span>
+        <span>2026</span>
+      </div>
+    </div>
+    <div class="hero-title" style="font-size:clamp(48px, 6vw, 90px);line-height:0.92;letter-spacing:-0.03em;">A Writer Needed A Site<br>That Looks Like The Way<br>She Lives.</div>
+    <img class="hero-product-img" src="assets/molly-portrait.jpg" alt="Molly Powers, writer, Brooklyn">
+    <div style="display:flex;justify-content:flex-start;align-items:flex-start;gap:200px;margin-top:40px;">
+      <div class="hero-meta" style="flex-direction:column;gap:0;max-width:none;font-size:13px;line-height:1.4;margin-top:0;">
+        <span>Client: Molly Powers</span>
+        <span>Scope: Art Direction, Web Design, Build</span>
+        <span>Industry: Writer, Personal Site</span>
+        <span>Designer: Evan Roberts</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <img src="assets/evan-headshot.jpg?v=4" alt="Evan Roberts" style="width:44px;height:44px;border-radius:50%;object-fit:cover;">
+        <div>
+          <div style="font-family:var(--font-mono);font-size:13px;font-weight:600;color:#1A1A1A;">Evan Roberts</div>
+          <div style="font-family:var(--font-mono);font-size:10px;color:rgba(0,0,0,0.35);letter-spacing:1px;">Lead Designer, Roberts Design Studio</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-sub-bar" style="margin-bottom:40px;">
+    <svg viewBox="0 0 2160 2160">
+      <polygon style="--dash:1200; stroke-dasharray:1200; stroke-dashoffset:1200; animation: heroStroke 16s 0s ease infinite, heroFill 16s 0s ease infinite" points="653.8 811.4 604 833 608.3 778.4 550.9 778.4 555.2 833 505.5 811.4 487.8 866 540.4 879.4 505 919.5 551.4 953 579.6 907.6 607.9 953 654.2 919.5 618.9 879.4 671.5 866 653.8 811.4"/>
+      <path style="--dash:1200; stroke-dasharray:1200; stroke-dashoffset:1200; animation: heroStroke 16s 0.4s ease infinite, heroFill 16s 0.4s ease infinite" d="M855.4,914.8c-10.4.7-20.5,2.6-30.3,5.4-9.8,2.9-18.8,6.9-27.1,12-10.8,6.4-20,14.5-27.4,24.2-3.5,4.6-6.7,9.5-9.6,14.6v-55.4h-76.5v344.4h87.4v-176c0-13.2,1.8-25,5.4-35.6,3.6-10.5,8.9-19.7,15.9-27.4,7-7.8,15.6-14,25.8-18.7,10.2-4.9,21.6-7.8,34.3-8.8,12.6-1,23.8,0,33.3,3v-81c-10.4-1.3-20.8-1.5-31.3-.8Z"/>
+      <path style="--dash:2500; stroke-dasharray:2500; stroke-dashoffset:2500; animation: heroStroke 16s 0.8s ease infinite, heroFill 16s 0.8s ease infinite" d="M1135.8,926.7c-21.4-13.8-47.4-20.7-77.8-20.7s-61.7,7.9-86.1,23.6c-24.5,15.7-43.4,37.3-56.9,64.6-13.5,27.3-20.2,58.5-20.2,93.6s6.6,65.4,19.9,92.8c13.3,27.4,31.8,49.1,55.6,65.1,23.8,15.9,51.5,23.9,83.2,23.9s62.8-8,85.8-23.9c2.5-1.7,5-3.6,7.3-5.5v19.8h76.5v-459.2h-87.4v125.9ZM1139,1142.6c-5.1,15.7-13.4,28-25,36.7-11.6,8.7-27.1,13.1-46.4,13.1s-34-4.7-45.9-14c-11.9-9.4-20.7-21.9-26.5-37.8-5.7-15.8-8.6-33.4-8.6-52.8s3-36.6,8.9-52.5c5.9-15.8,15.1-28.5,27.6-37.9,12.4-9.5,28.3-14.2,47.7-14.2s32.7,4.4,43.8,13.1c11.2,8.7,19.3,20.9,24.4,36.7,5.1,15.7,7.7,34,7.7,54.8s-2.6,39.1-7.7,54.8Z"/>
+      <path style="--dash:2000; stroke-dasharray:2000; stroke-dashoffset:2000; animation: heroStroke 16s 1.2s ease infinite, heroFill 16s 1.2s ease infinite" d="M1540.9,1156c0-17.9-3.6-33.1-10.8-45.8-7.2-12.6-18.8-23.5-34.6-32.5-15.8-9-36.8-17-63-23.8-26.8-6.8-46.7-12.3-59.8-16.6-13.1-4.2-21.7-8.4-25.8-12.4-4.1-4-6.2-9-6.2-15,0-10,4.8-17.6,14.5-23,9.7-5.3,22.5-7.4,38.4-6.4,16.4,1.3,29.3,5.6,38.9,13.1,9.6,7.4,15.1,17.5,16.6,30.3l88.7-15.9c-3-20.8-10.9-38.9-23.8-54.2-12.9-15.3-29.7-27.1-50.5-35.4-20.8-8.3-44.8-12.4-71.8-12.4s-52,4.4-72.5,13.2c-20.5,8.8-36.4,21.4-47.7,37.6-11.3,16.3-16.9,35.5-16.9,57.6s3.7,32.7,11.2,45.1c7.4,12.4,19.6,23.1,36.4,32,16.8,8.9,39.2,17,67.3,24.2,24.9,6.6,43.2,11.9,55,15.9,11.8,4,19.4,8.1,22.8,12.3,3.4,4.1,5.1,9.6,5.1,16.4,0,10.8-4.3,19.3-12.8,25.4-8.5,6.1-20.6,9.1-36.4,9.1s-34.9-4.6-47.4-13.7c-12.4-9.1-20.5-21.8-24.1-37.9l-88.7,13.4c5.7,35.9,21.9,63.7,48.6,83.4,26.7,19.7,61.7,29.5,105.1,29.5s80.4-10.1,105.9-30.3c25.5-20.2,38.3-47.9,38.3-83.2Z"/>
+      <path style="--dash:1500; stroke-dasharray:1500; stroke-dashoffset:1500; animation: heroStroke 16s 1.6s ease infinite, heroFill 16s 1.6s ease infinite" d="M1658.9,959.3c-9-40.4-22.3-78.9-39.9-115.6-17.5-36.7-38.6-69.5-63.3-98.4l-64.4,47.2c25.9,31.3,46.2,62.5,60.9,93.6,14.7,31.1,25,62.7,31.1,94.7,6.1,32,9.2,64.9,9.4,98.7-.2,33.8-3.3,66.7-9.4,98.7-6.1,32-16.4,63.6-31.1,94.7s-35,62.3-60.9,93.6l64.4,47.2c24.7-28.9,45.8-61.8,63.3-98.5,17.5-36.8,30.8-75.3,39.9-115.6,9-40.3,13.1-80.3,12.3-120.1.8-39.8-3.2-79.8-12.3-120.2Z"/>
+    </svg>
+  </div>
+</div>
+
+<!-- MOUNTAIN DIVIDER -->
+<div style="width:100%;overflow:hidden;padding:0;position:absolute;bottom:-70px;left:0;right:0;z-index:2;pointer-events:none;">
+  <svg id="mountainSvg" viewBox="0 0 1200 120" preserveAspectRatio="none" style="width:100%;height:100px;display:block;">
+    <polyline class="mountain-line" fill="none" stroke="rgba(0,0,0,0.2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+      points="0,100 60,95 120,85 180,70 240,90 300,60 360,75 420,45 480,65 540,35 580,50 620,25 660,40 700,15 730,30 760,10 790,25 820,18 860,35 900,50 940,65 980,55 1020,70 1060,80 1100,75 1140,85 1200,90"
+      style="stroke-dasharray: 2000; stroke-dashoffset: 2000; transition: stroke-dashoffset 6s ease;"
+    />
+  </svg>
+</div>
+
+<!-- ====== 1. THE BET ====== -->
+<div class="ed-section no-top-line" style="max-width:900px;margin-left:auto;margin-right:auto;padding-top:100px;padding-bottom:0;">
+  <div class="ed-label">Title: The Bet</div>
+  <div class="ed-header">The Bet</div>
+  <p class="ed-body">Molly Powers is a writer in Brooklyn. She runs a Substack called K, "a coming-of-age publication for the stickers on my laptop," and has spent two years publishing on music, fashion, identity, and a dated series she calls Field Notes.</p>
+  <p class="ed-body">The default move for a writer is a Linktree with a serif font. Competent, dead, scrolled past in four seconds. The second-easiest move is a portfolio that lists her essays and ships every click straight back to Substack.</p>
+  <p class="ed-body">So the brief was a bet, set before the first screen: <strong>build a site that does not list her writing but reads like it.</strong> Her voice in the type. Her rhythm in the scroll.</p>
+
+  <div class="ed-pullquote">
+    <div class="ed-pullquote-text">"The only thing that gets me out of bed in the morning is the opportunity to get dressed."</div>
+    <div style="font-family:var(--font-mono);font-size:13px;font-weight:500;color:rgba(0,0,0,0.5);letter-spacing:1px;text-transform:uppercase;margin-top:16px;">Molly Powers, I'm Dressed In This Uniform</div>
+    <div class="ed-pullquote-meta">
+      <span>PQ #001</span>
+      <span>88 Characters</span>
+    </div>
+  </div>
+</div>
+
+<div class="ed-section no-top-line" style="padding-top:0;position:relative;overflow:hidden;">
+  <div style="position:relative;">
+  <!-- Dissolving word cloud -->
+  <div class="dissolve-cloud" id="dissolveCloud">
+    <svg class="orbit-trail" viewBox="0 0 300 300">
+      <ellipse class="orbit-ellipse" cx="150" cy="150" rx="140" ry="90" opacity="0.04" style="stroke-dasharray:2 8 2 8 2 8 2 8 2 8 2 8 2 8 2 8 2 8 2 8 2 8 2 8 2 8 2 8 2 8 2 8 2 8 2 8 0 570" />
+      <ellipse class="orbit-ellipse" cx="150" cy="150" rx="140" ry="90" opacity="0.08" style="stroke-dasharray:2 8 2 8 2 8 2 8 2 8 2 8 2 8 2 8 2 8 2 8 2 8 2 8 0 630" />
+      <ellipse class="orbit-ellipse" cx="150" cy="150" rx="140" ry="90" opacity="0.14" style="stroke-dasharray:2 8 2 8 2 8 2 8 2 8 2 8 2 8 0 680" />
+      <ellipse class="orbit-ellipse" cx="150" cy="150" rx="140" ry="90" opacity="0.22" style="stroke-dasharray:2 8 2 8 2 8 0 720" />
+    </svg>
+    <span class="dissolve-word" style="top:30%;left:30%;font-size:15px;transform:rotate(-3deg);--float-dur:5s;--float-delay:0s;--float-x:4px;--float-y:-6px">LINKTREE</span>
+    <span class="dissolve-word" style="top:30%;left:55%;font-size:14px;transform:rotate(2deg);--float-dur:4.2s;--float-delay:0.8s;--float-x:-3px;--float-y:-4px">SERIF DEFAULT</span>
+    <span class="dissolve-word" style="top:36%;left:22%;font-size:14px;transform:rotate(-1deg);--float-dur:3.8s;--float-delay:1.2s;--float-x:5px;--float-y:-3px">PORTFOLIO LIST</span>
+    <span class="dissolve-word" style="top:36%;left:48%;font-size:16px;transform:rotate(1.5deg);--float-dur:4.6s;--float-delay:0.3s;--float-x:-4px;--float-y:-7px">ARROWS TO SUBSTACK</span>
+    <span class="dissolve-word" style="top:42%;left:35%;font-size:14px;transform:rotate(-2deg);--float-dur:5.2s;--float-delay:1.5s;--float-x:3px;--float-y:-5px">STOCK PHOTOGRAPHY</span>
+    <span class="dissolve-word" style="top:42%;left:58%;font-size:15px;transform:rotate(3deg);--float-dur:4s;--float-delay:0.6s;--float-x:-5px;--float-y:-4px">THEME TEMPLATE</span>
+    <span class="dissolve-word" style="top:48%;left:20%;font-size:13px;transform:rotate(-1.5deg);--float-dur:4.8s;--float-delay:2s;--float-x:4px;--float-y:-6px">PAGE BUILDER</span>
+    <span class="dissolve-word" style="top:48%;left:52%;font-size:15px;transform:rotate(2.5deg);--float-dur:5.5s;--float-delay:0.4s;--float-x:-3px;--float-y:-5px">GENERIC WRITING PAGE</span>
+    <span class="dissolve-word" style="top:54%;left:32%;font-size:14px;transform:rotate(-3deg);--float-dur:3.6s;--float-delay:1s;--float-x:5px;--float-y:-3px">NO VOICE</span>
+    <span class="dissolve-word" style="top:54%;left:55%;font-size:14px;transform:rotate(1deg);--float-dur:4.4s;--float-delay:1.8s;--float-x:-4px;--float-y:-6px">SCROLLED PAST</span>
+  </div>
+  <div style="max-width:900px;margin-left:calc(50% - 420px);margin-right:auto;position:relative;z-index:1;">
+    <div class="gap-stats" style="position:absolute;right:calc(100% + 220px);top:0;width:180px;text-align:left;">
+      <div class="ed-stat">12</div>
+      <div class="ed-stat-label">Essays read in full before a single screen was designed</div>
+      <div class="ed-stat">2 yrs</div>
+      <div class="ed-stat-label">Of K to design around. One voice, studied first</div>
+      <div class="ed-stat">0</div>
+      <div class="ed-stat-label">Templates. Custom build, no themes, no page-builder</div>
+    </div>
+    <p class="ed-body">The work started in her archive, not a moodboard. I read every essay and marked the sentences that only she would write. Twelve posts, September 2025 to May 2026.</p>
+    <p class="ed-body">A pattern came up fast. <strong>Concrete cold open, every time.</strong> A dropped case-less iPhone outside a wine bar. Headphones in, Funkadelic playing. Then fragments against long, breathless runs that keep qualifying themselves.</p>
+    <p class="ed-body">That is not decoration to add at the end. That is the brief. The rhythm of her sentences is the rhythm the site had to move in.</p>
+  </div>
+  </div>
+  <figure style="margin:80px 0 0;position:relative;z-index:1;width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);">
+    <img src="assets/site-home.png" alt="Molly Powers site, home" style="width:100%;height:100vh;object-fit:cover;display:block;">
+    <figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);letter-spacing:1px;margin-top:6px;padding-left:var(--page-pad);">site-home.png</figcaption>
+  </figure>
+</div>
+
+<!-- ====== 4. POSITIONING (AND) SPEED ====== -->
+<div class="ed-section" style="position:relative;overflow:hidden;">
+  <!-- Ascending dotted trail -->
+  <svg class="approach-trail" viewBox="0 0 2000 2000" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;">
+    <path d="M -100,1400 C 300,1200 500,900 800,700 C 1100,500 1400,350 1700,200 C 1900,100 2100,0 2200,-50" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 10" opacity="0.1" />
+    <path d="M -100,1500 C 300,1300 550,1000 850,800 C 1150,600 1450,420 1750,280 C 1950,180 2100,80 2200,20" fill="none" stroke="black" stroke-width="1" stroke-linecap="round" stroke-dasharray="2 12" opacity="0.07" />
+    <path d="M -50,1600 C 350,1400 600,1100 900,900 C 1200,700 1500,500 1800,350 C 2000,250 2100,150 2250,80" fill="none" stroke="black" stroke-width="1" stroke-linecap="round" stroke-dasharray="2 14" opacity="0.04" />
+  </svg>
+
+  <div class="ed-label" style="position:relative;z-index:1;">Title: The Approach</div>
+  <div class="ed-header" style="position:relative;z-index:1;">The Approach</div>
+  <div class="ed-two-col" style="position:relative;z-index:1;">
+    <div class="ed-text-col">
+      <p class="ed-body">She writes high against low on purpose. "Man-repelling outfit ingenuity" slammed against "copped it." Salomon, Brandy Melville, Supreme dropped in as coordinates that locate a person in space. <strong>The type had to hold both registers without flinching.</strong></p>
+      <p class="ed-body">She lives in the margin. Half the personality is in the aside, the self-interruption, the wink at her own pretension. So the margin became the interface: her asides sit where footnotes would, alongside the text rather than buried.</p>
+      <p class="ed-body">Field Notes is her dated, almanac-like series. Instead of a generic Writing list with arrows that ship readers off to Substack, the dated-entry structure drives the architecture. You read her here.</p>
+      <p class="ed-body">And "un beso" closes her essays, a Spanish kiss-off after English introspection. So the site ends the way her writing ends.</p>
+    </div>
+    <div style="margin-top:-100px;width:calc(100% + 80px);margin-left:-80px;">
+      <figure style="margin:0;">
+        <video src="assets/001.mp4" autoplay loop muted playsinline preload="metadata" aria-label="Molly Powers, motion" style="height:clamp(340px,52vh,620px);width:auto;max-width:100%;object-fit:contain;display:block;margin:0 auto;"></video>
+        <figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);letter-spacing:1px;margin-top:6px;">001.mp4</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div style="font-family:var(--font-display);font-size:clamp(28px,3.5vw,42px);font-weight:700;line-height:1.08;color:#1a1a1a;letter-spacing:-0.02em;margin:40px 0 16px 0;max-width:66%;text-align:left;">"The concept is not applied to her voice. It is extracted from it."</div>
+  <div style="font-family:var(--font-mono);font-size:13px;font-weight:500;color:rgba(0,0,0,0.5);letter-spacing:1px;text-transform:uppercase;margin-top:16px;">Evan Roberts, Lead Designer</div>
+  <div class="ed-pullquote-meta" style="margin-bottom:32px;justify-content:flex-start;gap:24px;">
+    <span>PQ #002</span>
+    <span>The Read</span>
+    <span>65 Characters</span>
+  </div>
+
+  <!-- Two-column: Key Decisions + Scope of Work -->
+  <div style="display:grid;grid-template-columns:2fr 3fr;gap:48px;margin-top:16px;align-items:start;">
+
+    <!-- Left: Key Decisions -->
+    <div>
+      <div style="font-family:var(--font-display);font-size:clamp(24px,3vw,36px);font-weight:800;color:#1a1a1a;text-transform:uppercase;letter-spacing:-0.02em;margin-bottom:24px;">Key Decisions</div>
+      <table class="ed-table">
+        <thead>
+          <tr>
+            <th style="width:40%;">Decision</th>
+            <th style="width:60%;">Outcome</th>
+          </tr>
+        </thead>
+        <tbody>
+                    <tr>
+            <td>Read the archive before designing a screen</td>
+            <td>The concept came out of her prose instead of a moodboard, so nothing had to be justified backwards.</td>
+          </tr>
+          <tr>
+            <td>Marginalia as the interface</td>
+            <td>Her asides sit alongside the text, where the personality actually lives.</td>
+          </tr>
+          <tr>
+            <td>Dated Field Notes as the architecture</td>
+            <td>The structure of her own series drives the site instead of a generic writing list.</td>
+          </tr>
+          <tr>
+            <td>Keep the reading on the page</td>
+            <td>Every click stays with her rather than shipping the reader off to Substack.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Right: Scope of Work -->
+    <div>
+      <div style="font-family:var(--font-display);font-size:clamp(24px,3vw,36px);font-weight:800;color:#1a1a1a;text-transform:uppercase;letter-spacing:-0.02em;margin-bottom:24px;">Scope of Work</div>
+
+      <!-- Timeline header -->
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);font-family:var(--font-mono);font-size:9px;letter-spacing:1.5px;color:rgba(0,0,0,0.25);text-transform:uppercase;margin-bottom:8px;padding:0 4px;">
+        <span>Feb 26</span>
+        <span>Mar 26</span>
+        <span>Apr 26</span>
+        <span>May 26</span>
+        <span>Jun 26</span>
+      </div>
+
+      <!-- Timeline grid lines -->
+      <div style="position:relative;">
+        <div style="position:absolute;top:0;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(5,1fr);pointer-events:none;">
+          <div style="border-left:1px solid rgba(0,0,0,0.06);"></div>
+          <div style="border-left:1px solid rgba(0,0,0,0.06);"></div>
+          <div style="border-left:1px solid rgba(0,0,0,0.06);"></div>
+          <div style="border-left:1px solid rgba(0,0,0,0.06);"></div>
+          <div style="border-left:1px solid rgba(0,0,0,0.06);"></div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:8px;padding:8px 0;">
+          <div style="width:48%;margin-left:2%;background:rgba(0,0,0,0.04);padding:10px 12px;display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-family:var(--font-body);font-size:12px;color:#1a1a1a;font-weight:500;">Archive Read</span>
+            <span style="font-family:var(--font-mono);font-size:9px;letter-spacing:1px;background:#1a1a1a;color:#fff;padding:3px 8px;">3 wk</span>
+          </div>
+          <div style="width:52%;margin-left:8%;background:rgba(0,0,0,0.04);padding:10px 12px;display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-family:var(--font-body);font-size:12px;color:#1a1a1a;font-weight:500;">Concept & Direction</span>
+            <span style="font-family:var(--font-mono);font-size:9px;letter-spacing:1px;background:#1a1a1a;color:#fff;padding:3px 8px;">3 wk</span>
+          </div>
+          <div style="width:56%;margin-left:18%;background:rgba(0,0,0,0.04);padding:10px 12px;display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-family:var(--font-body);font-size:12px;color:#1a1a1a;font-weight:500;">Type System</span>
+            <span style="font-family:var(--font-mono);font-size:9px;letter-spacing:1px;background:#1a1a1a;color:#fff;padding:3px 8px;">5 wk</span>
+          </div>
+          <div style="width:48%;margin-left:30%;background:rgba(0,0,0,0.04);padding:10px 12px;display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-family:var(--font-body);font-size:12px;color:#1a1a1a;font-weight:500;">Build</span>
+            <span style="font-family:var(--font-mono);font-size:9px;letter-spacing:1px;background:#1a1a1a;color:#fff;padding:3px 8px;">6 wk</span>
+          </div>
+          <div style="width:40%;margin-left:44%;background:rgba(0,0,0,0.04);padding:10px 12px;display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-family:var(--font-body);font-size:12px;color:#1a1a1a;font-weight:500;">Field Notes</span>
+            <span style="font-family:var(--font-mono);font-size:9px;letter-spacing:1px;background:#1a1a1a;color:#fff;padding:3px 8px;">3 wk</span>
+          </div>
+          <div style="width:44%;margin-left:56%;background:rgba(0,0,0,0.04);padding:10px 12px;display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-family:var(--font-body);font-size:12px;color:#1a1a1a;font-weight:500;">Launch & Refinement</span>
+            <span style="font-family:var(--font-mono);font-size:9px;letter-spacing:1px;background:#1a1a1a;color:#fff;padding:3px 8px;">cont.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== 5. THE SYSTEM ====== -->
+<div class="ed-section">
+  <div class="ed-label">Title: The Type</div>
+  <div class="ed-header">The Type</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
+    <p class="ed-body">With no logo and no photography to hide behind, <strong>the typeface is the identity</strong>. The face had to carry long-form reading without fatigue and hold her voice at the same time, which means a true italic with real character.</p>
+    <p class="ed-body">The wordmark is not a logo. It is her name built from a drifting field of her own initials that resolve into the words and dissolve back into texture as you move through the page. The mark is made of the reading.</p>
+  </div>
+
+  <!-- Brand Guidelines Deck -->
+  <div class="ed-deck">
+    <div class="deck-spacer"></div>
+    <img src="assets/site-home.png" alt="System 01">
+    <img src="assets/site-about.png" alt="System 02">
+    <img src="assets/molly-portrait.jpg" alt="System 03">
+    <img src="assets/molly-was-here.jpg" alt="System 04">
+  </div>
+</div>
+
+<!-- ====== 6. BUILT IN CODE ====== -->
+<div class="ed-section">
+  <div class="ed-label">Title: The Build</div>
+  <div class="ed-header">The Build</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
+    <p class="ed-body">The whole site is built directly in code, in Next.js. No mockups, no handoff, no translation loss. The wordmark letter-field, the marginalia, the pacing of the scroll, all of it made in the medium it ships in.</p>
+    <p class="ed-body">This is what I call <strong>Direct Design</strong>. Build directly in the medium. The browser is the canvas. The feedback loop collapses from weeks to minutes. Every decision is tested against real constraints, real content, real devices. Not a simulation of a website. The website.</p>
+  </div>
+
+  <!-- Website Screenshots Deck -->
+  <div class="ed-deck">
+    <div class="deck-spacer"></div>
+    
+    <video src="assets/001.mp4" autoplay loop muted playsinline preload="auto" aria-label="Molly Powers, motion 1"></video>
+    <video src="assets/005.mp4" autoplay loop muted playsinline preload="auto" aria-label="Molly Powers, motion 2"></video>
+    <img src="assets/002.jpg" alt="Build 03">
+    <img src="assets/003.jpg" alt="Build 04">
+    <img src="assets/004.jpg" alt="Build 05">
+    <video src="assets/006.mp4" autoplay loop muted playsinline preload="auto" aria-label="Molly Powers, motion 6"></video>
+    <video src="assets/007.mp4" autoplay loop muted playsinline preload="auto" aria-label="Molly Powers, motion 7"></video>
+    <img src="assets/008.jpg" alt="Build 08">
+  
+  </div>
+
+  <p class="ed-body" style="margin-top:24px;">View live site: <a href="https://mollykpowers.com" target="_blank" style="color:var(--text);font-weight:600;">mollykpowers.com</a></p>
+</div>
+
+<!-- ====== 8. THE RESULTS ====== -->
+<div class="ed-section">
+  <div class="ed-label">Title: Results</div>
+  <div style="font-family:var(--font-display);font-size:clamp(80px,12vw,180px);font-weight:800;color:#1a1a1a;line-height:0.9;letter-spacing:-0.04em;text-transform:uppercase;margin:16px 0 16px;">The Results</div>
+  <div style="font-family:var(--font-display);font-size:clamp(24px,3vw,36px);font-weight:800;color:#1a1a1a;letter-spacing:-0.02em;margin-bottom:32px;text-transform:uppercase;">One Voice. One Type System.</div>
+
+  <!-- Row 1: Stats full width -->
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;margin-bottom:48px;">
+    <div>
+      <div class="ed-stat">1</div>
+      <div class="ed-stat-label">Custom type system, built around her true italic and her register</div>
+    </div>
+    <div>
+      <div class="ed-stat">0</div>
+      <div class="ed-stat-label">Templates, stock images, or off-the-shelf faces</div>
+    </div>
+    <div>
+      <div class="ed-stat">100%</div>
+      <div class="ed-stat-label">Of her writing read on the page, not shipped off to Substack</div>
+    </div>
+  </div>
+
+  <!-- Row 2: Before/After Table (full width) -->
+  <div>
+    <table class="ed-table" style="margin:0;font-size:15px;">
+      <thead>
+        <tr>
+          <th style="width:30%;">Before</th>
+          <th style="width:70%;">After</th>
+        </tr>
+      </thead>
+      <tbody>
+                <tr>
+          <td>A Linktree and a serif default</td>
+          <td>A custom type system built around her italic and her register</td>
+        </tr>
+        <tr>
+          <td>A list of essays with arrows out</td>
+          <td>Dated Field Notes architecture that keeps the reading here</td>
+        </tr>
+        <tr>
+          <td>Asides buried in a modal</td>
+          <td>Marginalia sitting alongside the text, where the voice lives</td>
+        </tr>
+        <tr>
+          <td>A portfolio that describes her writing</td>
+          <td>A site that moves in the rhythm of her sentences</td>
+        </tr>
+        <tr>
+          <td>Every click shipped to Substack</td>
+          <td>Her work read in full on her own page</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="font-family:var(--font-display);font-size:clamp(36px,5vw,64px);font-weight:700;line-height:1.05;color:#1a1a1a;letter-spacing:-0.03em;margin-top:48px;text-align:center;">"The site does not list her writing. It reads like it."</div>
+  <div style="font-family:var(--font-mono);font-size:13px;font-weight:500;color:rgba(0,0,0,0.5);letter-spacing:1px;text-transform:uppercase;margin-top:16px;text-align:center;">Molly Powers, Launch</div>
+  <div class="ed-pullquote-meta" style="justify-content:center;gap:24px;margin-top:8px;">
+    <span>PQ #003</span>
+    <span>53 Characters</span>
+  </div>
+</div>
+
+<!-- ====== 9. PHOTOGRAPHY ====== -->
+<div class="ed-section" style="padding-left:0;padding-right:0;">
+  <div class="ed-label" style="padding-left:var(--page-pad);">Photography</div>
+  <div class="ed-img-grid" style="grid-template-columns:1fr;gap:4px;margin:24px 0 0;">
+    <figure><img src="assets/site-unbeso.jpg" alt=""><figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);padding:6px 8px;">site-unbeso.jpg</figcaption></figure>
+  </div>
+</div>
+
+<!-- ====== 10. REFLECTION ====== -->
+<div class="ed-section" style="text-align:center;padding:60px var(--page-pad);min-height:100vh;display:flex;flex-direction:column;justify-content:center;">
+  <div class="ed-label">Title: Reflection</div>
+  <div class="ed-header" style="font-size:clamp(32px,5vw,56px);">What I Would Do Differently</div>
+  <div style="max-width:800px;margin:0 auto;">
+    <p class="ed-body">The hardest part was restraint. A writer's site tempts you toward gimmicks: cursor trails, noise shaders, five components at forty percent. The read on her work said the opposite. One or two real things, fully made.</p>
+    <p class="ed-body">With more time I would build Field Notes into a living, dated index that grows every time she publishes, so the architecture keeps writing itself. But the bet held. Un beso.</p>
+    <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin-top:48px;">
+      <img src="assets/evan-headshot.jpg?v=4" alt="Evan Roberts" style="width:44px;height:44px;border-radius:50%;object-fit:cover;">
+      <div style="text-align:left;">
+        <div style="font-family:var(--font-mono);font-size:13px;font-weight:600;color:#1A1A1A;">Evan Roberts</div>
+        <div style="font-family:var(--font-mono);font-size:10px;color:rgba(0,0,0,0.35);letter-spacing:1px;">Lead Designer, Roberts Design Studio</div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

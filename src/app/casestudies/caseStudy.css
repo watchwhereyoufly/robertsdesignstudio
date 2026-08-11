@@ -172,6 +172,14 @@
 .cs-page .ed-stat { font-family: var(--font-display); font-size: 80px; font-weight: 800; color: #1a1a1a; line-height: 1; letter-spacing: -0.04em; margin: 8px 0 4px; }
 .cs-page .gap-stats .ed-stat { font-size: 48px; }
 .cs-page .gap-stats .ed-stat-label { font-size: 9px; margin-bottom: 20px; }
+
+/* The stats column is absolutely positioned, so its height never pushed the
+   section down and it ran into the full-bleed figure below on every case study
+   (clearance measured -4px to -65px). Reserving its height on the text wrapper
+   fixes the collision at the cause and, because the reserve is a fixed floor
+   taller than any stats column, every page now breaks to the figure at the same
+   point instead of at whatever height that page's copy happened to reach. */
+.cs-page .ed-section div:has(> .gap-stats) { min-height: 360px; }
 .cs-page .ed-stat-label { font-family: var(--font-mono); font-size: 10px; color: rgba(0, 0, 0, 0.35); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; }
 
 .cs-page .ed-table { width: 100%; border-collapse: collapse; font-family: var(--font-mono); font-size: 12px; margin: -8px 0 32px; }
@@ -179,10 +187,122 @@
 .cs-page .ed-table tbody td { padding: 16px; border-bottom: 1px solid rgba(0, 0, 0, 0.06); vertical-align: top; line-height: 1.6; color: var(--text-dim); }
 .cs-page .ed-table tbody td:first-child { font-weight: 600; color: var(--text); }
 
+/* === FULL-BLEED HERO (dark plate variant) === */
+.cs-page .fb-hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #0c0b0a;
+  overflow: hidden;
+  padding: 88px var(--page-pad) 28px;
+}
+.cs-page .fb-hero-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.cs-page .fb-hero-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(8,7,6,0.62) 0%, rgba(8,7,6,0.12) 38%, rgba(8,7,6,0.82) 100%);
+}
+.cs-page .fb-hero > .fb-row,
+.cs-page .fb-hero > .fb-title { position: relative; z-index: 2; }
+.cs-page .fb-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: flex-start;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.cs-page .fb-row strong { display: block; color: rgba(255, 255, 255, 0.7); font-weight: 500; letter-spacing: 2px; }
+.cs-page .fb-row .fb-c { text-align: center; letter-spacing: 3px; color: rgba(255, 255, 255, 0.35); }
+.cs-page .fb-row .fb-r { text-align: right; display: flex; justify-content: flex-end; gap: 32px; }
+.cs-page .fb-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(44px, 6.2vw, 94px);
+  line-height: 0.9;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+  color: #f4efe7;
+  max-width: 15ch;
+  margin-bottom: auto;
+  padding-top: 6vh;
+  animation: heroFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.25s backwards;
+}
+.cs-page .fb-meta {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 40px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.42);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* white-ground product plates sit flush inside the light page */
+.cs-page .ed-img-plate { width: 100%; margin: 48px 0; background: #ffffff; }
+.cs-page .ed-img-plate img { width: 100%; display: block; }
+
+/* Horizontal deck. The markup (.ed-deck + .deck-spacer) was always here but was
+   never styled, so 38 guideline pages and 8 site shots stacked into a mile of
+   vertical page. Sizing by height and letting width follow keeps mixed aspect
+   ratios (1.78 guidelines, 1.98 screenshots) on one baseline.
+   The negative margin breaks the strip out of .ed-section's padding so it runs
+   edge to edge; .deck-spacer is the first flex item, re-establishing the text
+   inset so the strip starts aligned with the copy, and ::after does the same at
+   the tail so the last page is not jammed against the viewport. */
+.cs-page .ed-deck {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 48px calc(var(--page-pad) * -1);
+  padding-bottom: 14px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+.cs-page .ed-deck::-webkit-scrollbar { display: none; }
+
+.cs-page .ed-deck .deck-spacer { flex: 0 0 var(--page-pad); align-self: stretch; }
+.cs-page .ed-deck::after { content: ""; flex: 0 0 var(--page-pad); }
+.cs-page .ed-deck img,
+.cs-page .ed-deck video {
+  flex: 0 0 auto;
+  height: clamp(240px, 42vw, 460px);
+  width: auto;
+  max-width: none;
+  display: block;
+  background: #ffffff;
+  scroll-snap-align: center;
+}
+
 @media (max-width: 768px) {
+  .cs-page .fb-hero { padding: 72px var(--page-pad) 22px; min-height: 88vh; }
+  .cs-page .fb-title { font-size: 38px; max-width: none; }
+  .cs-page .fb-row .fb-r { gap: 14px; }
   .cs-page .ed-header { font-size: 36px; }
   .cs-page .ed-two-col { grid-template-columns: 1fr; }
   .cs-page .ed-img-grid { grid-template-columns: 1fr; }
+  .cs-page .ed-deck { margin: 32px calc(var(--page-pad) * -1); gap: 8px; }
+  .cs-page .ed-deck img { height: clamp(180px, 52vw, 300px); }
   .cs-page .ed-pullquote-text { font-size: 24px; }
   .cs-page .ed-stat { font-size: 72px; }
   .cs-page .hero-title { font-size: 60px !important; }

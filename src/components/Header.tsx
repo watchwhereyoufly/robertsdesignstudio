@@ -123,6 +123,7 @@ export default function Header({ theme = "dark", hidePills = false }: { theme?: 
 
   return (
     <div
+      className="rds-header"
       style={{
         position: "fixed",
         top: 0,
@@ -137,7 +138,7 @@ export default function Header({ theme = "dark", hidePills = false }: { theme?: 
       <div style={{ pointerEvents: "auto", display: "flex", flexDirection: "column", gap: 0 }}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16 }}>
           {/* Left: star logo */}
-          <Link href="/" aria-label="Roberts Design Studio — home" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", textDecoration: "none" }}>
+          <Link href="/" aria-label="Roberts Design Studio — home" className="rds-star-link" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", textDecoration: "none" }}>
             <svg width="30" height="29" viewBox="0 0 456.73 434.8" aria-hidden="true" style={{ display: "block" }}>
               <path d={STAR_PATH} fill="var(--ink)" />
             </svg>

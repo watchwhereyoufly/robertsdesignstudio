@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import Header from "@/components/Header";
 
 export default function Home() {
@@ -47,6 +48,42 @@ export default function Home() {
   return (
     <>
       <Header hidePills />
+
+      {/* Continue to the studio site. Sits above the header so it clears the
+          fixed nav row, and stops pointer propagation so it doesn't trip the
+          global unmute listener on the way out. */}
+      <Link
+        href="/studio"
+        className="rds-nav-pill"
+        onPointerDown={(e) => e.stopPropagation()}
+        onTouchStart={(e) => e.stopPropagation()}
+        style={{
+          position: "fixed",
+          top: 14,
+          right: "var(--page-pad)",
+          zIndex: 60,
+          display: "inline-flex",
+          alignItems: "center",
+          gap: 8,
+          padding: "7px 14px",
+          borderRadius: 999,
+          textDecoration: "none",
+          whiteSpace: "nowrap",
+          fontSize: 12,
+          fontWeight: 500,
+          letterSpacing: 0,
+          color: "#FFFFFF",
+          background: "rgba(255,255,255,0.06)",
+          border: "1px solid rgba(255,255,255,0.18)",
+          backdropFilter: "blur(14px) saturate(1.4)",
+          WebkitBackdropFilter: "blur(14px) saturate(1.4)",
+        }}
+      >
+        Continue to site
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden>
+          <path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </Link>
 
       <div
         style={{

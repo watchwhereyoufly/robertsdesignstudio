@@ -52,8 +52,8 @@
 
 .headerRow {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr) minmax(0, 0.6fr) 24px;
-  gap: 40px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr) minmax(0, 0.75fr) minmax(0, 0.5fr) 24px;
+  gap: 28px;
   padding: 0 12px 12px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
   font-family: var(--font-mono);
@@ -65,9 +65,9 @@
 
 .row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr) minmax(0, 0.6fr) 24px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr) minmax(0, 0.75fr) minmax(0, 0.5fr) 24px;
   align-items: center;
-  gap: 40px;
+  gap: 28px;
   padding: 24px 12px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   text-decoration: none;
@@ -104,20 +104,107 @@
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.4);
 }
+.rowByline {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.55);
+}
 .rowMarker { color: rgba(255, 255, 255, 0.35); display: flex; justify-content: flex-end; transition: color 0.15s ease; }
 .row:hover .rowTitle { color: #111111; }
 .row:hover .rowExcerpt { color: rgba(0, 0, 0, 0.72); }
 .row:hover .rowCat { color: rgba(0, 0, 0, 0.6); }
+.row:hover .rowByline { color: rgba(0, 0, 0, 0.68); }
 .row:hover .rowMarker { color: #111111; }
 
+/* === MOBILE: square tiles, 1:1, two up ===
+   The five-column table has nowhere to go on a phone, so the row becomes a
+   card. Each tile is its own 3-row grid: label and marker on top, title
+   filling the middle, source pinned to the bottom edge. */
 @media (max-width: 768px) {
-  .row {
-    grid-template-columns: 1fr;
-    gap: 8px;
-    padding: 20px 4px;
-  }
-  .rowCat { order: -1; }
-  .rowMarker { display: none; }
-  .rowExcerpt { -webkit-line-clamp: 3; }
   .title { font-size: clamp(44px, 15vw, 80px); }
+  .filters { margin-bottom: 28px; }
+
+  .headerRow { display: none; }
+
+  .list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .row {
+    /* Landscape, not square. Same height the 2-up squares had, full width. */
+    aspect-ratio: 2 / 1;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto 1fr auto;
+    align-items: start;
+    gap: 10px 12px;
+    padding: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    background: rgba(255, 255, 255, 0.02);
+    overflow: hidden;
+  }
+
+  .rowCat {
+    grid-area: 1 / 1 / 2 / 2;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+  .rowMarker {
+    grid-area: 1 / 2 / 2 / 3;
+    display: flex;
+  }
+  .rowMarker svg { width: 13px; height: 13px; }
+
+  .rowTitle {
+    grid-area: 2 / 1 / 3 / 3;
+    align-self: start;
+    font-size: clamp(19px, 5.6vw, 25px);
+    line-height: 1.08;
+    letter-spacing: -0.022em;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* No room for it at this size. The reader carries it. */
+  .rowExcerpt { display: none; }
+
+  .rowByline {
+    grid-area: 3 / 1 / 4 / 3;
+    align-self: end;
+    font-size: 10.5px;
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.45);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Hover sticks after a tap on touch, so fill on press instead. */
+  .row:hover { background: rgba(255, 255, 255, 0.02); }
+  .row:hover .rowTitle,
+  .row:hover .rowCat,
+  .row:hover .rowByline,
+  .row:hover .rowMarker { color: inherit; }
+  .row:hover .rowTitle { color: #ffffff; }
+  .row:hover .rowCat { color: rgba(255, 255, 255, 0.4); }
+  .row:hover .rowByline { color: rgba(255, 255, 255, 0.45); }
+  .row:hover .rowMarker { color: rgba(255, 255, 255, 0.35); }
+
+  .row:active { background: var(--accent); border-color: var(--accent); }
+  .row:active .rowTitle { color: #111111; }
+  .row:active .rowCat { color: rgba(0, 0, 0, 0.6); }
+  .row:active .rowByline { color: rgba(0, 0, 0, 0.68); }
+  .row:active .rowMarker { color: #111111; }
+}
+
+/* Narrow phones: a 2:1 tile gets short, so trim the padding to keep three
+   title lines available. */
+@media (max-width: 359px) {
+  .row { padding: 14px; gap: 8px 10px; }
+  .rowByline { font-size: 9.5px; }
 }

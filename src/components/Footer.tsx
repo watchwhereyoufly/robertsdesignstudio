@@ -37,11 +37,8 @@ export default function Footer() {
 
       <div className={styles.bar}>
         <div className={styles.barBottom}>
-          <span>UNITED STATES</span>
           <span>&copy; 2026 Roberts Design Studio</span>
-          <span>
-            <a href="#">PRIVACY POLICY</a> &middot; <a href="#">TERMS OF SERVICE</a>
-          </span>
+          <span>United States</span>
         </div>
       </div>
     </div>

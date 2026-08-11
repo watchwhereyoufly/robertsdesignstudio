@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Molly Powers Case Study | Roberts Design Studio",
   description:
     "A personal site for a writer, built to read the way she writes. Typography as the entire design.",
-  openGraph: { images: ["/casestudies/mollypowers/assets/site-home.png"] },
+  openGraph: { images: ["/og-image.jpg"] },
 };
 
 export default function MollyPowers() {

@@ -20,6 +20,7 @@ export default function CaseStudyShell({ body }: { body: string }) {
     }
   }, []);
 
+
   return (
     <>
       <Header theme="light" />

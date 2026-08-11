@@ -26,17 +26,23 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
+  align-items: stretch;
 }
 
+/* Column flex plus stretch keeps every card in a row the same height no matter
+   how long its headline or caption runs; the two text blocks are line-clamped
+   so a long one cannot push the card taller than its neighbours. */
 .card {
   position: relative;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
   text-decoration: none;
   color: inherit;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   transition: transform 0.3s ease;
 }
 .card:hover { transform: translateY(-8px); }
@@ -61,6 +67,60 @@
 }
 .img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 
+/* Client mark over the cover. Sits in the DOM instead of being composited into
+   the JPEG, so it renders at device resolution no matter how soft the photo is,
+   and its size is a value to tune rather than a re-export. */
+.cardLogo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 14px rgba(0, 0, 0, 0.28));
+}
+
+/* Coming soon: the card reads as a normal card until it is tapped. It is a
+   <button>, so reset the UA chrome it would otherwise bring. */
+.cardSoon {
+  appearance: none;
+  font: inherit;
+  text-align: left;
+  padding: 0;
+  cursor: pointer;
+}
+.cardSoon .imgWrap { background: rgba(255, 255, 255, 0.05); }
+/* Dim only while the answer is showing, so the cover is never permanently greyed. */
+.imgDimmed { opacity: 0.32; filter: grayscale(1); }
+.img { transition: opacity 0.25s ease, filter 0.25s ease; }
+
+.soon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.94);
+  z-index: 2;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(17, 17, 17, 0.86);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  padding: 7px 14px 8px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.soonOn { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+
+@media (prefers-reduced-motion: reduce) {
+  .soon, .img { transition: none; }
+}
+
 .metaRow { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; }
 .cardTitle {
   font-family: var(--font-display);
@@ -79,19 +139,62 @@
   border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 4px 10px;
 }
-.caption {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 1.3;
-  font-family: var(--font-mono);
-  text-transform: uppercase;
+/* The study's own headline, set in the display face so it reads as the title of
+   the piece rather than as more metadata. */
+.headline {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin-top: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+/* Disciplines as pills, with the industry riding at the end of the same row.
+   Replaced a paragraph of grey uppercase mono that read as a wall. */
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
   margin-top: 12px;
 }
-.divider { width: 100%; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+.pill {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  line-height: 1;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  padding: 5px 10px 6px;
+  white-space: nowrap;
+}
+/* The type/industry pill fills so it reads as the category, not another
+   discipline. Disciplines stay outlined. */
+.pillType {
+  background: var(--accent);
+  color: #ffffff;
+}
+/* Pins the rule to the bottom of the card so it lands at the same height across
+   a row even when one card's text is shorter. */
+.divider { width: 100%; border-top: 1px solid rgba(255, 255, 255, 0.08); margin-top: auto; }
+
+@media (max-width: 1180px) {
+  .cardTitle { font-size: 18px; }
+  .headline { font-size: 15px; }
+}
 
 @media (max-width: 768px) {
   .grid { grid-template-columns: 1fr; gap: 20px; }
   .title { font-size: 52px; }
   .card:hover { transform: none; }
+  .cardTitle { font-size: 20px; }
+  .headline { font-size: 16px; -webkit-line-clamp: 3; }
+
 }
