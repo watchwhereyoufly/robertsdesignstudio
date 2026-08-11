@@ -99,6 +99,7 @@ const CARDS: CaseStudyCard[] = [
     caption:
       "A Rename, a Brand System, and The Templates and Training That Let a Staff Of Non-Designers Run It Without a Designer.",
   },
+  /* Soma Longevity hidden 2026-08-11. Uncomment to restore.
   {
     slug: "somalongevity",
     no: "No. 006",
@@ -119,6 +120,7 @@ const CARDS: CaseStudyCard[] = [
       "Identity and Collateral For a Boutique Longevity Clinic Built On Labs, Genetics, and Wearable Data.",
     comingSoon: true,
   },
+  */
 ];
 
 // One canonical order for the discipline pills. Every card sorts against this,
