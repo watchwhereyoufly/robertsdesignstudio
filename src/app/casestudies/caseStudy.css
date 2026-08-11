@@ -295,20 +295,148 @@
 }
 
 @media (max-width: 768px) {
-  .cs-page .fb-hero { padding: 72px var(--page-pad) 22px; min-height: 88vh; }
-  .cs-page .fb-title { font-size: 38px; max-width: none; }
-  .cs-page .fb-row .fb-r { gap: 14px; }
-  .cs-page .ed-header { font-size: 36px; }
-  .cs-page .ed-two-col { grid-template-columns: 1fr; }
-  .cs-page .ed-img-grid { grid-template-columns: 1fr; }
-  .cs-page .ed-deck { margin: 32px calc(var(--page-pad) * -1); gap: 8px; }
-  .cs-page .ed-deck img { height: clamp(180px, 52vw, 300px); }
-  .cs-page .ed-pullquote-text { font-size: 24px; }
-  .cs-page .ed-stat { font-size: 72px; }
-  .cs-page .hero-title { font-size: 60px !important; }
-  .cs-page .hero-product-img { position: relative; right: auto; top: auto; transform: none; height: auto; max-height: 400px; margin: 24px auto; }
-  .cs-page .hero-meta { flex-wrap: wrap; }
+  /* === CASE STUDY MOBILE ===
+     Same composition as desktop, re-proportioned. Most of the layout lives in
+     inline styles inside the body HTML, so the overrides here have to be
+     explicit; attribute selectors target those exact declarations. */
+
+  /* --- hero --- */
+  .cs-page .hero { min-height: auto; padding-bottom: 8px; }
+  /* The header is fixed; on desktop the tall hero centres its content well clear
+     of it, but once the hero collapses to auto height the nav runs underneath
+     the star. Push the body down past it. */
+  .cs-page .hero-body { justify-content: flex-start; padding-top: 62px; }
+  .cs-page .hero-nav { grid-template-columns: 1fr; gap: 6px; margin-bottom: 18px; }
+  .cs-page .hero-nav-center { text-align: left; }
+  .cs-page .hero-nav-right { justify-content: flex-start; gap: 16px; }
+  /* The desktop line breaks are set for a wide measure; kept at this width they
+     force every line to re-wrap and strand single words. Dropping them and
+     letting the browser balance the block holds a bigger size with no orphans. */
+  .cs-page .hero-title { font-size: 28px !important; line-height: 1.04; letter-spacing: -0.03em; text-wrap: balance; }
+  .cs-page .hero-title br { display: none; }
+
+  /* The header is fixed and its star was landing on body copy while scrolling. */
+  body:has(.cs-page) .rds-header::before {
+    content: "";
+    position: absolute;
+    inset: -14px 0 auto 0;
+    height: 76px;
+    background: linear-gradient(#ffffff 42%, rgba(255, 255, 255, 0));
+    pointer-events: none;
+    z-index: -1;
+  }
+  /* Two studies carry an inline height to shrink the desktop hero; on a phone the
+     image goes in flow instead, so those inline values have to be overridden. */
+  .cs-page .hero-product-img {
+    position: relative !important;
+    right: auto !important;
+    top: auto !important;
+    transform: none !important;
+    height: auto !important;
+    max-height: 46vh !important;
+    width: 100%;
+    object-fit: contain;
+    margin: 22px auto 0 !important;
+    filter: none;
+  }
+  /* Meta and the designer credit sit side by side with a 200px gutter on
+     desktop. At 358px that gutter leaves each column ~80px, which is what was
+     breaking every line to one word. Stack them instead. */
+  .cs-page [style*="gap:200px"] {
+    flex-direction: column !important;
+    gap: 18px !important;
+    margin-top: 26px !important;
+  }
+  .cs-page [style*="gap:200px"] > div { width: 100%; max-width: none; }
+  .cs-page .hero-meta { flex-wrap: wrap; gap: 2px; margin-top: 0 !important; font-size: 11px !important; }
+  /* The mark is absolutely placed and on desktop it bleeds up behind a tall
+     hero. Here it has to stay inside its own bar or it lands on the meta, so the
+     bar reserves its height and the mark is pinned to the bottom of it. */
+  .cs-page .hero-sub-bar { padding-top: 26px; padding-bottom: 8px; min-height: 124px; }
+  .cs-page .hero-sub-bar svg { height: 108px; left: -18px; bottom: 4px; top: auto; opacity: 0.45; }
+
+  /* --- editorial rhythm --- */
+  .cs-page .ed-section { padding: 18px var(--page-pad); }
+  .cs-page .ed-header { font-size: clamp(30px, 8.4vw, 40px); }
+  .cs-page .ed-body { font-size: 15px; line-height: 1.35; margin-bottom: 18px; }
+  .cs-page .ed-two-col { grid-template-columns: 1fr; gap: 24px; }
+  .cs-page .ed-pullquote-text { font-size: 22px; }
+  .cs-page .ed-pullquote-meta { flex-wrap: wrap; gap: 8px; }
   .cs-page .dissolve-cloud { display: none; }
+
+  /* The gap section is centred with a fixed 900px offset on desktop, which
+     pushes it off a phone screen entirely. */
+  .cs-page [style*="max-width:900px"] {
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-top: 40px !important;
+  }
+  /* Stats ride in the left margin on desktop; on mobile they come into flow. */
+  /* The markup is six alternating siblings (stat, label, stat, label, ...), so a
+     plain 3-column grid reads them across and pairs every number with the wrong
+     caption. Two rows filled column-first keeps each stat above its own label. */
+  .cs-page .gap-stats {
+    position: static !important;
+    width: auto !important;
+    right: auto !important;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    grid-auto-flow: column;
+    align-items: start;
+    column-gap: 12px;
+    row-gap: 4px;
+    margin: 0 0 30px;
+  }
+  .cs-page .gap-stats .ed-stat { font-size: 34px; }
+  .cs-page .gap-stats .ed-stat-label { margin-bottom: 0; }
+  .cs-page .ed-section div:has(> .gap-stats) { min-height: 0; }
+
+  /* --- figures --- */
+  .cs-page [style*="margin-top:-100px"] {
+    margin-top: 24px !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+  .cs-page [style*="height:100vh"] { height: 52vh !important; }
+  .cs-page [style*="max-width:66%"] { max-width: 100% !important; font-size: 22px !important; }
+
+  /* --- two and three column blocks collapse --- */
+  .cs-page [style*="grid-template-columns:1fr 1fr 1fr"] { grid-template-columns: 1fr !important; gap: 20px !important; }
+  .cs-page [style*="grid-template-columns:2fr 3fr"] { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .cs-page [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; gap: 20px !important; }
+  .cs-page .ed-stat { font-size: 56px; }
+
+  /* --- tables --- */
+  .cs-page .ed-table { font-size: 13px !important; }
+  .cs-page .ed-table th, .cs-page .ed-table td { padding: 8px 6px; }
+  .cs-page .ed-table th:first-child, .cs-page .ed-table td:first-child { width: 38% !important; }
+
+  /* --- timeline ---
+     The gantt offsets are unreadable at this width, so bars go full width and
+     the month scale comes off rather than implying a mapping that is gone. */
+  .cs-page [style*="grid-template-columns:repeat(5,1fr)"] { display: none !important; }
+  .cs-page [style*="background:rgba(0,0,0,0.04)"] {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+
+  /* --- results + photography --- */
+  .cs-page [style*="font-size:clamp(80px,12vw,180px)"] { font-size: 46px !important; margin: 10px 0 12px !important; }
+  .cs-page [style*="font-size:clamp(36px,5vw,64px)"] { font-size: 24px !important; }
+  .cs-page [style*="font-size:clamp(24px,3vw,36px)"] { font-size: 22px !important; }
+  .cs-page .ed-img-grid { grid-template-columns: 1fr !important; }
+  .cs-page .ed-img-grid img { height: 260px; }
+
+  /* The fixed description bar is desktop furniture; on a phone it eats the
+     bottom of the viewport and lands on the content behind it. */
+  #tempBar { display: none !important; }
+
+  /* --- decks --- */
+  .cs-page .ed-deck { margin: 28px calc(var(--page-pad) * -1); gap: 8px; }
+  .cs-page .ed-deck img,
+  .cs-page .ed-deck video { height: clamp(180px, 52vw, 300px); }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -13,7 +13,7 @@ export const body = `
       </div>
     </div>
     <div class="hero-title" style="font-size:clamp(48px, 6vw, 90px);line-height:0.92;letter-spacing:-0.03em;">A Church Full Of<br>Non-Designers Needed A Brand<br>That Designs Itself.</div>
-    <img class="hero-product-img" src="assets/hero.jpg" alt="Garden Church sanctuary">
+    <img class="hero-product-img" src="assets/hero.jpg" alt="Garden Church sanctuary" style="height:47.5%;max-height:400px;">
     <div style="display:flex;justify-content:flex-start;align-items:flex-start;gap:200px;margin-top:40px;">
       <div class="hero-meta" style="flex-direction:column;gap:0;max-width:none;font-size:13px;line-height:1.4;margin-top:0;">
         <span>Client: Garden Church</span>
@@ -105,8 +105,8 @@ export const body = `
   </div>
   </div>
   <figure style="margin:80px 0 0;position:relative;z-index:1;width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);">
-    <img src="assets/worship.jpg" alt="Garden Church gathering" style="width:100%;height:100vh;object-fit:cover;display:block;">
-    <figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);letter-spacing:1px;margin-top:6px;padding-left:var(--page-pad);">worship.jpg</figcaption>
+    <img src="assets/community.jpg" alt="Garden Church gathering" style="width:100%;height:100vh;object-fit:cover;display:block;">
+    <figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);letter-spacing:1px;margin-top:6px;padding-left:var(--page-pad);">community.jpg</figcaption>
   </figure>
 </div>
 
@@ -130,8 +130,8 @@ export const body = `
     </div>
     <div style="margin-top:-100px;width:calc(100% + 80px);margin-left:-80px;">
       <figure style="margin:0;">
-        <img src="assets/deck-lockup.jpg" alt="Garden Church lockup, white on green and green on cream" style="width:100%;aspect-ratio:1.587;object-fit:cover;display:block;">
-        <figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);letter-spacing:1px;margin-top:6px;">deck-lockup.jpg</figcaption>
+        <img src="assets/approach.jpg" alt="Garden Church site, home" style="width:100%;aspect-ratio:1.587;object-fit:cover;display:block;">
+        <figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);letter-spacing:1px;margin-top:6px;">approach.jpg</figcaption>
       </figure>
     </div>
   </div>
@@ -244,10 +244,47 @@ export const body = `
   <!-- Brand Guidelines Deck -->
   <div class="ed-deck">
     <div class="deck-spacer"></div>
-    <img src="assets/deck-cover.jpg" alt="System 01">
-    <img src="assets/deck-lockup.jpg" alt="System 02">
-    <img src="assets/deck-color.jpg" alt="System 03">
-    <img src="assets/deck-photo.jpg" alt="System 04">
+    
+    <img src="assets/gl-01.jpg" alt="Brand Guidelines 01">
+    <img src="assets/gl-02.jpg" alt="Brand Guidelines 02">
+    <img src="assets/gl-03.jpg" alt="Brand Guidelines 03">
+    <img src="assets/gl-04.jpg" alt="Brand Guidelines 04">
+    <img src="assets/gl-05.jpg" alt="Brand Guidelines 05">
+    <img src="assets/gl-06.jpg" alt="Brand Guidelines 06">
+    <img src="assets/gl-07.jpg" alt="Brand Guidelines 07">
+    <img src="assets/gl-08.jpg" alt="Brand Guidelines 08">
+    <img src="assets/gl-09.jpg" alt="Brand Guidelines 09">
+    <img src="assets/gl-10.jpg" alt="Brand Guidelines 10">
+    <img src="assets/gl-11.jpg" alt="Brand Guidelines 11">
+    <img src="assets/gl-12.jpg" alt="Brand Guidelines 12">
+    <img src="assets/gl-13.jpg" alt="Brand Guidelines 13">
+    <img src="assets/gl-14.jpg" alt="Brand Guidelines 14">
+    <img src="assets/gl-15.jpg" alt="Brand Guidelines 15">
+    <img src="assets/gl-16.jpg" alt="Brand Guidelines 16">
+    <img src="assets/gl-17.jpg" alt="Brand Guidelines 17">
+    <img src="assets/gl-18.jpg" alt="Brand Guidelines 18">
+    <img src="assets/gl-19.jpg" alt="Brand Guidelines 19">
+    <img src="assets/gl-20.jpg" alt="Brand Guidelines 20">
+    <img src="assets/gl-21.jpg" alt="Brand Guidelines 21">
+    <img src="assets/gl-22.jpg" alt="Brand Guidelines 22">
+    <img src="assets/gl-23.jpg" alt="Brand Guidelines 23">
+    <img src="assets/gl-24.jpg" alt="Brand Guidelines 24">
+    <img src="assets/gl-25.jpg" alt="Brand Guidelines 25">
+    <img src="assets/gl-26.jpg" alt="Brand Guidelines 26">
+    <img src="assets/gl-27.jpg" alt="Brand Guidelines 27">
+    <img src="assets/gl-28.jpg" alt="Brand Guidelines 28">
+    <img src="assets/gl-29.jpg" alt="Brand Guidelines 29">
+    <img src="assets/gl-30.jpg" alt="Brand Guidelines 30">
+    <img src="assets/gl-31.jpg" alt="Brand Guidelines 31">
+    <img src="assets/gl-32.jpg" alt="Brand Guidelines 32">
+    <img src="assets/gl-33.jpg" alt="Brand Guidelines 33">
+    <img src="assets/gl-34.jpg" alt="Brand Guidelines 34">
+    <img src="assets/gl-35.jpg" alt="Brand Guidelines 35">
+    <img src="assets/gl-36.jpg" alt="Brand Guidelines 36">
+    <img src="assets/gl-37.jpg" alt="Brand Guidelines 37">
+    <img src="assets/gl-38.jpg" alt="Brand Guidelines 38">
+    <img src="assets/gl-39.jpg" alt="Brand Guidelines 39">
+  
   </div>
 </div>
 
@@ -263,18 +300,16 @@ export const body = `
   <!-- Website Screenshots Deck -->
   <div class="ed-deck">
     <div class="deck-spacer"></div>
-    <img src="assets/hero.jpg" alt="Build 01">
-    <img src="assets/worship.jpg" alt="Build 02">
-    <img src="assets/community.jpg" alt="Build 03">
+    
+    <img src="assets/site-01.jpg" alt="Website 01">
+    <img src="assets/site-02.jpg" alt="Website 02">
+    <img src="assets/site-03.jpg" alt="Website 03">
+    <img src="assets/site-04.jpg" alt="Website 04">
+  
   </div>
 
   <p class="ed-body" style="margin-top:24px;">View live site: <a href="https://gardencda.com" target="_blank" style="color:var(--text);font-weight:600;">gardencda.com</a></p>
 </div>
-
-<figure style="margin:20px 0 0;position:relative;z-index:1;width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);">
-  <img src="assets/deck-cover.jpg" alt="Garden Church Brand Guidelines, Volume One" style="width:100%;height:100vh;object-fit:cover;display:block;">
-  <figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);letter-spacing:1px;margin-top:6px;padding-left:var(--page-pad);">deck-cover.jpg</figcaption>
-</figure>
 
 <!-- ====== 8. THE RESULTS ====== -->
 <div class="ed-section">
@@ -346,10 +381,10 @@ export const body = `
   <div class="ed-img-grid" style="grid-template-columns:1fr 1fr 1fr;gap:4px;margin:24px 0 0;">
     <figure><img src="assets/hero.jpg" alt=""><figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);padding:6px 8px;">hero.jpg</figcaption></figure>
     <figure><img src="assets/worship.jpg" alt=""><figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);padding:6px 8px;">worship.jpg</figcaption></figure>
-    <figure><img src="assets/community.jpg" alt=""><figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);padding:6px 8px;">community.jpg</figcaption></figure>
-    <figure><img src="assets/deck-cover.jpg" alt=""><figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);padding:6px 8px;">deck-cover.jpg</figcaption></figure>
-    <figure><img src="assets/deck-lockup.jpg" alt=""><figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);padding:6px 8px;">deck-lockup.jpg</figcaption></figure>
-    <figure><img src="assets/deck-color.jpg" alt=""><figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);padding:6px 8px;">deck-color.jpg</figcaption></figure>
+    <figure><img src="assets/approach.jpg" alt=""><figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);padding:6px 8px;">approach.jpg</figcaption></figure>
+    <figure><img src="assets/gc-03.jpg" alt=""><figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);padding:6px 8px;">gc-03.jpg</figcaption></figure>
+    <figure><img src="assets/gc-04.jpg" alt=""><figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);padding:6px 8px;">gc-04.jpg</figcaption></figure>
+    <figure><img src="assets/gc-05.jpg" alt=""><figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);padding:6px 8px;">gc-05.jpg</figcaption></figure>
   </div>
 </div>
 

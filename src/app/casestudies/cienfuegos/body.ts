@@ -272,11 +272,6 @@ export const body = `
   <p class="ed-body" style="margin-top:24px;">The member site is private, behind the club's access flow.</p>
 </div>
 
-<figure style="margin:20px 0 0;position:relative;z-index:1;width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);">
-  <img src="assets/member-site.jpg" alt="Cienfuegos Release No. 2 at altitude" style="width:100%;height:100vh;object-fit:cover;display:block;">
-  <figcaption style="font-family:var(--font-mono);font-size:9px;color:rgba(0,0,0,0.25);letter-spacing:1px;margin-top:6px;padding-left:var(--page-pad);">member-site.jpg</figcaption>
-</figure>
-
 <!-- ====== 8. THE RESULTS ====== -->
 <div class="ed-section">
   <div class="ed-label">Title: Results</div>
