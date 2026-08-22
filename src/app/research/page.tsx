@@ -3,6 +3,7 @@
 import { useState } from "react";
 import styles from "./research.module.css";
 import Header from "@/components/Header";
+import FitText from "@/components/FitText";
 import Footer from "@/components/Footer";
 import { research, RESEARCH_CATEGORIES } from "@/data/research";
 import { STAR_PATH } from "@/components/logoPaths";
@@ -35,7 +36,7 @@ export default function Research() {
       <Header />
 
       <div className={styles.page}>
-        <h1 className={styles.title}>Research</h1>
+        <FitText as="h1" className={styles.title}>Research</FitText>
 
         <div className={styles.filters}>
           {filters.map((f) => (

@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import MountainDraw from "@/components/MountainDraw";
 import Footer from "@/components/Footer";
 import Grid from "./Grid";
+import FitText from "@/components/FitText";
 
 export const metadata: Metadata = {
   title: "Case Studies | Roberts Design Studio",
@@ -18,11 +19,11 @@ export default function CaseStudies() {
       <Header />
 
       <div className={styles.mountainTop}>
-        <MountainDraw stroke="rgba(255,255,255,0.15)" />
+        <MountainDraw stroke="rgba(0,0,0,0.18)" />
       </div>
 
       <div className={styles.page}>
-        <div className={styles.title}>Case Studies</div>
+        <FitText className={styles.title}>Case Studies</FitText>
 
         <Grid />
       </div>

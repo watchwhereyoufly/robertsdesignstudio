@@ -19,7 +19,7 @@ const DARK_VARS: React.CSSProperties = {
   ["--pill" as string]: "rgba(255,255,255,0.06)",
   ["--pill-hover" as string]: "rgba(255,255,255,0.11)",
   ["--pill-active" as string]: "rgba(255,255,255,0.16)",
-  ["--hdr-accent" as string]: "#FF3000",
+  ["--hdr-accent" as string]: "#F04E42",
 };
 const LIGHT_VARS: React.CSSProperties = {
   ["--rule" as string]: "rgba(17,17,19,0.08)",
@@ -29,7 +29,7 @@ const LIGHT_VARS: React.CSSProperties = {
   ["--pill" as string]: "rgba(17,17,19,0.05)",
   ["--pill-hover" as string]: "rgba(17,17,19,0.09)",
   ["--pill-active" as string]: "rgba(17,17,19,0.13)",
-  ["--hdr-accent" as string]: "#FF3000",
+  ["--hdr-accent" as string]: "#F04E42",
 };
 
 const GLASS: React.CSSProperties = {
@@ -38,7 +38,7 @@ const GLASS: React.CSSProperties = {
   border: "1px solid var(--rule)",
 };
 
-export default function Header({ theme = "dark", hidePills = false }: { theme?: "dark" | "light"; hidePills?: boolean }) {
+export default function Header({ theme = "light", hidePills = false }: { theme?: "dark" | "light"; hidePills?: boolean }) {
   const [mounted, setMounted] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [expanded, setExpanded] = useState(false);

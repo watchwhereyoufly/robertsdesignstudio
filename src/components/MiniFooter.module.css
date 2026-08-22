@@ -12,17 +12,17 @@
   justify-content: space-between;
   gap: 24px;
   padding: 8px var(--page-pad);
-  background: #111111;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg);
+  border-top: 1px solid rgba(0, 0, 0, 0.10);
   font-family: var(--font-mono);
   font-size: 9px;
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(0, 0, 0, 0.4);
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }
 
 .orange {
-  background: var(--accent);
+  background: var(--footer);
   animation: fadeUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.5s backwards;
 }
 .thinBar { animation: fadeUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.44s backwards; }
@@ -34,7 +34,7 @@
   padding: 14px 0;
   font-family: var(--font-mono);
   font-size: 9px;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(0, 0, 0, 0.62);
   letter-spacing: 1px;
   text-transform: uppercase;
 }

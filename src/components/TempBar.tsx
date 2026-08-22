@@ -4,9 +4,9 @@ import { useEffect, useRef } from "react";
 
 // Fixed bottom description bar that parks above the footer when it scrolls into view.
 export default function TempBar({
-  variant = "dark",
+  variant = "light",
 }: {
-  variant?: "dark" | "scroll";
+  variant?: "dark" | "light" | "scroll";
 }) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -48,7 +48,7 @@ export default function TempBar({
         left: 0,
         right: 0,
         padding: "8px var(--page-pad)",
-        background: dark ? "#111111" : "#F0F0F0",
+        background: dark ? "#111111" : "#FFFFFF",
         borderTop: dark ? "1px solid rgba(255,255,255,0.08)" : "1px solid rgba(0,0,0,0.08)",
         fontFamily: "var(--font-mono)",
         fontSize: 9,

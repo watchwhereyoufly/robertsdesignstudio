@@ -1,0 +1,255 @@
+.viewport {
+  height: 100svh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.hero {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Spans the full measure so the element's own width IS the target the fitter
+   scales to. The links stay inline-block inside it, so each one still shrinks
+   to its text and the stack keeps its ragged right. */
+.navCol {
+  position: absolute;
+  left: var(--page-pad);
+  right: var(--page-pad);
+  /* Same margin as the left and right edges. --nav-trim, set by the fitter,
+     cancels the distance from the element's box top down to the cap line so the
+     three margins read equal. */
+  top: var(--page-pad);
+  margin-top: var(--nav-trim, 0px);
+  margin-left: var(--nav-lead, 0px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.heroLink {
+  font-family: var(--font-display);
+  /* JS overwrites --nav-size with the exact fit. The vw fallback is a close
+     approximation of Manrope's metrics for "CASE STUDIES" at this tracking, so
+     the page is still composed if the script never runs. */
+  font-size: var(--nav-size, 13.2vw);
+  white-space: nowrap;
+  font-weight: 800;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  line-height: 0.8;
+  transition: color 0.3s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-block;
+  transform-origin: left center;
+}
+/* Nudges right under the cursor. The scramble supplies the event, this
+   supplies the weight. */
+.heroLink:hover { color: #17b8d9; opacity: 1; transform: translateX(12px); }
+.navCol .heroLink:nth-child(1) { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s backwards; }
+.navCol .heroLink:nth-child(2) { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s backwards; }
+.navCol .heroLink:nth-child(3) { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.45s backwards; }
+
+/* The lockup deck, pinned to the bottom-left corner. Three colourways of the
+   same mark stacked exactly on top of each other; hovering fans the back two
+   out to the right like cards off a deck, and they retract on leave.
+
+   The artwork carries its own margin -- the plate spans x 168-983 and y 107-756
+   inside a 1151 x 864 box -- so anchoring the box to the corner would leave the
+   plate floating ~15% away from it. The offset lives on the deck rather than on
+   the lockups, which keeps each card's own transform free for the fan. */
+.lockupDeck {
+  position: absolute;
+  left: var(--page-pad);
+  bottom: var(--page-pad);
+  transform: translate(-14.6%, 12.5%);
+  z-index: 3;
+  width: clamp(285px, 31vw, 465px);
+  animation: deckSettle 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.35s backwards;
+}
+@keyframes deckSettle {
+  from { opacity: 0; transform: translate(-14.6%, calc(12.5% + 14px)); }
+  to   { opacity: 1; transform: translate(-14.6%, 12.5%); }
+}
+
+.lockup {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+/* The front card holds the flow and sets the deck's height. The two behind it
+   are taken out of flow and stacked on it, so the deck is exactly one mark tall
+   whether or not it is fanned. */
+.lockupBack,
+.lockupMid {
+  position: absolute;
+  inset: 0;
+}
+.lockupBack { z-index: 1; }
+.lockupMid  { z-index: 2; }
+.lockupFront {
+  position: relative;
+  z-index: 3;
+}
+
+/* Fan. Percentages resolve against each card's own width, so the spread holds
+   across the clamp. Staggered so the far card leads and the near one follows. */
+.lockupDeck:hover .lockupMid {
+  transform: translate(26%, -5%) rotate(4deg);
+  transition-delay: 0.02s;
+}
+.lockupDeck:hover .lockupBack {
+  transform: translate(50%, -10%) rotate(8deg);
+  transition-delay: 0.06s;
+}
+
+/* Studio line in the bottom-right corner, opposite the mark. No lockup beside
+   it here: the deck at bottom left is already carrying the identity. */
+.tag {
+  position: absolute;
+  right: var(--page-pad);
+  bottom: var(--page-pad);
+  z-index: 3;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(30px, 4.6vw, 78px);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--footer);
+  text-transform: lowercase;
+  pointer-events: none;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s backwards;
+}
+
+.mountainWrap {
+  position: absolute;
+  bottom: 80px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.mountainSvg { width: 100%; height: 100px; display: block; }
+.mountainLine { stroke: rgba(0, 0, 0, 0.28); }
+
+/* Must be declared locally. Lightning CSS scopes animation-name inside a CSS
+   module, so referencing the fadeUp in globals.css resolves to a hashed name
+   that does not exist and the animation silently never runs. */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.tempBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px var(--page-pad);
+  background: var(--bg);
+  border-top: 1px solid rgba(0, 0, 0, 0.10);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: rgba(0, 0, 0, 0.4);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  z-index: 200;
+}
+
+/* === MOBILE ===
+   Same poster as desktop, rescaled. The nav is the hero type at top left, the
+   lockup holds the bottom-left corner, the horizon runs above the footer. An
+   earlier pass built a separate stacked layout here; it read as a different
+   site, so it is gone. */
+@media (max-width: 768px) {
+  .tempBar { display: none; }
+
+  .navCol { top: max(var(--page-pad), 52px); }
+  /* Padding buys a ~45px touch target; the matching negative margin cancels it
+     out so the stack still reads as tight as it does on desktop. */
+  .heroLink {
+    line-height: 0.85;
+    padding: 7px 0;
+    margin: -7px 0;
+  }
+  /* Hover cannot resolve on touch, so the desktop nudge would stick after a tap. */
+  .heroLink:hover { color: var(--ink); transform: none; }
+  .heroLink:active { color: var(--accent); }
+
+  .lockupDeck { width: min(74vw, 340px); }
+  .tag { font-size: clamp(24px, 8vw, 38px); }
+  /* Touch cannot resolve hover, so the fan would stick after a tap. */
+  .lockupDeck:hover .lockupMid,
+  .lockupDeck:hover .lockupBack { transform: none; }
+
+  /* Studio line in the bottom-right corner, opposite the mark. No lockup beside
+   it here: the deck at bottom left is already carrying the identity. */
+.tag {
+  position: absolute;
+  right: var(--page-pad);
+  bottom: var(--page-pad);
+  z-index: 3;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(30px, 4.6vw, 78px);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--footer);
+  text-transform: lowercase;
+  pointer-events: none;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s backwards;
+}
+
+.mountainWrap { bottom: 26px; }
+  .mountainSvg { height: 64px; }
+}
+
+/* Short viewports: Safari with both toolbars up. The lockup shrinks so it does
+   not climb into the nav stack. */
+@media (max-width: 768px) and (max-height: 700px) {
+  .navCol { top: max(var(--page-pad), 46px); }
+  .lockupDeck { width: min(66vw, 288px); }
+  /* Studio line in the bottom-right corner, opposite the mark. No lockup beside
+   it here: the deck at bottom left is already carrying the identity. */
+.tag {
+  position: absolute;
+  right: var(--page-pad);
+  bottom: var(--page-pad);
+  z-index: 3;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(30px, 4.6vw, 78px);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--footer);
+  text-transform: lowercase;
+  pointer-events: none;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s backwards;
+}
+
+.mountainWrap { bottom: 16px; }
+  .mountainSvg { height: 48px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lockupDeck, .tag, .heroLink { animation: none !important; }
+  .lockup { transition: none !important; }
+  /* Every entrance keyframe starts at opacity 0 with `backwards` fill, so
+     killing the animation is enough to leave everything fully visible. */
+  .heroLink { transition: color 0.3s ease !important; }
+  .heroLink:hover { transform: none; }
+}

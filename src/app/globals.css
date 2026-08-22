@@ -5,7 +5,14 @@
 :root {
   --font-display: 'Manrope', -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
-  --accent: #FF3000;
+  --accent: #F04E42;
+  /* Matches the rgba(0,0,0,0.04) blocks inside the case studies. */
+  --footer: #F5F5F5;
+  --bg: #FFFFFF;
+  --ink: #111111;
+  --ink-2: rgba(0, 0, 0, 0.62);
+  --ink-3: rgba(0, 0, 0, 0.38);
+  --rule: rgba(0, 0, 0, 0.10);
   --brand-blue: #13294B;
   --brand-gold: #866D4B;
   --brand-wheat: #FDD086;
@@ -16,12 +23,12 @@
   :root { --page-pad: 16px; }
 }
 
-html { scroll-behavior: smooth; background: #111111; }
+html { scroll-behavior: smooth; background: var(--bg); }
 
 body {
   font-family: var(--font-mono);
-  background: #111111;
-  color: rgba(255, 255, 255, 0.85);
+  background: var(--bg);
+  color: rgba(0, 0, 0, 0.85);
   margin: 0;
   -webkit-font-smoothing: antialiased;
   line-height: 1.7;
@@ -32,7 +39,7 @@ a { -webkit-tap-highlight-color: transparent; }
 
 /* Nav pill hover (matches evan---roberts.com, using the RDS accent) */
 .rds-nav-pill { transition: background 0.15s ease, border-color 0.15s ease; }
-.rds-nav-pill:hover { background: rgba(255, 48, 0, 0.16) !important; border-color: rgba(255, 48, 0, 0.45) !important; }
+.rds-nav-pill:hover { background: rgba(240, 78, 66, 0.16) !important; border-color: rgba(240, 78, 66, 0.45) !important; }
 .rds-nav-pill:hover .nav-num { background: var(--hdr-accent) !important; color: #fff !important; }
 .mono-num { font-family: var(--font-mono); font-feature-settings: "tnum"; }
 
@@ -40,6 +47,19 @@ a { -webkit-tap-highlight-color: transparent; }
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Star interior. Both are referenced from inline styles (the dots are built in
+   JS, the outline snake is an inline `animation`), so they cannot be scoped to
+   a CSS module: Lightning CSS hashes module keyframe names and an inline
+   reference would resolve to a name that does not exist. */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.7; }
+}
+@keyframes starSnake {
+  0% { stroke-dashoffset: 3000; }
+  100% { stroke-dashoffset: 0; }
 }
 
 /* Header settles down from the top edge on load. */
@@ -65,7 +85,7 @@ a { -webkit-tap-highlight-color: transparent; }
   height: 200%;
   z-index: 9999;
   pointer-events: none;
-  opacity: 0.035;
+  opacity: 0.022;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 256px 256px;
   animation: grainShift 0.5s steps(4) infinite;
@@ -100,11 +120,11 @@ body.reader-open .site-root { filter: blur(6px); }
   height: min(90vh, 920px);
   display: flex;
   flex-direction: column;
-  background: #111111;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.22);
   transform: translateY(16px);
   animation: readerRise 0.32s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
@@ -114,7 +134,7 @@ body.reader-open .site-root { filter: blur(6px); }
   align-items: center;
   justify-content: space-between;
   padding: 14px 16px 14px 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.10);
   flex-shrink: 0;
 }
 .reader-title {
@@ -123,7 +143,7 @@ body.reader-open .site-root { filter: blur(6px); }
   text-transform: uppercase;
   letter-spacing: -0.01em;
   font-size: 15px;
-  color: #ffffff;
+  color: #111111;
 }
 .reader-x {
   width: 34px;
@@ -131,8 +151,8 @@ body.reader-open .site-root { filter: blur(6px); }
   padding: 0;
   border: 0;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
+  background: rgba(0, 0, 0, 0.07);
+  color: #111111;
   line-height: 0;
   cursor: pointer;
   display: inline-flex;
@@ -142,7 +162,7 @@ body.reader-open .site-root { filter: blur(6px); }
   flex-shrink: 0;
 }
 .reader-x svg { display: block; }
-.reader-x:hover { background: var(--accent); }
+.reader-x:hover { background: var(--accent); color: #ffffff; }
 .reader-frame { flex: 1; width: 100%; border: 0; background: #ffffff; }
 .reader-empty {
   flex: 1;
@@ -151,7 +171,7 @@ body.reader-open .site-root { filter: blur(6px); }
   justify-content: center;
   font-family: var(--font-mono);
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.45);
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -165,7 +185,7 @@ body.reader-open .site-root { filter: blur(6px); }
   font-size: 10px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(0, 0, 0, 0.42);
 }
 .reader-article { max-width: none; }
 .reader-article h3 {
@@ -182,7 +202,7 @@ body.reader-open .site-root { filter: blur(6px); }
   font-weight: 400;
   font-size: 17px;
   line-height: 1.75;
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(0, 0, 0, 0.75);
   margin: 0 0 20px;
 }
 .reader-article p.reader-dek {
@@ -190,12 +210,12 @@ body.reader-open .site-root { filter: blur(6px); }
   font-size: clamp(20px, 2.4vw, 28px);
   line-height: 1.25;
   letter-spacing: -0.01em;
-  color: #ffffff;
+  color: #111111;
   margin: 12px 0 32px;
 }
-.reader-article em { font-style: italic; color: #ffffff; }
-.reader-article strong { font-weight: 700; color: #ffffff; }
-.reader-article p:last-child { color: rgba(255, 255, 255, 0.92); font-weight: 500; }
+.reader-article em { font-style: italic; color: #111111; }
+.reader-article strong { font-weight: 700; color: #111111; }
+.reader-article p:last-child { color: rgba(0, 0, 0, 0.9); font-weight: 500; }
 
 /* Attribution closing a Reading entry. Declared after p:last-child on purpose:
    the source line is always last, and it should recede rather than land like a
@@ -205,18 +225,18 @@ body.reader-open .site-root { filter: blur(6px); }
   font-size: 12px;
   line-height: 1.7;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.42);
+  color: rgba(0, 0, 0, 0.45);
   margin: 44px 0 0;
   padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 .reader-article a {
   color: var(--accent);
   text-decoration: none;
-  border-bottom: 1px solid rgba(255, 48, 0, 0.4);
+  border-bottom: 1px solid rgba(240, 78, 66, 0.4);
   transition: color 0.2s ease, border-color 0.2s ease;
 }
-.reader-article a:hover { color: #ffffff; border-bottom-color: rgba(255, 255, 255, 0.55); }
+.reader-article a:hover { color: #111111; border-bottom-color: rgba(0, 0, 0, 0.55); }
 
 /* === READER ON MOBILE: full sheet, not a shrunken modal ===
    A 94vw x 90vh panel on a phone is a modal pretending it has room. Below 768
@@ -244,7 +264,7 @@ body.reader-open .site-root { filter: blur(6px); }
     position: sticky;
     top: 0;
     z-index: 2;
-    background: #111111;
+    background: #FFFFFF;
     gap: 14px;
     padding: 14px 12px 14px 18px;
     padding-top: max(14px, env(safe-area-inset-top));
@@ -258,8 +278,8 @@ body.reader-open .site-root { filter: blur(6px); }
     overflow: hidden;
   }
   .reader-x { width: 38px; height: 38px; }
-  .reader-x:hover { background: rgba(255, 255, 255, 0.1); }
-  .reader-x:active { background: var(--accent); }
+  .reader-x:hover { background: rgba(0, 0, 0, 0.07); }
+  .reader-x:active { background: var(--accent); color: #ffffff; }
 
   /* Bottom pad clears the Safari toolbar, which overlays the last line. */
   .reader-article-inner { padding: 30px 20px calc(120px + env(safe-area-inset-bottom)); }

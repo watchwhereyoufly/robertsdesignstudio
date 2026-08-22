@@ -1,16 +1,9 @@
-import type { Metadata } from "next";
 import styles from "./about.module.css";
 import Header from "@/components/Header";
+import FitText from "@/components/FitText";
 import MountainDraw from "@/components/MountainDraw";
 import MiniFooter from "@/components/MiniFooter";
-import { RDS_PATHS, RDS_STAR_POLYGON, FOOTER_STAGGER } from "@/components/logoPaths";
-
-export const metadata: Metadata = {
-  title: "About | Roberts Design Studio",
-  description:
-    "Roberts Design Studio is an American design company specializing in brand, package, digital, and web design for products that demand craft.",
-  openGraph: { images: ["/og-image.jpg"] },
-};
+import RdsLockup from "@/components/RdsLockup";
 
 export default function About() {
   return (
@@ -18,40 +11,37 @@ export default function About() {
       <Header />
 
       <div className={styles.mountainTop}>
-        <MountainDraw stroke="rgba(255,255,255,0.15)" />
+        <MountainDraw stroke="rgba(0,0,0,0.18)" />
       </div>
 
       <div className={styles.viewport}>
         <div className={styles.page}>
-          <svg className={styles.fixedLogo} viewBox="470 700 1250 800" aria-hidden="true">
-            {RDS_PATHS.map((d, i) => (
-              <path
-                key={i}
-                className={styles.shape}
-                d={d}
-                style={{ ["--dash" as string]: FOOTER_STAGGER[i + 1][0], ["--delay" as string]: `${FOOTER_STAGGER[i + 1][1]}s` }}
-              />
-            ))}
-            <polygon
-              className={styles.shape}
-              points={RDS_STAR_POLYGON}
-              style={{ ["--dash" as string]: FOOTER_STAGGER[0][0], ["--delay" as string]: `${FOOTER_STAGGER[0][1]}s` }}
-            />
-          </svg>
+          {/* The deck, held open. Same three cards as the home page mark, but
+              fanned as a resting state rather than on hover. */}
+          <div className={styles.deck} aria-hidden="true">
+            <RdsLockup tone="grey" className={`${styles.card} ${styles.cardBack}`} />
+            <RdsLockup tone="blue" className={`${styles.card} ${styles.cardMid}`} />
+            <RdsLockup tone="pink" className={`${styles.card} ${styles.cardFront}`} />
+          </div>
 
-          <div className={styles.title}>About</div>
+          <FitText className={styles.title}>Info</FitText>
 
           <p className={styles.body}>
             <strong>Roberts Design Studio</strong> is an American design company specializing in{" "}
-            <strong>brand</strong>, <strong>package</strong>, <strong>digital</strong>, and{" "}
-            <strong>web design</strong>. Founded by <strong>Evan Roberts</strong> in 2025, RDS builds brand
-            systems directly in code.
+            <strong>digital</strong>, <strong>industrial</strong>, and <strong>web design</strong>.
           </p>
 
-          <div className={styles.sectionLabel}>Contact</div>
+          {/* Icon only. The address is gone from the page, so the link needs its
+              own accessible name. */}
           <div className={styles.contact}>
-            <a href="mailto:evan@robertsdesignstudio.com">evan@robertsdesignstudio.com</a>
+            <a href="mailto:evan@robertsdesignstudio.com" aria-label="Email evan@robertsdesignstudio.com">
+              <svg className={styles.mailIcon} viewBox="0 0 688.53 471.65" aria-hidden="true">
+                <path d="M676.82,471.65H13.58c-4.5,0-7.89-2.56-10.61-5.69-2.89-3.33-3.38-7.9-2.69-12.48V11.16C1.67,4.93,6.66.64,13.02,0h664.23c5.91,1.53,9.7,5.86,11.28,11.76v447.63c-1.64,6.43-5.3,10.34-11.7,12.26ZM351.29,296.6l14.61-13.58,8.74-8.27,8.51-7.98,9.48-8.96,5.51-5.07,11.46-10.94,6.53-6.05,6.49-5.95,5.8-6.14,9.45-8.08,16.97-15.99,6.72-6.3,4.98-4.51,5.07-4.82,7.46-7.13,8.01-7.48,7.49-7,7.49-6.99,6.99-6.52,9.27-8.71,7.72-7.25,7.25-6.78,15.72-14.71,9.01-8.48,7.5-7,6.96-6.54,2.1-1.93,15.14-14.21,6.78-6.3,8.99-8.48,7.5-7,8.78-8.21,8.22-7.73,4.7-4.32c.18-.16.82-.75.69-.94l-.86-1.17H51.18c-.38.55-.86,1.21-.61,1.44l1.19,1.1,4.36,4.03,19.98,18.53,7.52,7.01,14.51,13.45,8.21,7.77,5.52,5.01,8.96,8.46,5.02,4.54,7.48,6.98,7.52,6.99,14.46,13.46,5.5,5.03,6.02,5.49,8.72,8.23,13.02,11.97,8.71,8.26,6.01,5.51,7.01,6.5,14.46,13.47,6.51,6.01,7.5,6.98,6.49,6.01,7.49,6.98,6.51,6.01,7.98,7.48,6.02,5.52,8.99,8.46,7.49,7,6.51,6,5.74,5.29,14.23,13.2,8.01,7.49,7.76,7.26,12.21,11,7.1-6.4ZM473.31,246.53l2.85,2.71,9.96,9.49,6.72,6.38,4.32,4.11,10.01,9.52,15.35,14.53,3.11,2.93,7.97,7.52,9.98,9.48,7.47,7.08,4.27,4.08,9.74,9.33,8.51,7.98,8.51,8,11.95,11.49,7.52,7.02,11.47,10.97,8.53,7.98,8.93,8.57,20.02,18.92,6.84,6.55c.36.34,1.61.42,2.13.27V49.63c-1.49-.17-2.54.74-3.59,1.72l-3.39,3.16-7.47,7-7.5,7.01-6.99,6.51-8.51,7.96-8.73,8.26-13.25,12.24-10.48,9.97-7.77,7.26-15.49,14.46-9.73,9.24-6.02,5.52-9.47,8.97-7.01,6.5-8.73,8.25-15.49,14.46-7.76,7.26-7.22,6.77-9.27,8.72-7.51,7-9.46,8.96-5.77,5.31c-.59.54-1.77,1.68-1.72,2.4.05.63,1.01,1.57,1.59,2.12l9,8.53,1.57,1.34ZM225.15,232.4l-3.45-3.04-6.94-6.5-6.51-5.98-6-5.52-7.51-6.98-9.46-8.97-5.02-4.54-7.49-6.97-7.26-6.77-15.28-14.16-6.93-6.54-5.04-4.51-7.66-7.3-7.04-6.44-13.25-12.22-12.47-11.5-7.23-6.75-5.78-5.26-7.51-6.97-9.47-8.99-7.51-6.98-7-6.5-6.5-6-6.75-6.25-10.34-9.6c-.65,1.92-.77,2.89-.77,5v363.32c0,1.13.63,2.23,1.07,2.72l3.48-3.43,6.57-6.39,7.24-6.74,9.7-9.27,12.77-12.18,9.77-9.26,9.72-9.26,10.2-9.76,7.99-7.53,13.56-12.9,9.71-9.28,11.48-10.98,8.72-8.28,9.29-8.73,13.95-13.45,9.29-8.75,8.43-8.04,5.31-5.1,8.96-8.6,9.3-8.71,8.9-8.58c.64-.62,1.74-1.32,1.89-1.97s-.67-2.16-1.18-2.61ZM553.32,362.72l-4.32-3.94-9.45-9.05-10-9.47-9.2-8.79-12.27-11.69-9.5-8.99-8.01-7.51-11.51-10.98-19.94-18.95-9.78-9.29-8.86-8.25c-.6-.56-2.49-.45-3.12.15l-6.24,5.88-13.88,13.04-10.83,10.16-7.24,6.76-7.99,7.52-6.02,5.41-9.45,9.04-8.01,7.49-7.49,6.99-6.18,5.73c-5.82,5.39-14.13,5.03-19.84-.23l-5.99-5.51-6.5-5.99-7.24-6.77-15.27-14.22-13.18-12.24-13.78-12.73-14.46-13.47-4.96-4.56-4.18-3.77-7.84,7.31-8.21,7.78-5.31,5.1-6.48,6.13-11.98,11.47-11.49,10.99-9.51,8.99-10.48,9.99-8.02,7.52-13.75,13.19-11.2,10.77-8.01,7.49-7.96,7.51-4.31,4.13-7.74,7.36-13.18,12.74-10.56,9.96-9.71,9.25-9.51,9-12.27,11.68-8.73,8.51c.52.49,1.6,1.2,2.7,1.2h577.78c1.45,0,2.29-.3,3.46-.91l-9.32-9.01-10.2-9.84-4.71-4.3-6.29-6.09-9.83-9.19-9.42-9.03-8.53-7.98-8.93-8.57-15.75-14.92Z" fill="currentColor" />
+              </svg>
+            </a>
           </div>
+
+          <div className={styles.tag}>make it real.</div>
         </div>
 
         <MiniFooter hideThinBar />

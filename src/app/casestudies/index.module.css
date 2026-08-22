@@ -9,19 +9,28 @@
 }
 
 .page {
-  padding: 72px var(--page-pad) 48px;
+  padding: 56px var(--page-pad) 48px;
   min-height: 100vh;
+}
+
+
+/* Declared locally on purpose: Lightning CSS scopes animation-name inside a CSS
+   module, so the fadeUp in globals.css is unreachable from here. */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .title {
   font-family: var(--font-display);
   font-size: clamp(44px, 7vw, 104px);
   font-weight: 800;
-  color: #ffffff;
+  color: var(--ink);
   line-height: 0.9;
   letter-spacing: -0.03em;
   text-transform: uppercase;
   margin-bottom: 28px;
+  animation: fadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.08s backwards;
 }
 
 .grid {
@@ -36,8 +45,8 @@
    so a long one cannot push the card taller than its neighbours. */
 .card {
   position: relative;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.10);
   text-decoration: none;
   color: inherit;
   display: flex;
@@ -47,9 +56,19 @@
 }
 .card:hover { transform: translateY(-8px); }
 
+/* Cards arrive in reading order behind the title. */
+.card { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) backwards; }
+.card:nth-child(1) { animation-delay: 0.22s; }
+.card:nth-child(2) { animation-delay: 0.30s; }
+.card:nth-child(3) { animation-delay: 0.38s; }
+.card:nth-child(4) { animation-delay: 0.46s; }
+.card:nth-child(5) { animation-delay: 0.54s; }
+.card:nth-child(6) { animation-delay: 0.62s; }
+.card:nth-child(n+7) { animation-delay: 0.70s; }
+
 .cardHeader { display: flex; justify-content: space-between; align-items: flex-start; }
 .cardId {
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(0, 0, 0, 0.32);
   font-size: 10px;
   font-family: var(--font-mono);
   letter-spacing: 0.1em;
@@ -61,7 +80,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 11;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.04);
   overflow: hidden;
   display: block;
 }
@@ -90,7 +109,7 @@
   padding: 0;
   cursor: pointer;
 }
-.cardSoon .imgWrap { background: rgba(255, 255, 255, 0.05); }
+.cardSoon .imgWrap { background: rgba(0, 0, 0, 0.04); }
 /* Dim only while the answer is showing, so the cover is never permanently greyed. */
 .imgDimmed { opacity: 0.32; filter: grayscale(1); }
 .img { transition: opacity 0.25s ease, filter 0.25s ease; }
@@ -106,7 +125,7 @@
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: var(--accent);
-  background: rgba(17, 17, 17, 0.86);
+  background: rgba(255, 255, 255, 0.92);
   border: 1px solid var(--accent);
   border-radius: 999px;
   padding: 7px 14px 8px;
@@ -126,17 +145,17 @@
   font-family: var(--font-display);
   font-size: 20px;
   font-weight: 800;
-  color: #ffffff;
+  color: var(--ink);
   text-transform: uppercase;
   letter-spacing: -0.02em;
 }
 .cardTag {
   font-family: var(--font-mono);
   font-size: 9px;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.55);
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.18);
   padding: 4px 10px;
 }
 /* The study's own headline, set in the display face so it reads as the title of
@@ -147,7 +166,7 @@
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.01em;
-  color: #ffffff;
+  color: var(--ink);
   margin-top: 10px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -183,7 +202,7 @@
 }
 /* Pins the rule to the bottom of the card so it lands at the same height across
    a row even when one card's text is shorter. */
-.divider { width: 100%; border-top: 1px solid rgba(255, 255, 255, 0.08); margin-top: auto; }
+.divider { width: 100%; border-top: 1px solid rgba(0, 0, 0, 0.10); margin-top: auto; }
 
 @media (max-width: 1180px) {
   .cardTitle { font-size: 18px; }
@@ -197,4 +216,8 @@
   .cardTitle { font-size: 20px; }
   .headline { font-size: 16px; -webkit-line-clamp: 3; }
 
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .title, .card { animation: none !important; }
 }

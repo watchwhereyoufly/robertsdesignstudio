@@ -33,7 +33,7 @@ export default function GlitchLink({
       for (let i = 0; i < len; i++) {
         if (resolved[i]) result += original[i];
         else if (original[i] === " ") result += " ";
-        else result += '<span style="color:#FF3000">' + CHARS[Math.floor(Math.random() * CHARS.length)] + "</span>";
+        else result += '<span style="color:#F04E42">' + CHARS[Math.floor(Math.random() * CHARS.length)] + "</span>";
       }
       link!.innerHTML = result;
       if (progress < 1) requestAnimationFrame(frame);
