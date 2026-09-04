@@ -2,7 +2,13 @@
 
 import { useLayoutEffect, useRef } from "react";
 
-// A single line of display type scaled to exactly fill its measure.
+// Fraction of the measure the ink fills. 1 is edge to edge; below that the type
+// pulls in off the right margin and gets quieter. One number governs every
+// display line on the site -- the home nav stack imports it too, so the four
+// pages can never drift apart.
+export const TITLE_FILL = 0.55;
+
+// A single line of display type scaled to fill its measure by TITLE_FILL.
 //
 // A vw value cannot do this: the right size depends on the string's own advance
 // widths, so "About" and "Case Studies" need very different sizes to span the
@@ -12,10 +18,12 @@ export default function FitText({
   children,
   className,
   as: Tag = "div",
+  fill = TITLE_FILL,
 }: {
   children: string;
   className?: string;
   as?: "div" | "h1";
+  fill?: number;
 }) {
   const ref = useRef<HTMLElement>(null);
 
@@ -51,7 +59,7 @@ export default function FitText({
       const cs = getComputedStyle(el);
       const ctx = canvas.getContext("2d");
       if (!ctx) {
-        el.style.fontSize = `${(PROBE * measure) / w}px`;
+        el.style.fontSize = `${(PROBE * measure * fill) / w}px`;
         return;
       }
       ctx.font = `${cs.fontWeight} ${PROBE}px ${cs.fontFamily}`;
@@ -62,7 +70,7 @@ export default function FitText({
       const lead = hasInk ? -first.actualBoundingBoxLeft : 0;
       const trail = hasInk ? last.width - last.actualBoundingBoxRight : 0;
 
-      const size = (PROBE * measure) / (w - lead - trail);
+      const size = (PROBE * measure * fill) / (w - lead - trail);
       const scale = size / PROBE;
       el.style.fontSize = `${size}px`;
       el.style.marginLeft = `${-lead * scale}px`;
@@ -89,7 +97,7 @@ export default function FitText({
     const ro = new ResizeObserver(fit);
     ro.observe(el.parentElement ?? el);
     return () => ro.disconnect();
-  }, [children]);
+  }, [children, fill]);
 
   return (
     <Tag ref={ref as never} className={className} style={{ whiteSpace: "nowrap" }}>

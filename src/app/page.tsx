@@ -1,17 +1,13 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import styles from "./home.module.css";
 import Header from "@/components/Header";
-import MiniFooter from "@/components/MiniFooter";
 import GlitchLink from "@/components/GlitchLink";
 import RdsLockup from "@/components/RdsLockup";
-
-const MOUNTAIN_POINTS =
-  "0,100 60,95 120,85 180,70 240,90 300,60 360,75 420,45 480,65 540,35 580,50 620,25 660,40 700,15 730,30 760,10 790,25 820,18 860,35 900,50 940,65 980,55 1020,70 1060,80 1100,75 1140,85 1200,90";
+import { TITLE_FILL } from "@/components/FitText";
 
 export default function Studio() {
-  const mtnRef = useRef<SVGPolylineElement>(null);
   const navRef = useRef<HTMLDivElement>(null);
 
   // The nav IS the page: three words set to the full measure, so the longest
@@ -60,24 +56,30 @@ export default function Studio() {
         }
       }
 
-      const size = (PROBE * measure) / (widest - lead - trail);
+      const size = (PROBE * measure * TITLE_FILL) / (widest - lead - trail);
       nav.style.setProperty("--nav-size", `${size}px`);
       nav.style.setProperty("--nav-lead", `${(-lead * size) / PROBE}px`);
 
-      // Optical top. The cap line sits below the element's box top by the line
-      // box's half-leading plus the gap between the font's ascent and its cap
-      // height, and both scale with the size -- so a fixed px `top` can never
-      // hold across viewports. Measure the real offset and cancel it, which
-      // lands the caps on the same margin the left and right edges use.
+      // Optical centring. The stack is centred with top:50% and a -50% shift,
+      // but that centres the BOX, and the box is not the type: half-leading sits
+      // above the cap line, and the descent below the last baseline is empty on
+      // words with no descenders. Centring the box therefore parks the ink low.
+      // Measure where the ink actually starts and ends inside the stack, and
+      // cancel the difference between the ink's centre and the box's.
       const cs = getComputedStyle(links[0]);
       const ctx = canvas.getContext("2d");
       if (!ctx) return;
       ctx.font = `${cs.fontWeight} ${size}px ${cs.fontFamily}`;
-      const m = ctx.measureText(links[0].textContent || "C");
-      if (m.actualBoundingBoxAscent == null) return; // leave the trim at 0
+      const first = ctx.measureText(links[0].textContent || "C");
+      const last = ctx.measureText(links[links.length - 1].textContent || "C");
+      if (first.actualBoundingBoxAscent == null) return; // leave the trim at 0
       const lh = parseFloat(cs.lineHeight) || size;
-      const baseline = (lh - (m.fontBoundingBoxAscent + m.fontBoundingBoxDescent)) / 2 + m.fontBoundingBoxAscent;
-      nav.style.setProperty("--nav-trim", `${-(baseline - m.actualBoundingBoxAscent)}px`);
+      // Where the baseline falls inside any one line box.
+      const baseline = (lh - (first.fontBoundingBoxAscent + first.fontBoundingBoxDescent)) / 2 + first.fontBoundingBoxAscent;
+      const inkTop = baseline - first.actualBoundingBoxAscent;
+      const inkBottom = (links.length - 1) * lh + baseline + last.actualBoundingBoxDescent;
+      const boxHeight = links.length * lh;
+      nav.style.setProperty("--nav-trim", `${-((inkTop + inkBottom) / 2 - boxHeight / 2)}px`);
     };
 
     fit();
@@ -91,18 +93,6 @@ export default function Studio() {
     return () => ro.disconnect();
   }, []);
 
-  useEffect(() => {
-    // mountain draws itself in once it is on screen
-    if (mtnRef.current) {
-      const line = mtnRef.current;
-      const obs = new IntersectionObserver(
-        ([e]) => { if (e.isIntersecting) line.style.strokeDashoffset = "0"; },
-        { threshold: 0.1 }
-      );
-      obs.observe(line);
-    }
-  }, []);
-
   return (
     <>
       <Header theme="light" hidePills />
@@ -113,36 +103,24 @@ export default function Studio() {
         <div className={styles.navCol} ref={navRef}>
           <GlitchLink href="/casestudies/" className={styles.heroLink}>Case Studies</GlitchLink>
           <GlitchLink href="/research/" className={styles.heroLink}>Research</GlitchLink>
-          <GlitchLink href="/about/" className={styles.heroLink}>Info</GlitchLink>
-        </div>
-
-        <div className={styles.mountainWrap}>
-          <svg className={styles.mountainSvg} viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <polyline
-              ref={mtnRef}
-              className={styles.mountainLine}
-              fill="none"
-              strokeWidth={1.5}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              points={MOUNTAIN_POINTS}
-              style={{ strokeDasharray: 2000, strokeDashoffset: 2000, transition: "stroke-dashoffset 6s ease" }}
-            />
-          </svg>
         </div>
 
         {/* Hovering fans the other two colourways out to the right, like
             pulling cards off a deck. Pink stays put as the face card. */}
         <div className={styles.lockupDeck}>
           <RdsLockup tone="grey" className={`${styles.lockup} ${styles.lockupBack}`} />
-          <RdsLockup tone="blue" className={`${styles.lockup} ${styles.lockupMid}`} />
+          <RdsLockup tone="black" className={`${styles.lockup} ${styles.lockupMid}`} />
           <RdsLockup tone="pink" className={`${styles.lockup} ${styles.lockupFront}`} />
         </div>
 
-        <div className={styles.tag}>make it real.</div>
+        {/* The studio line, opposite the deck. It carried its own page until the
+            sentence turned out to be the whole page. */}
+        <p className={styles.studioLine}>
+          <strong>Roberts Design Studio</strong> is an American design company specializing in{" "}
+          <strong>brand identity</strong>, <strong>art direction</strong>, and{" "}
+          <strong>web design</strong>.
+        </p>
       </div>
-
-      <MiniFooter hideThinBar />
       </div>
     </>
   );

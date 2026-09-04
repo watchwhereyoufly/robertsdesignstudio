@@ -6,7 +6,7 @@ export const body = `
     <div class="hero-facts">
       <div class="hero-meta" style="flex-direction:column;gap:0;max-width:none;margin-top:0;">
         <span>Client: Cienfuegos</span>
-        <span>Scope: Identity, Packaging, Bottle Platform, Web</span>
+        <span class="hero-scope">Scope:<span class="hero-pill">Identity</span><span class="hero-pill">Packaging</span><span class="hero-pill">Bottle Platform</span><span class="hero-pill">Web</span></span>
         <span>Industry: Members-Only Tequila</span>      </div>
       <div class="hero-credit">
         <img src="assets/evan-headshot.jpg?v=4" alt="Evan Roberts">
@@ -17,7 +17,7 @@ export const body = `
       </div>
     </div>
   </div>
-    <div class="hero-tag"><img class="hero-tag-mark" src="/rds-lockup-blue.svg" alt=""><span>make it real.</span></div>
+    <div class="hero-tag"><img class="hero-tag-mark" src="/rds-lockup-black.svg" alt=""><span>make it real.</span></div>
 </div>
 
 <!-- MOUNTAIN DIVIDER -->
@@ -79,8 +79,8 @@ export const body = `
       <div class="ed-stat-label">Variants the identity had to survive</div>
     </div>
     <p class="ed-body">A members-only club releases variants constantly. The identity had to hold across all of them without a new mold, a new system, or a new argument every time.</p>
-    <p class="ed-body">The real problem underneath the brief was structural, not decorative. <strong>The brand had to be a set of rules, not a look.</strong></p>
-    <p class="ed-body">Gold was never a taste question. It was a scale question. An accent that has to be re-decided every release is a cost, not a system.</p>
+    <p class="ed-body">The real problem underneath the brief was structural. <strong>The brand had to be a set of rules that survive ten releases.</strong></p>
+    <p class="ed-body">Gold was never a taste question, it was a scale question. An accent that has to be re-decided every release is a recurring cost.</p>
   </div>
   </div>
   <figure style="margin:80px 0 0;position:relative;z-index:1;width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);">
@@ -102,10 +102,10 @@ export const body = `
   <div class="ed-header" style="position:relative;z-index:1;">The Approach</div>
   <div class="ed-two-col" style="position:relative;z-index:1;">
     <div class="ed-text-col">
-      <p class="ed-body">The reframe was one sentence: <strong>Cienfuegos is the beautiful thing fire leaves behind.</strong> Not the flame, not the heat, the aftermath. That single move decided every material question that followed, and it took gold off the table permanently.</p>
-      <p class="ed-body">Matte black ceramic became the primary surface, textured rather than glazed, so the bottle reads as earth after a burn instead of as luxury packaging. The palette narrowed to ash, sand, moss, clay, and char, with <strong>no metallic anywhere in the build</strong>.</p>
-      <p class="ed-body">The variant system does the heavy lifting. A leather colorway band wraps the lower third of the bottle, and that band is the only element that changes between variants. One mold, one ceramic body, one wordmark, ten releases. The band carries the release information so the ceramic never has to.</p>
-      <p class="ed-body">The wordmark was rebuilt as a restrained condensed serif with a single agave flame above it, and then left alone. The closure is a blonde bartop cork under a numbered seal, so scarcity is legible on the object itself.</p>
+      <p class="ed-body">The reframe was one sentence. <strong>Cienfuegos is the beautiful thing fire leaves behind.</strong> The aftermath, not the flame itself. That single move decided every material question that followed, and it took gold off the table permanently.</p>
+      <p class="ed-body">I specified matte black ceramic as the primary surface, textured rather than glazed, so the bottle reads as earth after a burn. The palette narrowed to ash, sand, moss, clay, and char, with <strong>no metallic anywhere in the build</strong>.</p>
+      <p class="ed-body">I moved every variable onto a leather colorway band wrapping the lower third. That band is the only element that changes between variants. One mold, one ceramic body, one wordmark, ten releases. The band carries the release information so the ceramic never has to.</p>
+      <p class="ed-body">I rebuilt the wordmark as a restrained condensed serif with a single agave flame above it, then left it alone. The closure is a blonde bartop cork under a numbered seal, so scarcity is legible on the object itself.</p>
     </div>
     <div style="margin-top:-100px;width:calc(100% + 80px);margin-left:-80px;">
       <figure style="margin:0;">
@@ -139,11 +139,11 @@ export const body = `
         <tbody>
                     <tr>
             <td>Matte black ceramic over gold-accent heritage</td>
-            <td>Took the category default off the table and made every later material decision follow one rule.</td>
+            <td>Every later material decision followed from it.</td>
           </tr>
           <tr>
             <td>Leather band as the only variable element</td>
-            <td>Ten colorways ship from one mold and one ceramic body. No retooling per variant.</td>
+            <td>Ten colorways come off one mold and one ceramic body. No retooling per variant.</td>
           </tr>
           <tr>
             <td>Release data carried on the band and seal</td>
@@ -151,7 +151,7 @@ export const body = `
           </tr>
           <tr>
             <td>Glass tier built on the same silhouette</td>
-            <td>A member complaint became a product line instead of an exception to the system.</td>
+            <td>A member complaint became a product line the system already had room for.</td>
           </tr>
         </tbody>
       </table>
@@ -216,8 +216,8 @@ export const body = `
   <div class="ed-label">Title: Brand System</div>
   <div class="ed-header">The System</div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
-    <p class="ed-body">A bottle platform rather than a bottle. Silhouette, ceramic body, band placement, seal, neck strip, and the rules that decide which of them may change. One system. Every release.</p>
-    <p class="ed-body">The system is written so a ceramicist in Hidalgo, a leather supplier, and a fulfilment team all read the same answer. It specifies proportion and sequence, not preference, so a new colorway is a decision already made.</p>
+    <p class="ed-body">A bottle platform. Silhouette, ceramic body, band placement, seal, neck strip, and the rules that decide which of them may change. One system carries every release.</p>
+    <p class="ed-body">The system is written so a ceramicist in Hidalgo, a leather supplier, and a fulfilment team all read the same answer. It specifies proportion and sequence, so a new colorway is a decision already made.</p>
   </div>
 
   <!-- Brand Guidelines Deck -->
@@ -237,8 +237,8 @@ export const body = `
   <div class="ed-label">Title: The Member Site</div>
   <div class="ed-header">The Member Site</div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
-    <p class="ed-body">A members-only site built directly in code: waitlist, access flow, member dashboard, and the bottle-rights logic that governs what a membership actually holds. No mockups. No handoffs. What I designed is what shipped.</p>
-    <p class="ed-body">This is what I call <strong>Direct Design</strong>. Build directly in the medium. The browser is the canvas. The feedback loop collapses from weeks to minutes. Every decision is tested against real constraints, real content, real devices. Not a simulation of a website. The website.</p>
+    <p class="ed-body">A members-only site built directly in code: waitlist, access flow, member dashboard, and the bottle-rights logic that governs what a membership actually holds.</p>
+    <p class="ed-body">Building in the browser is the only way I would have caught what the access flow does to a stranger. A member and a non-member see different sites here. That is something you have to click through, not something you can draw.</p>
   </div>
 
   <!-- Website Screenshots Deck -->
@@ -261,7 +261,7 @@ export const body = `
   <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;margin-bottom:48px;">
     <div>
       <div class="ed-stat">10</div>
-      <div class="ed-stat-label">Colorway variants shipping from a single ceramic mold</div>
+      <div class="ed-stat-label">Colorway variants off a single ceramic mold</div>
     </div>
     <div>
       <div class="ed-stat">3</div>
@@ -285,7 +285,7 @@ export const body = `
       <tbody>
                 <tr>
           <td>Gold-accent heritage direction</td>
-          <td>Matte black ceramic platform with no metallic anywhere in the build</td>
+          <td>Matte black ceramic, textured, from a single Hidalgo mold</td>
         </tr>
         <tr>
           <td>One-off packaging per release</td>
@@ -293,11 +293,11 @@ export const body = `
         </tr>
         <tr>
           <td>Opaque bottle hiding its own fill</td>
-          <td>Glass tier in clear flint, smoked, and amber on the same silhouette</td>
+          <td>Clear flint, smoked, and amber, all on the original silhouette</td>
         </tr>
         <tr>
           <td>Release information printed on the body</td>
-          <td>Release number and year carried on the seal and the band</td>
+          <td>Release number and year legible without reprinting the ceramic</td>
         </tr>
         <tr>
           <td>No membership infrastructure</td>
@@ -333,8 +333,8 @@ export const body = `
   <div class="ed-label">Title: Reflection</div>
   <div class="ed-header" style="font-size:clamp(32px,5vw,56px);">What I Would Do Differently</div>
   <div style="max-width:800px;margin:0 auto;">
-    <p class="ed-body">With more time I would have built the glass tier into the first platform document instead of adding it after the members found the flaw. The complaint was correct and it was predictable. What surprised me is how much work one sentence did. Once the brand was the thing fire leaves behind, the material questions stopped being opinions and started having answers.</p>
-    <p class="ed-body">This platform is ongoing. Releases keep coming. But the rules are set, and they are set so that a new variant costs a band and not a rebuild.</p>
+    <p class="ed-body">With more time I would have built the glass tier into the first platform document instead of adding it after the members found the flaw. The complaint was correct and it was predictable. One sentence did most of the work on this project. Once the brand was the thing fire leaves behind, the material questions stopped being opinions and started having answers.</p>
+    <p class="ed-body">The platform is ongoing and releases keep coming. The rules are set so a new variant costs a band.</p>
     <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin-top:48px;">
       <img src="assets/evan-headshot.jpg?v=4" alt="Evan Roberts" style="width:44px;height:44px;border-radius:50%;object-fit:cover;">
       <div style="text-align:left;">

@@ -3,12 +3,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { STAR_PATH } from "./logoPaths";
+import { MARK_VIEWBOX, MARK_ASTERISK } from "./logoPaths";
 
 const TABS = [
   { label: "Case Studies", href: "/casestudies/" },
   { label: "Research", href: "/research/" },
-  { label: "Info", href: "/about/" },
 ] as const;
 
 const DARK_VARS: React.CSSProperties = {
@@ -19,7 +18,7 @@ const DARK_VARS: React.CSSProperties = {
   ["--pill" as string]: "rgba(255,255,255,0.06)",
   ["--pill-hover" as string]: "rgba(255,255,255,0.11)",
   ["--pill-active" as string]: "rgba(255,255,255,0.16)",
-  ["--hdr-accent" as string]: "#F04E42",
+  ["--hdr-accent" as string]: "#ED2777",
 };
 const LIGHT_VARS: React.CSSProperties = {
   ["--rule" as string]: "rgba(17,17,19,0.08)",
@@ -29,7 +28,7 @@ const LIGHT_VARS: React.CSSProperties = {
   ["--pill" as string]: "rgba(17,17,19,0.05)",
   ["--pill-hover" as string]: "rgba(17,17,19,0.09)",
   ["--pill-active" as string]: "rgba(17,17,19,0.13)",
-  ["--hdr-accent" as string]: "#F04E42",
+  ["--hdr-accent" as string]: "#ED2777",
 };
 
 const GLASS: React.CSSProperties = {
@@ -38,11 +37,22 @@ const GLASS: React.CSSProperties = {
   border: "1px solid var(--rule)",
 };
 
+// Every page renders its own Header, so a client navigation unmounts and
+// remounts this component and the CSS entrance animation runs again -- the mark
+// re-drops on a bar that never actually left the screen. Module scope outlives
+// the remount and only resets on a full page load, which is exactly when the
+// entrance is honest.
+let hasEntered = false;
+
 export default function Header({ theme = "light", hidePills = false }: { theme?: "dark" | "light"; hidePills?: boolean }) {
   const [mounted, setMounted] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [expanded, setExpanded] = useState(false);
+  // Read in the initialiser, not in render: the effect below flips the flag, and
+  // reading it during render would make the first paint disagree with itself.
+  const [skipEntrance] = useState(() => hasEntered);
   useEffect(() => {
+    hasEntered = true;
     setMounted(true);
     const update = () => setIsMobile(window.innerWidth < 760);
     update();
@@ -55,8 +65,6 @@ export default function Header({ theme = "light", hidePills = false }: { theme?:
     ? "/casestudies/"
     : pathname.startsWith("/research")
     ? "/research/"
-    : pathname.startsWith("/about")
-    ? "/about/"
     : null;
 
   const renderTab = (label: string, href: string, i: number) => {
@@ -66,11 +74,16 @@ export default function Header({ theme = "light", hidePills = false }: { theme?:
     const inner = (
       <>
         <span
-          className="mono-num nav-num"
+          className="nav-num"
           style={{
-            fontSize: 9,
-            fontWeight: 500,
-            letterSpacing: "0.04em",
+            // Manrope, matching the label. Tabular figures so 01/02/03 hold the
+            // same width and the badges never jitter between routes.
+            fontFamily: "var(--font-display)",
+            fontVariantNumeric: "tabular-nums",
+            fontSize: 10,
+            fontWeight: 600,
+            letterSpacing: 0,
+            lineHeight: 1,
             width: 20,
             height: 20,
             borderRadius: "50%",
@@ -82,12 +95,19 @@ export default function Header({ theme = "light", hidePills = false }: { theme?:
             transition: "background 0.15s ease, color 0.15s ease",
           }}
         >
-          {num}
+          {/* The nudge rides an inner span, never the disc: flex centres the
+              line box, not the ink, and Manrope's figures sit low inside it.
+              Put the transform on the disc and the whole circle moves. */}
+          <span style={{ display: "block", transform: "translate(-0.031em, -0.091em)" }}>{num}</span>
         </span>
+        {/* Manrope, against the body's mono default. The badge beside it stays
+            mono because a number is data; the label is a word. */}
         <span
           style={{
+            fontFamily: "var(--font-display)",
             fontSize: 12,
             fontWeight: active ? 600 : 500,
+            letterSpacing: 0,
             color: active ? "var(--ink)" : "var(--ink-2)",
             transition: "color 0.15s ease",
           }}
@@ -123,7 +143,7 @@ export default function Header({ theme = "light", hidePills = false }: { theme?:
 
   return (
     <div
-      className="rds-header"
+      className={skipEntrance ? "rds-header rds-header-settled" : "rds-header"}
       style={{
         position: "fixed",
         top: 0,
@@ -139,8 +159,9 @@ export default function Header({ theme = "light", hidePills = false }: { theme?:
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16 }}>
           {/* Left: star logo */}
           <Link href="/" aria-label="Roberts Design Studio — home" className="rds-star-link" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", textDecoration: "none" }}>
-            <svg width="30" height="29" viewBox="0 0 456.73 434.8" aria-hidden="true" style={{ display: "block" }}>
-              <path d={STAR_PATH} fill="var(--ink)" />
+            <svg width="42" height="42" viewBox={MARK_VIEWBOX} aria-hidden="true" style={{ display: "block" }}>
+              <circle cx="289.47" cy="289.47" r="289.47" fill="var(--hdr-accent)" />
+              <polygon points={MARK_ASTERISK} fill="#FFFFFF" />
             </svg>
           </Link>
 

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRef } from "react";
 
 const CHARS = "!@#$%&*<?>/\\|[]{}=+~^:;0123456789";
@@ -33,7 +34,7 @@ export default function GlitchLink({
       for (let i = 0; i < len; i++) {
         if (resolved[i]) result += original[i];
         else if (original[i] === " ") result += " ";
-        else result += '<span style="color:#F04E42">' + CHARS[Math.floor(Math.random() * CHARS.length)] + "</span>";
+        else result += '<span style="color:#ED2777">' + CHARS[Math.floor(Math.random() * CHARS.length)] + "</span>";
       }
       link!.innerHTML = result;
       if (progress < 1) requestAnimationFrame(frame);
@@ -45,9 +46,12 @@ export default function GlitchLink({
     requestAnimationFrame(frame);
   }
 
+  // next/link, not a bare anchor: a plain <a> reloads the document, which throws
+  // away every bit of client state the site keeps between routes -- including the
+  // flag that stops the header replaying its entrance on a bar that never left.
   return (
-    <a href={href} className={className} ref={ref} onMouseEnter={onEnter}>
+    <Link href={href} className={className} ref={ref} onMouseEnter={onEnter}>
       {children}
-    </a>
+    </Link>
   );
 }

@@ -84,6 +84,28 @@
 
 .cs-page .hero-title { animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.35s backwards; }
 
+/* Scope reads as pills, matching the discipline tags on the case-study index
+   tiles. Same outlined-accent treatment, scaled up to sit with 18px meta type
+   rather than the 9.5px the tiles use. */
+.cs-page .hero-scope {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.cs-page .hero-pill {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  padding: 6px 12px 7px;
+  white-space: nowrap;
+}
 /* Each detail line arrives on its own beat, landing after the title and before
    the credit. */
 .cs-page .hero-meta > span {
@@ -350,6 +372,8 @@
   .cs-page .hero-facts { gap: 18px; margin-top: 26px; }
   .cs-page .hero-facts > div { width: 100%; max-width: none; }
   .cs-page .hero-meta { flex-wrap: wrap; gap: 2px; margin-top: 0 !important; font-size: 14px; }
+  .cs-page .hero-scope { gap: 5px; row-gap: 6px; }
+  .cs-page .hero-pill { font-size: 10px; padding: 5px 9px 6px; }
   /* The mark is absolutely placed and on desktop it bleeds up behind a tall
      hero. Here it has to stay inside its own bar or it lands on the meta, so the
      bar reserves its height and the mark is pinned to the bottom of it. */

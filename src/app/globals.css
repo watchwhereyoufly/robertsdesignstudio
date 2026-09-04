@@ -5,7 +5,7 @@
 :root {
   --font-display: 'Manrope', -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
-  --accent: #F04E42;
+  --accent: #ED2777;
   /* Matches the rgba(0,0,0,0.04) blocks inside the case studies. */
   --footer: #F5F5F5;
   --bg: #FFFFFF;
@@ -41,7 +41,6 @@ a { -webkit-tap-highlight-color: transparent; }
 .rds-nav-pill { transition: background 0.15s ease, border-color 0.15s ease; }
 .rds-nav-pill:hover { background: rgba(240, 78, 66, 0.16) !important; border-color: rgba(240, 78, 66, 0.45) !important; }
 .rds-nav-pill:hover .nav-num { background: var(--hdr-accent) !important; color: #fff !important; }
-.mono-num { font-family: var(--font-mono); font-feature-settings: "tnum"; }
 
 /* Shared entrance animation */
 @keyframes fadeUp {
@@ -68,12 +67,15 @@ a { -webkit-tap-highlight-color: transparent; }
   to { opacity: 1; transform: translateY(0); }
 }
 .rds-header { animation: fadeDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.05s backwards; }
+/* Already on screen from the previous route: no second entrance. */
+.rds-header-settled { animation: none; }
 
-/* Star logo: one point of rotation on hover, easing into the accent. */
+/* The mark: a half turn on hover. The asterisk sits below the disc's centre, and
+   the svg turns about that centre -- so 180deg is what carries it from the
+   bottom of the disc to the top. The disc already holds the accent, so there is
+   nothing left to fill: the turn is the whole gesture. */
 .rds-star-link svg { transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
-.rds-star-link:hover svg { transform: rotate(72deg); }
-.rds-star-link path { transition: fill 0.3s ease; }
-.rds-star-link:hover path { fill: var(--hdr-accent); }
+.rds-star-link:hover svg { transform: rotate(180deg); }
 
 /* === FILM GRAIN OVERLAY === */
 .film-grain {

@@ -22,3 +22,11 @@ export const FOOTER_STAGGER: [number, number][] = [
 // Big 8-point star (hero spinner, mobile mark, case-study accents)
 export const STAR_PATH =
   "M151.83,434.8l-105.48-76.22,92.08-107.94L0,213.44l40.23-123.78,132.33,54.27L163.42,0h130.5l-9.16,143.92,131.72-54.27,40.25,123.78-137.81,37.2,91.47,107.94-105.5,76.22-76.22-119.52-76.84,119.52Z";
+
+// The RDS mark (Asset 15): accent disc with the five-point asterisk knocked out,
+// sitting low in the circle. Square viewBox, unlike the older bare STAR_PATH.
+// Five-fold symmetry, so the asterisk lands off-grid on a quarter turn -- that
+// asymmetry is the point: you can see it move.
+export const MARK_VIEWBOX = "0 0 578.93 578.93";
+export const MARK_ASTERISK =
+  "386.47 354.44 321.38 382.6 327.02 311.25 251.92 311.25 257.55 382.6 192.47 354.44 169.31 425.78 238.15 443.3 191.84 495.87 252.54 539.68 289.47 480.22 326.39 539.68 387.09 495.87 340.78 443.3 409.62 425.78 386.47 354.44";

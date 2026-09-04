@@ -6,7 +6,7 @@ export const body = `
     <div class="hero-facts">
       <div class="hero-meta" style="flex-direction:column;gap:0;max-width:none;margin-top:0;">
         <span>Client: Molly Powers</span>
-        <span>Scope: Art Direction, Web Design, Build</span>
+        <span class="hero-scope">Scope:<span class="hero-pill">Art Direction</span><span class="hero-pill">Web Design</span><span class="hero-pill">Build</span></span>
         <span>Industry: Writer, Personal Site</span>      </div>
       <div class="hero-credit">
         <img src="assets/evan-headshot.jpg?v=4" alt="Evan Roberts">
@@ -17,7 +17,7 @@ export const body = `
       </div>
     </div>
   </div>
-    <div class="hero-tag"><img class="hero-tag-mark" src="/rds-lockup-blue.svg" alt=""><span>make it real.</span></div>
+    <div class="hero-tag"><img class="hero-tag-mark" src="/rds-lockup-black.svg" alt=""><span>make it real.</span></div>
 </div>
 
 <!-- MOUNTAIN DIVIDER -->
@@ -35,8 +35,8 @@ export const body = `
   <div class="ed-label">Title: The Bet</div>
   <div class="ed-header">The Bet</div>
   <p class="ed-body">Molly Powers is a writer in Brooklyn. She runs a Substack called K, "a coming-of-age publication for the stickers on my laptop," and has spent two years publishing on music, fashion, identity, and a dated series she calls Field Notes.</p>
-  <p class="ed-body">The default move for a writer is a Linktree with a serif font. Competent, dead, scrolled past in four seconds. The second-easiest move is a portfolio that lists her essays and ships every click straight back to Substack.</p>
-  <p class="ed-body">So the brief was a bet, set before the first screen: <strong>build a site that does not list her writing but reads like it.</strong> Her voice in the type. Her rhythm in the scroll.</p>
+  <p class="ed-body">The default move for a writer is a Linktree with a serif font. Competent, and scrolled past in four seconds. The second-easiest move is a portfolio that lists her essays and sends every click straight back to Substack.</p>
+  <p class="ed-body">So the brief was a bet, set before the first screen. <strong>Build a site that reads the way she writes.</strong> Her voice in the type. Her rhythm in the scroll.</p>
 
   <div class="ed-pullquote">
     <div class="ed-pullquote-text">"The only thing that gets me out of bed in the morning is the opportunity to get dressed."</div>
@@ -104,7 +104,7 @@ export const body = `
     <div class="ed-text-col">
       <p class="ed-body">She writes high against low on purpose. "Man-repelling outfit ingenuity" slammed against "copped it." Salomon, Brandy Melville, Supreme dropped in as coordinates that locate a person in space. <strong>The type had to hold both registers without flinching.</strong></p>
       <p class="ed-body">She lives in the margin. Half the personality is in the aside, the self-interruption, the wink at her own pretension. So the margin became the interface: her asides sit where footnotes would, alongside the text rather than buried.</p>
-      <p class="ed-body">Field Notes is her dated, almanac-like series. Instead of a generic Writing list with arrows that ship readers off to Substack, the dated-entry structure drives the architecture. You read her here.</p>
+      <p class="ed-body">Field Notes is her dated, almanac-like series. Instead of a generic Writing list with arrows that send readers off to Substack, the dated-entry structure drives the architecture. You read her here.</p>
       <p class="ed-body">And "un beso" closes her essays, a Spanish kiss-off after English introspection. So the site ends the way her writing ends.</p>
     </div>
     <div style="margin-top:-100px;width:calc(100% + 80px);margin-left:-80px;">
@@ -139,7 +139,7 @@ export const body = `
         <tbody>
                     <tr>
             <td>Read the archive before designing a screen</td>
-            <td>The concept came out of her prose instead of a moodboard, so nothing had to be justified backwards.</td>
+            <td>The concept came out of her prose, so nothing had to be justified backwards.</td>
           </tr>
           <tr>
             <td>Marginalia as the interface</td>
@@ -147,11 +147,11 @@ export const body = `
           </tr>
           <tr>
             <td>Dated Field Notes as the architecture</td>
-            <td>The structure of her own series drives the site instead of a generic writing list.</td>
+            <td>Her own series drives the architecture, so the site is dated the way her work is.</td>
           </tr>
           <tr>
             <td>Keep the reading on the page</td>
-            <td>Every click stays with her rather than shipping the reader off to Substack.</td>
+            <td>A reader finishes an essay without leaving her name.</td>
           </tr>
         </tbody>
       </table>
@@ -217,7 +217,7 @@ export const body = `
   <div class="ed-header">The Type</div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
     <p class="ed-body">With no logo and no photography to hide behind, <strong>the typeface is the identity</strong>. The face had to carry long-form reading without fatigue and hold her voice at the same time, which means a true italic with real character.</p>
-    <p class="ed-body">The wordmark is not a logo. It is her name built from a drifting field of her own initials that resolve into the words and dissolve back into texture as you move through the page. The mark is made of the reading.</p>
+    <p class="ed-body">The wordmark is her name built from a drifting field of her own initials that resolve into the words and dissolve back into texture as you move through the page. The mark is made of the reading.</p>
   </div>
 
   <!-- Brand Guidelines Deck -->
@@ -235,8 +235,8 @@ export const body = `
   <div class="ed-label">Title: The Build</div>
   <div class="ed-header">The Build</div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
-    <p class="ed-body">The whole site is built directly in code, in Next.js. No mockups, no handoff, no translation loss. The wordmark letter-field, the marginalia, the pacing of the scroll, all of it made in the medium it ships in.</p>
-    <p class="ed-body">This is what I call <strong>Direct Design</strong>. Build directly in the medium. The browser is the canvas. The feedback loop collapses from weeks to minutes. Every decision is tested against real constraints, real content, real devices. Not a simulation of a website. The website.</p>
+    <p class="ed-body">The whole site is built directly in code, in Next.js. The wordmark letter-field, the marginalia, the pacing of the scroll, all of it made in the medium it runs in.</p>
+    <p class="ed-body">Scroll pacing does not exist in a static file. I could only find the rhythm of this one by reading it the way a reader would, at real speed, on a real phone. That is the only place the site was ever going to be judged.</p>
   </div>
 
   <!-- Website Screenshots Deck -->
@@ -261,7 +261,7 @@ export const body = `
 <div class="ed-section">
   <div class="ed-label">Title: Results</div>
   <div style="font-family:var(--font-display);font-size:clamp(80px,12vw,180px);font-weight:800;color:#1a1a1a;line-height:0.9;letter-spacing:-0.04em;text-transform:uppercase;margin:16px 0 16px;">The Results</div>
-  <div style="font-family:var(--font-display);font-size:clamp(24px,3vw,36px);font-weight:800;color:#1a1a1a;letter-spacing:-0.02em;margin-bottom:32px;text-transform:uppercase;">One Voice. One Type System.</div>
+  <div style="font-family:var(--font-display);font-size:clamp(24px,3vw,36px);font-weight:800;color:#1a1a1a;letter-spacing:-0.02em;margin-bottom:32px;text-transform:uppercase;">One Voice, One Type System</div>
 
   <!-- Row 1: Stats full width -->
   <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;margin-bottom:48px;">
@@ -275,7 +275,7 @@ export const body = `
     </div>
     <div>
       <div class="ed-stat">100%</div>
-      <div class="ed-stat-label">Of her writing read on the page, not shipped off to Substack</div>
+      <div class="ed-stat-label">Of her archive readable in full on her own page</div>
     </div>
   </div>
 
@@ -291,29 +291,29 @@ export const body = `
       <tbody>
                 <tr>
           <td>A Linktree and a serif default</td>
-          <td>A custom type system built around her italic and her register</td>
+          <td>A face that holds long-form reading and her register at once</td>
         </tr>
         <tr>
           <td>A list of essays with arrows out</td>
-          <td>Dated Field Notes architecture that keeps the reading here</td>
+          <td>A dated index that grows every time she publishes</td>
         </tr>
         <tr>
           <td>Asides buried in a modal</td>
-          <td>Marginalia sitting alongside the text, where the voice lives</td>
+          <td>The aside sits in the margin, at the height of the line it interrupts</td>
         </tr>
         <tr>
           <td>A portfolio that describes her writing</td>
           <td>A site that moves in the rhythm of her sentences</td>
         </tr>
         <tr>
-          <td>Every click shipped to Substack</td>
-          <td>Her work read in full on her own page</td>
+          <td>Every click sent to Substack</td>
+          <td>The essay ends and the next one is already there</td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <div style="font-family:var(--font-display);font-size:clamp(36px,5vw,64px);font-weight:700;line-height:1.05;color:#1a1a1a;letter-spacing:-0.03em;margin-top:48px;text-align:center;">"The site does not list her writing. It reads like it."</div>
+  <div style="font-family:var(--font-display);font-size:clamp(36px,5vw,64px);font-weight:700;line-height:1.05;color:#1a1a1a;letter-spacing:-0.03em;margin-top:48px;text-align:center;">"Her rhythm is the interface."</div>
   <div style="font-family:var(--font-mono);font-size:13px;font-weight:500;color:rgba(0,0,0,0.5);letter-spacing:1px;text-transform:uppercase;margin-top:16px;text-align:center;">Molly Powers, Launch</div>
   <div class="ed-pullquote-meta" style="justify-content:center;gap:24px;margin-top:8px;">
     <span>PQ #003</span>
@@ -334,7 +334,7 @@ export const body = `
   <div class="ed-label">Title: Reflection</div>
   <div class="ed-header" style="font-size:clamp(32px,5vw,56px);">What I Would Do Differently</div>
   <div style="max-width:800px;margin:0 auto;">
-    <p class="ed-body">The hardest part was restraint. A writer's site tempts you toward gimmicks: cursor trails, noise shaders, five components at forty percent. The read on her work said the opposite. One or two real things, fully made.</p>
+    <p class="ed-body">The hardest part was restraint. A writer's site tempts you toward gimmicks: cursor trails, noise shaders, five components at forty percent. The read on her work said the opposite. Two real things, fully made, and nothing else.</p>
     <p class="ed-body">With more time I would build Field Notes into a living, dated index that grows every time she publishes, so the architecture keeps writing itself. But the bet held. Un beso.</p>
     <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin-top:48px;">
       <img src="assets/evan-headshot.jpg?v=4" alt="Evan Roberts" style="width:44px;height:44px;border-radius:50%;object-fit:cover;">

@@ -83,6 +83,7 @@ const CARDS: CaseStudyCard[] = [
       "A Home For a Speaker Series and The Community That Had Already Formed Around It.",
     comingSoon: true,
   },
+  /* Garden Church hidden 2026-09-04. Uncomment to restore.
   {
     slug: "gardenchurch",
     no: "No. 005",
@@ -99,6 +100,7 @@ const CARDS: CaseStudyCard[] = [
     caption:
       "A Rename, a Brand System, and The Templates and Training That Let a Staff Of Non-Designers Run It Without a Designer.",
   },
+  */
   /* Soma Longevity hidden 2026-08-11. Uncomment to restore.
   {
     slug: "somalongevity",

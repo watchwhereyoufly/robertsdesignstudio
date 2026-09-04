@@ -20,11 +20,17 @@ import { useId } from "react";
 export const TONES = {
   // Reads the token so the plate and every accent surface can never drift.
   pink: "var(--accent)",
-  blue: "#1CB9D8",
+  black: "#000000",
   grey: "#B5B5B6",
 } as const;
 
 export type LockupTone = keyof typeof TONES;
+
+// The plate outline, exported so a static hit-target can be cut to the same
+// shape as the artwork without duplicating the whole lockup.
+export const PLATE_POINTS =
+  "168.03 401.2 359 175.32 457.56 183.53 940.12 107.55 983.24 364.24 829.24 448.43 660.85 707.16 398.01 756.45 168.03 401.2";
+export const PLATE_VIEWBOX = "0 0 1151.27 864";
 
 export default function RdsLockup({
   tone = "pink",

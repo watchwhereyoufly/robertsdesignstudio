@@ -6,7 +6,7 @@ export const body = `
     <div class="hero-facts">
       <div class="hero-meta" style="flex-direction:column;gap:0;max-width:none;margin-top:0;">
         <span>Client: Garden Church</span>
-        <span>Scope: Brand System, Guidelines, Templates, Training, Web</span>
+        <span class="hero-scope">Scope:<span class="hero-pill">Brand System</span><span class="hero-pill">Guidelines</span><span class="hero-pill">Templates</span><span class="hero-pill">Training</span><span class="hero-pill">Web</span></span>
         <span>Industry: Faith</span>      </div>
       <div class="hero-credit">
         <img src="assets/evan-headshot.jpg?v=4" alt="Evan Roberts">
@@ -17,7 +17,7 @@ export const body = `
       </div>
     </div>
   </div>
-    <div class="hero-tag"><img class="hero-tag-mark" src="/rds-lockup-blue.svg" alt=""><span>make it real.</span></div>
+    <div class="hero-tag"><img class="hero-tag-mark" src="/rds-lockup-black.svg" alt=""><span>make it real.</span></div>
 </div>
 
 <!-- MOUNTAIN DIVIDER -->
@@ -35,7 +35,7 @@ export const body = `
   <div class="ed-label">Title: The Rename</div>
   <div class="ed-header">The Rename</div>
   <p class="ed-body">Garden Church was planted in 2009 as Anthem CDA. In 2026 it changed its name to match what it had actually become, and <strong>a name change is the moment every inconsistency in a brand becomes visible at once</strong>.</p>
-  <p class="ed-body">A church ships more design per week than most startups. Sunday slides, series artwork, event graphics, social posts, bulletins, signage, the site. None of it made by designers. All of it made on a deadline that does not move.</p>
+  <p class="ed-body">A church puts out more design per week than most startups. Sunday slides, series artwork, event graphics, social posts, bulletins, signage, the site. None of it made by designers. All of it made on a deadline that does not move.</p>
   <p class="ed-body">The staff did not need a designer. They needed to stop needing one.</p>
 
   <div class="ed-pullquote">
@@ -80,7 +80,7 @@ export const body = `
     </div>
     <p class="ed-body">Every week a volunteer opened a blank canvas and made a decision a brand system should have already made for them. Every one of those decisions was a small drift away from the last.</p>
     <p class="ed-body">I was brought in for the rename and the brand system, but the actual brief underneath was operational: <strong>build something a team with no design training can run correctly on a Saturday night without asking anyone.</strong></p>
-    <p class="ed-body">That reframes the deliverable. A logo is an asset. A system is a set of decisions already made.</p>
+    <p class="ed-body">That reframes the deliverable. A system is a set of decisions already made.</p>
   </div>
   </div>
   <figure style="margin:80px 0 0;position:relative;z-index:1;width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);">
@@ -102,10 +102,10 @@ export const body = `
   <div class="ed-header" style="position:relative;z-index:1;">The Approach</div>
   <div class="ed-two-col" style="position:relative;z-index:1;">
     <div class="ed-text-col">
-      <p class="ed-body">The identity is a nine-point symbol and a wide grotesque wordmark, <strong>locked as one unit</strong>, supplied white-on-green as primary and green-on-cream as secondary. It is never redrawn and never cramped.</p>
-      <p class="ed-body">Forest green is the ground, warm cream is the relief, charcoal carries the reading text, and sage tints but never shouts. The proportions are specified as ratios rather than preferences: green holds roughly sixty percent of a branded surface, cream twenty-five, charcoal ten, sage five.</p>
-      <p class="ed-body">That ratio is the single most useful thing in the document, because it answers the question a volunteer actually has, which is not "what green" but <strong>"how much green."</strong></p>
-      <p class="ed-body">Photography is where church branding usually goes wrong: stage closeups, flash, crowd shots, production gear in frame. The direction here is the opposite. Lead with the sacred ordinary, people in relationship, natural light and breathing room.</p>
+      <p class="ed-body">I drew a nine-point symbol and locked it to a wide grotesque wordmark, <strong>locked as one unit</strong>, supplied white-on-green as primary and green-on-cream as secondary. It is never redrawn and never cramped.</p>
+      <p class="ed-body">Forest green is the ground, warm cream is the relief, charcoal carries the reading text, and sage tints but never shouts. I specified the proportions as ratios: green holds roughly sixty percent of a branded surface, cream twenty-five, charcoal ten, sage five.</p>
+      <p class="ed-body">That ratio is the single most useful thing in the document, because it answers the question a volunteer actually has, which is <strong>how much green goes on a wall.</strong></p>
+      <p class="ed-body">Photography is where church branding usually goes wrong. Stage closeups, flash, crowd shots, production gear in frame. I wrote the direction to run the other way. Lead with the sacred ordinary, people in relationship, natural light and breathing room.</p>
     </div>
     <div style="margin-top:-100px;width:calc(100% + 80px);margin-left:-80px;">
       <figure style="margin:0;">
@@ -138,16 +138,16 @@ export const body = `
         </thead>
         <tbody>
                     <tr>
-            <td>Rules written as sentences, not swatches</td>
-            <td>A volunteer gets an answer to how much green, not a list of hex values to interpret.</td>
+            <td>Rules written as sentences a volunteer can act on</td>
+            <td>A volunteer gets a sentence they can follow at 9pm without calling anyone.</td>
           </tr>
           <tr>
             <td>Colour specified as surface proportion</td>
-            <td>Sixty, twenty-five, ten, five decides a layout before anyone opens a file.</td>
+            <td>Sixty, twenty-five, ten, five. The ratio settles a layout in one line.</td>
           </tr>
           <tr>
             <td>Template library over one-off requests</td>
-            <td>The recurring weekly assets start from a correct file instead of a blank canvas.</td>
+            <td>The recurring weekly assets start from a correct file.</td>
           </tr>
           <tr>
             <td>One intake route, named decision owners</td>
@@ -216,8 +216,8 @@ export const body = `
   <div class="ed-label">Title: Brand System</div>
   <div class="ed-header">The System</div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
-    <p class="ed-body">Thirty-nine pages across six sections: story, identity, typography, colour, photography, and voice. The document specifies proportion and sequence rather than preference.</p>
-    <p class="ed-body">It is written to be read by people who were never trained as designers. Photography direction names the high-priority subjects and, more usefully, the low-priority ones. <strong>Telling a volunteer what not to shoot is worth more than telling them what to shoot.</strong></p>
+    <p class="ed-body">Thirty-nine pages across six sections: story, identity, typography, colour, photography, and voice.</p>
+    <p class="ed-body">I wrote it to be read by people who have never opened a design file. The photography direction names the high-priority subjects and, more usefully, the low-priority ones. <strong>The low-priority list is the one people actually use.</strong></p>
   </div>
 
   <!-- Brand Guidelines Deck -->
@@ -272,8 +272,8 @@ export const body = `
   <div class="ed-label">Title: The Website</div>
   <div class="ed-header">The Website</div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
-    <p class="ed-body">Built and shipped directly in code, serving both the current and the legacy domain so nobody arrives at a dead link after the rename. No mockups. No handoffs. What I designed is what shipped.</p>
-    <p class="ed-body">This is what I call <strong>Direct Design</strong>. Build directly in the medium. The browser is the canvas. The feedback loop collapses from weeks to minutes. Every decision is tested against real constraints, real content, real devices. Not a simulation of a website. The website.</p>
+    <p class="ed-body">Built directly in code, serving both the current and the legacy domain so nobody arrives at a dead link after the rename.</p>
+    <p class="ed-body">The site is the one asset the volunteers never have to maintain, so it had to be the reference for everything they do make. Building it in the browser meant the type scale and the green ratio were proven on a real page before they went into the book.</p>
   </div>
 
   <!-- Website Screenshots Deck -->
@@ -294,13 +294,13 @@ export const body = `
 <div class="ed-section">
   <div class="ed-label">Title: Results</div>
   <div style="font-family:var(--font-display);font-size:clamp(80px,12vw,180px);font-weight:800;color:#1a1a1a;line-height:0.9;letter-spacing:-0.04em;text-transform:uppercase;margin:16px 0 16px;">The Results</div>
-  <div style="font-family:var(--font-display);font-size:clamp(24px,3vw,36px);font-weight:800;color:#1a1a1a;letter-spacing:-0.02em;margin-bottom:32px;text-transform:uppercase;">One System. Ninety Days.</div>
+  <div style="font-family:var(--font-display);font-size:clamp(24px,3vw,36px);font-weight:800;color:#1a1a1a;letter-spacing:-0.02em;margin-bottom:32px;text-transform:uppercase;">Ninety Days, One System.</div>
 
   <!-- Row 1: Stats full width -->
   <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;margin-bottom:48px;">
     <div>
       <div class="ed-stat">39</div>
-      <div class="ed-stat-label">Page brand book handed over across six sections</div>
+      <div class="ed-stat-label">A brand book handed over, not a deck presented</div>
     </div>
     <div>
       <div class="ed-stat">0</div>
@@ -324,23 +324,23 @@ export const body = `
       <tbody>
                 <tr>
           <td>Two names in circulation</td>
-          <td>One lockup, supplied as a single unit, never redrawn</td>
+          <td>One lockup, handed over as a single file nobody can assemble wrong</td>
         </tr>
         <tr>
           <td>Colour chosen per asset</td>
-          <td>Colour specified as surface proportion, sixty percent green</td>
+          <td>A ratio that answers the question before it gets asked</td>
         </tr>
         <tr>
           <td>A blank canvas every Saturday night</td>
-          <td>A template library covering the recurring weekly assets</td>
+          <td>Slides, series art, and bulletins each start from a correct file</td>
         </tr>
         <tr>
           <td>Requests arriving as hallway asks</td>
-          <td>One intake route with named decision owners</td>
+          <td>One route in, and a named person who owns the yes</td>
         </tr>
         <tr>
           <td>Stage-lit crowd photography</td>
-          <td>Photography direction naming what to capture and what to avoid</td>
+          <td>A shot list volunteers can carry on a phone</td>
         </tr>
       </tbody>
     </table>
@@ -373,7 +373,7 @@ export const body = `
   <div class="ed-header" style="font-size:clamp(32px,5vw,56px);">What I Would Do Differently</div>
   <div style="max-width:800px;margin:0 auto;">
     <p class="ed-body">With more time I would have run the training session twice, once before the guidelines were final and once after, because the questions people ask when they are actually making something are different from the questions they ask reading a document.</p>
-    <p class="ed-body">The brand book was half the work. The other half was operational, and that half is what decides whether any of it survives.</p>
+    <p class="ed-body">The brand book was half the work. The operational half is what decides whether any of it survives.</p>
     <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin-top:48px;">
       <img src="assets/evan-headshot.jpg?v=4" alt="Evan Roberts" style="width:44px;height:44px;border-radius:50%;object-fit:cover;">
       <div style="text-align:left;">
